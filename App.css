@@ -1,0 +1,19 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+.top-card {
+  border-radius: 10px;
+  background: 
+  url('/assets/images/BACKGROUND.png'),  linear-gradient(84deg, #1E3A6D 10.01%, #24B3BA 95.25%);
+    
+  background-size: cover;
+  background-position: center;
+}
+.lucky-draw {
+ border-radius: 10px;
+background: linear-gradient(270deg, rgba(36, 179, 186, 0.15) -2.21%, rgba(192, 216, 87, 0.35) 100%);
+}
+.gradient{
+   background:  linear-gradient(84deg, #1E3A6D 10.01%, #24B3BA 95.25%);
+
+}
