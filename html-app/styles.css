@@ -1,0 +1,31 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f3f4f6;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Safe area for bottom nav on mobile */
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+/* Gradient utility if needed (from CreatePlan.tsx) */
+.gradient {
+    background: linear-gradient(to right, #1E3A6D, #24B3BA);
+}
+
+/* Lucky draw background */
+.lucky-draw {
+background: linear-gradient(270deg, rgba(36, 179, 186, 0.15) -2.21%, rgba(192, 216, 87, 0.35) 100%);
+}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Zindigi Musafir</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1E3A6D', // Deep Blue
+              'primary-light': '#2A4B8D',
+              'primary-pale': '#E8EDF5',
+              accent: '#26d0ce', // Teal Accent
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-200 font-sans">
+    <div class="min-h-screen flex justify-center">
+        <!-- Mobile Frame -->
+        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+            
+            <!-- Main Content Area -->
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+                <!-- Content will be injected here by script.js -->
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                <!-- Nav items injected by script.js -->
+            </nav>
+
+            <!-- Modals Container -->
+            <div id="modal-container"></div>
+        </div>
+    </div>    
+    <script src="bottomNav.js"></script>
+
+    <script src="plans.js"></script>
+
+    <!-- Application Logic -->
+    <script src="journey.js"></script>
+    <script src="profile.js"></script>
+    <script src="bonusModal.js"></script>
+    <script src="points.js"></script>
+    <script src="journeyForm.js"></script>
+     <script src="script.js"></script>
+
+</body>
+</html>
