@@ -68,7 +68,7 @@ function renderPlans() {
         state.plansList.forEach((plan, index) => {
             html += `
                 <div class="px-5">
-                    <div class="bg-[#F4F8FB] rounded-3xl p-4 shadow-sm border border-gray-100 mb-6">
+                    <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm  mb-6">
                         <div class="flex justify-between items-center mb-6">
                             <div>
                                 <h6 class="text-normal font-bold text-primary text-[#1E3A6D]">${plan.name}</h6>
@@ -87,7 +87,7 @@ function renderPlans() {
                             <p class="font-normal text-xs text-[#627497]">PKR ${plan.paid.toLocaleString()} Paid</p>
                             <p class="font-normal text-xs text-[#627497]">Goal: ${plan.goal.toLocaleString()}</p>
                         </small>
-                        <button class="w-full mt-4 border border-[#BFD3E0] text-primary py-3.5 rounded-xl font-bold hover:bg-primary-light hover:text-white flex items-center justify-center space-x-2 text-sm transition-colors text-[#1E3A6D]">
+                        <button onclick="showPlanDetails(${index})" class="w-full mt-4 border border-[#BFD3E0] text-primary py-3.5 rounded-xl font-bold hover:bg-primary-light hover:text-white flex items-center justify-center space-x-2 text-sm transition-colors text-[#1E3A6D]">
                             View Details
                         </button>
                     </div>
@@ -107,3 +107,14 @@ function renderPlans() {
 
     return div;
 }
+
+function showPlanDetails(planIndex) {
+    const plan = state.plansList[planIndex];
+    const container = document.getElementById('app'); // or your root container
+    container.innerHTML = '';
+    container.appendChild(renderPlanDetails(plan));
+            lucide.createIcons();
+
+}
+
+

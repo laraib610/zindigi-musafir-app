@@ -3,8 +3,9 @@ function renderBottomNav() {
         { id: Tab.HOME, icon: 'home', label: 'Home' },
         { id: Tab.JOURNEY, icon: 'package', label: 'Ihram' },
         { id: Tab.PLANS, icon: 'calendar', label: 'Plans' },
-        { id: Tab.POINTS, icon: 'shopping-bag', label: 'Ihram Points' },
+        { id: Tab.POINTS, icon: 'trophy', label: 'Rewards' },
         { id: Tab.PROFILE, icon: 'user', label: 'Profile' },
+        { id: Tab.SUPPORT, icon: 'help-circle', label: 'Support' },
     ];
 
     const html = `

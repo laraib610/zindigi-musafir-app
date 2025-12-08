@@ -53,9 +53,65 @@
             <div id="modal-container"></div>
         </div>
     </div>    
+    <div id="edit-schedule-modal" 
+     class="fixed p-5 inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+      <div class="p-5 flex justify-center">
+        <div class="bg-white no-scrollbar h-[400px] overflow-y-scroll p-5 rounded-2xl shadow-lg w-11/12 max-w-md">
+              <div class="flex items-start justify-between">
+                  <div>
+                    <h2 class="font-bold text-lg text-[#1E3A6D] ">Change Installment Amount</h2>
+                    <p class="text-[#627497] text-sm mb-4">Enter the amount you want to pay for this month’s installment.</p>
+                  </div>
+                  <button onclick="closeEditScheduleModal()" class="ml-auto block">
+                      <i data-lucide="x" color="#1E3A6D"></i>
+                  </button>
+              </div>
+            
+
+              <input type="number" id="installment-input" 
+                    placeholder="e.g. PKR 25,000"
+                    class="w-full border border-gray-300 rounded-xl px-3 py-2 mb-4" />
+
+              <div id="installment-list">
+                  <!-- You can dynamically inject installments here if needed -->
+              </div>
+
+              <p class="lucky-draw text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded mt-3">
+                  <strong>Note:</strong> Changing your installment amount may affect your overall plan and could delay your expected Umrah month. We’ll update your schedule based on your new payment..
+              </p>
+
+              <div class="flex justify-between gap-2 pt-4">
+                  <button onclick="closeEditScheduleModal() " class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
+                  <button onclick="setWizardStep(7)" class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg" style="background-color: #1E3A6D;">Update Amount</button>
+                </div>
+          </div>
+      </div>
+    </div>
+    <div id="faq-modal" 
+    class="fixed inset-0 bg-black bg-opacity-30 hidden flex justify-center items-end z-50">
+
+    <div class="bg-white w-full max-w-md rounded-t-2xl p-5 pb-8 shadow-lg animate-slideUp">
+
+        <div class="flex justify-between items-center mb-2">
+            <h2 id="faq-modal-title" class="text-md font-bold text-[#1E3A6D]"></h2>
+            <button onclick="closeFaqModal()">
+                <i data-lucide="x" width="20"></i>
+            </button>
+        </div>
+
+        <p id="faq-modal-body" class="text-sm text-gray-600 leading-relaxed"></p>
+
+    </div>
+
+</div>
+
+
+
     <script src="bottomNav.js"></script>
 
     <script src="plans.js"></script>
+    <script src="plan-details.js"></script>
+    <script src="support.js"></script>
 
     <!-- Application Logic -->
     <script src="journey.js"></script>

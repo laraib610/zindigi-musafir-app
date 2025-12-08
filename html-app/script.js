@@ -5,7 +5,8 @@ const Tab = {
     JOURNEY: 'journey',
     PLANS: 'plans',
     POINTS: 'points',
-    PROFILE: 'profile'
+    PROFILE: 'profile',
+    SUPPORT: 'support'
 };
 
 const IhramMode = {
@@ -86,7 +87,26 @@ const state = {
     showBonusModal: false,
     journeyMode: IhramMode.OVERVIEW,
     plansMode: UmrahPlan.OVERVIEW,
-    plansList: [], // Start empty
+    plansList: [
+        // Sample plan
+        {
+            id: 1,
+            name: "Family Umrah 2025",
+            date: "2025-06",
+            progress: 45, // percentage
+            paid: 95000, // PKR
+            goal: 200000, // PKR
+            transactions: [
+                { title: "Initial Deposit", date: "2024-01-15", amount: 50000, status: "paid" },
+                { title: "Second Installment", date: "2024-02-15", amount: 45000, status: "paid" },
+            ],
+            installments: [
+            { id: 1, date: "2024-09-01", amount: 5000, status: "paid" },
+            { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid" },
+            { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid" }
+        ],
+        },
+    ], // Start empty
     isCreatingPlan: false,
     wizardStep: 1,
     wizardData: {
@@ -129,6 +149,9 @@ function renderApp() {
             break;
         case Tab.PROFILE:
             app.appendChild(renderProfile());
+            break;
+        case Tab.SUPPORT:
+            app.appendChild(renderSupport());
             break;
         default:
             app.appendChild(renderHome());
@@ -186,7 +209,7 @@ function renderHome() {
             <div class="relative px-5 rounded-2xl top-card mt-5 text-white p-5 shadow-lg shadow-blue-900/10" style="background-color: #1E3A6D;">
                 <div class="relative z-10 w-2/3">
                     <h2 class="text-lg font-bold mb-1">Upgrade to Ihram Account</h2>
-                    <p class="text-xs text-blue-100 mb-4 leading-relaxed">
+                    <p class="text-sm text-blue-100 mb-4 leading-relaxed">
                         Unlock exclusive savings, earn double points, and priority support.
                     </p>
                     <button id="upgrade-btn" class="bg-[#24B3BA] flex items-center gap-1 hover:bg-primary hover:text-white text-white text-xs font-bold py-2.5 px-5 rounded-lg transition-colors shadow-md">
@@ -204,21 +227,21 @@ function renderHome() {
         <div class="grid grid-cols-2 gap-2 px-5">
             <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
-                    <span class="text-xs font-semibold text-[#627497]">Umrah Savings</span>
+                    <span class="text-md font-semibold text-[#627497]">Umrah Savings</span>
                     <img src="assets/svgs/savings.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
                 </div>
-                <h3 class="font-bold text-[12px] text-gray-800">PKR 250,000</h3>
-                <p class="text-[10px] text-gray-400 mt-1">
+                <h3 class="font-bold text-lg text-primary">PKR 250,000</h3>
+                <p class="text-sm text-gray-400 mt-1">
                     You’re getting close to your Umrah - keep moving at your pace.
                 </p>
             </div>
             <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
-                    <span class="text-xs font-semibold text-[#627497]">Ihram Points</span>
+                    <span class="text-md font-semibold text-[#627497]">Ihram Points</span>
                     <img src="assets/svgs/ihram_points.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
                 </div>
-                <h3 class="text-[12px] font-bold text-gray-800">1,259</h3>
-                <p class="text-[10px] text-gray-400 mt-1">
+                <h3 class="text-lg font-bold text-primary">1,259</h3>
+                <p class="text-sm text-gray-400 mt-1">
                     Collect points with every booking and step closer to exclusive Umrah rewards.
                 </p>
             </div>
@@ -231,9 +254,9 @@ function renderHome() {
                     <div class="w-6 h-6 bg-primary-pale text-primary rounded-full flex items-center justify-center bg-[#E8EDF5] text-[#1E3A6D]">
                         <span class="text-xs">💡</span>
                     </div>
-                    <h3 class="text-[12px] font-bold text-gray-800">Ibrahim's Tip</h3>
+                    <h3 class="text-md font-bold text-primary">Ibrahim's Tip</h3>
                 </div>
-                <p class="text-[10px] text-[#627497] leading-relaxed mb-3">
+                <p class="text-sm text-[#627497] leading-relaxed mb-3">
                     "Based on your saving rate, if you invite 2 family members to contribute, you could reach your goal 
                     <span class="font-bold text-gray-800"> 2 months earlier!</span>"
                 </p>
@@ -247,10 +270,10 @@ function renderHome() {
         <div class="px-5">
             <div class="relative lucky-draw rounded-2xl p-5 text-white overflow-hidden">
                 <div class="relative z-10 w-2/3">
-                    <h3 class="text-sm font-bold text-[#1E3A6D] mb-1">Umrah Lucky Draw</h3>
-                    <div class="flex items-center space-x-2 text-[10px] text-[#1E3A6D] mb-3">
+                    <h3 class="text-md font-bold text-[#1E3A6D] mb-1">Umrah Lucky Draw</h3>
+                    <div class="flex items-center space-x-2 text-sm text-[#1E3A6D] mb-3">
                         <span>Next Draw: 01/11/2025</span>
-                        <span class="bg-white/50 px-1.5 py-0.5 rounded">Entries: 5</span>
+                        <span class="bg-[#CFE5D9] px-1.5 py-0.5 rounded">Entries: 5</span>
                     </div>
                     <div class="w-full bg-gray-100 h-1.5 rounded-full my-2">
                         <div class="bg-primary h-full w-1/2 rounded-full" style="background-color: #1E3A6D;"></div>

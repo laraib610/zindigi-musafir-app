@@ -279,7 +279,7 @@ function renderCreatePlanWizard() {
             </p>
 
             <div class="bg-[#F4F8FB] p-4 rounded-lg mb-6 text-left text-sm">
-                <strong class="block mb-2">Payment Summary:</strong>
+                <strong class="block text-primary mb-2">Payment Summary:</strong>
                 <ul class="list-disc list-inside text-[#627497]">
                     <li>Down Payment: <strong class="text-primary">PKR 25,000</strong></li>
                     <li>Remaining Payment Method: Will be paid later after confirmation</li>
@@ -321,12 +321,12 @@ function renderCreatePlanWizard() {
 
                 <div class="bg-[#F4F8FB] p-6 rounded-xl text-center mb-6">
                     <div class="flex justify-center gap-4 mb-6">
-                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
-                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
-                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
-                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                        <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
                     </div>
-                    <button onclick="confirmOTP()" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
+                    <button onclick="setWizardStep(9)" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
                         Confirm
                     </button>
                      <p class="text-xs text-[#627497] text-start">Resend Code in <span id="resendTimer">30s</span></p>
@@ -336,7 +336,21 @@ function renderCreatePlanWizard() {
             </div
         </div>
     `;
+    }
+     else if (wizardStep === 9) {
+    content = `
+        <div class="  px-5 mt-10 text-center">
+                <div class="bg-[#F4F8FB] rounded-md p-4 flex flex-col items-center justify-center">
+                    <img src="assets/svgs/success.svg" alt="No Plans" class="w-[50px] mb-4" onerror="this.src='https://placehold.co/200x200?text=success'">
+                    <h5 class="text-lg font-bold text-primary text-[#1E3A6D] mb-2">Payment Successful!</h5>
+                    <p class="text-sm text-[#627497] mb-6">Your down payment of PKR 25,000 has been received.
+                    Our team will contact you soon to assist with the remaining payment and finalize your Umrah booking.</p>
+
+                </div>
+            </div>
+    `;
 }
+
 
 
     div.innerHTML = html+ content;
