@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Support - Zindigi Musafir</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A6D', // Deep Blue
+                        'primary-light': '#2A4B8D',
+                        'primary-pale': '#E8EDF5',
+                        accent: '#26d0ce', // Teal Accent
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-200 font-sans">
+    <div class="min-h-screen flex justify-center">
+        <!-- Mobile Frame -->
+        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+
+            <!-- Main Content Area -->
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+                <div class="bg-white min-h-screen pt-6">
+                    <!-- Header -->
+                    <div class="flex px-5 justify-between items-center border-b border-gray-100 pb-2">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
+                                <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah"
+                                    class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <p class="text-xs text-[#627497] font-medium">Assalam o Alaikom</p>
+                                <h1 class="text-lg font-bold text-gray-800">Abdullah!</h1>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                                <i data-lucide="bell" width="20"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="px-5 mt-6 mb-10">
+                        <h1 class="text-center text-lg font-bold text-primary mb-6">
+                            Frequently Asked Questions
+                        </h1>
+
+                        <div id="faq-list">
+                            <!-- Items will be injected by script below -->
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav id="bottom-nav"
+                class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                <div class="flex justify-between items-center pb-4 pt-2">
+                    <a href="index.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="home" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Home</span>
+                    </a>
+                    <a href="journey.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="package" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Ihram</span>
+                    </a>
+                    <a href="plans.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="calendar" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Plans</span>
+                    </a>
+                    <a href="points.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Rewards</span>
+                    </a>
+                    <a href="profile.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Profile</span>
+                    </a>
+                    <!-- Active -->
+                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent"
+                        style="color: #26d0ce;">
+                        <div class="transition-all duration-300 -translate-y-1">
+                            <i data-lucide="help-circle" width="22" stroke-width="2.5"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-100">Support</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- FAQ Modal -->
+            <div id="faq-modal" class="fixed inset-0 bg-black bg-opacity-30 hidden flex justify-center items-end z-50">
+                <div class="bg-white w-full max-w-md rounded-t-2xl p-5 pb-8 shadow-lg animate-slideUp">
+                    <div class="flex justify-between items-center mb-2">
+                        <h2 id="faq-modal-title" class="text-md font-bold text-[#1E3A6D]"></h2>
+                        <button onclick="closeFaqModal()">
+                            <i data-lucide="x" width="20"></i>
+                        </button>
+                    </div>
+                    <p id="faq-modal-body" class="text-sm text-gray-600 leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const FAQ_LIST = [
+            { q: "Can I get the real-time updates on app?", a: "Absolutely! With our app, you can receive real-time updates on your Umrah journey. Stay informed with instant notifications about booking confirmations, itinerary changes, and exclusive offers. Get the latest information at your fingertips to ensure a seamless and worry-free pilgrimage." },
+            { q: "What does the app offer?", a: "The app offers trip planning, savings tracking, booking management, real-time notifications and more." },
+            { q: "Is the app available offline?", a: "Basic features are available offline. For updates & syncing, internet is required." },
+            { q: "What does the app provide?", a: "It provides affordable Umrah saving plans, reminders, tracking, and rewards." },
+            { q: "How can I contact your support team?", a: "You can contact support through chat, email, or WhatsApp inside the app." }
+        ];
+
+        // Render List
+        const listContainer = document.getElementById('faq-list');
+        listContainer.innerHTML = FAQ_LIST.map((item, i) => `
+            <button onclick="openFaqModal(${i})" class="w-full flex justify-between items-center bg-white border p-4 rounded-xl mb-3 shadow-sm">
+                <span class="text-sm font-semibold text-[#1E3A6D] text-left">${item.q}</span>
+                <i data-lucide="chevron-down" class="text-gray-500"></i>
+            </button>
+        `).join('');
+
+        function openFaqModal(index) {
+            const item = FAQ_LIST[index];
+            document.getElementById("faq-modal-title").textContent = item.q;
+            document.getElementById("faq-modal-body").textContent = item.a;
+            const modal = document.getElementById("faq-modal");
+            modal.classList.remove("hidden");
+            document.getElementById('app').style.filter = "blur(3px)";
+        }
+
+        function closeFaqModal() {
+            const modal = document.getElementById("faq-modal");
+            modal.classList.add("hidden");
+            document.getElementById('app').style.filter = "none";
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

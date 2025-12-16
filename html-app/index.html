@@ -1,125 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Zindigi Musafir</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#1E3A6D', // Deep Blue
-              'primary-light': '#2A4B8D',
-              'primary-pale': '#E8EDF5',
-              accent: '#26d0ce', // Teal Accent
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Home - Zindigi Musafir</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E3A6D', // Deep Blue
+            'primary-light': '#2A4B8D',
+            'primary-pale': '#E8EDF5',
+            accent: '#26d0ce', // Teal Accent
           }
         }
       }
-    </script>
+    }
+  </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-gray-200 font-sans">
-    <div class="min-h-screen flex justify-center">
-        <!-- Mobile Frame -->
-        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
-            
-            <!-- Main Content Area -->
-            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
-                <!-- Content will be injected here by script.js -->
-            </main>
+  <div class="min-h-screen flex justify-center">
+    <!-- Mobile Frame -->
+    <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
 
-            <!-- Bottom Navigation -->
-            <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
-                <!-- Nav items injected by script.js -->
-            </nav>
-
-            <!-- Modals Container -->
-            <div id="modal-container"></div>
-        </div>
-    </div>    
-    <div id="edit-schedule-modal" 
-     class="fixed p-5 inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
-      <div class="p-5 flex justify-center">
-        <div class="bg-white no-scrollbar h-[400px] overflow-y-scroll p-5 rounded-2xl shadow-lg w-11/12 max-w-md">
-              <div class="flex items-start justify-between">
-                  <div>
-                    <h2 class="font-bold text-lg text-[#1E3A6D] ">Change Installment Amount</h2>
-                    <p class="text-[#627497] text-sm mb-4">Enter the amount you want to pay for this month’s installment.</p>
-                  </div>
-                  <button onclick="closeEditScheduleModal()" class="ml-auto block">
-                      <i data-lucide="x" color="#1E3A6D"></i>
-                  </button>
+      <!-- Main Content Area -->
+      <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+        <div class="pt-6 pb-28 space-y-6 bg-white min-h-screen">
+          <!-- Header -->
+          <div class="flex px-5 justify-between items-center border-b border-gray-100 pb-2">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
+                <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah"
+                  class="w-full h-full object-cover" />
               </div>
-            
-
-              <input type="number" id="installment-input" 
-                    placeholder="e.g. PKR 25,000"
-                    class="w-full border border-gray-300 rounded-xl px-3 py-2 mb-4" />
-
-              <div id="installment-list">
-                  <!-- You can dynamically inject installments here if needed -->
+              <div>
+                <p class="text-xs text-[#627497] font-medium">Assalam o Alaikom</p>
+                <h1 class="text-lg font-bold text-gray-800">Abdullah!</h1>
               </div>
+            </div>
+            <div class="flex space-x-3">
+              <button
+                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                <i data-lucide="bell" width="20"></i>
+              </button>
 
-              <p class="lucky-draw text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded mt-3">
-                  <strong>Note:</strong> Changing your installment amount may affect your overall plan and could delay your expected Umrah month. We’ll update your schedule based on your new payment..
-              </p>
-
-              <div class="flex justify-between gap-2 pt-4">
-                  <button onclick="closeEditScheduleModal() " class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
-                  <button onclick="setWizardStep(7)" class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg" style="background-color: #1E3A6D;">Update Amount</button>
-                </div>
+            </div>
           </div>
-      </div>
-    </div>
-    <div id="faq-modal" 
-    class="fixed inset-0 bg-black bg-opacity-30 hidden flex justify-center items-end z-50">
 
-    <div class="bg-white w-full max-w-md rounded-t-2xl p-5 pb-8 shadow-lg animate-slideUp">
+          <!-- Upgrade Banner -->
+          <div class="px-5">
+            <div class="relative px-5 rounded-2xl top-card mt-5 text-white p-5 shadow-lg shadow-blue-900/10"
+              style="background-color: #1E3A6D;">
+              <div class="relative z-10 w-2/3">
+                <h2 class="text-lg font-bold mb-1">Upgrade to Ihram Account</h2>
+                <p class="text-sm text-blue-100 mb-4 leading-relaxed">
+                  Unlock exclusive savings, earn double points, and priority support.
+                </p>
+                <a href="journey.html"
+                  class="bg-[#24B3BA] flex items-center gap-1 hover:bg-primary hover:text-white text-white text-xs font-bold py-2.5 px-5 rounded-lg transition-colors shadow-md w-fit">
+                  <img src="assets/svgs/sparkles.svg" alt="" onerror="this.style.display='none'"> Upgrade Now
+                </a>
+              </div>
+              <div class="absolute right-[-20px] bottom-[-20px] w-40 h-40">
+                <img src="assets/images/ihram.png" alt="Pilgrim" style="height: 203px; transform: translateY(-62px);"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="absolute top-[-50px] left-[-50px] w-32 h-32 bg-white opacity-5 rounded-full blur-2xl"></div>
+            </div>
+          </div>
 
-        <div class="flex justify-between items-center mb-2">
-            <h2 id="faq-modal-title" class="text-md font-bold text-[#1E3A6D]"></h2>
-            <button onclick="closeFaqModal()">
-                <i data-lucide="x" width="20"></i>
-            </button>
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-2 px-5">
+            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+              <div class="flex justify-between items-start mb-1">
+                <span class="text-md font-semibold text-[#627497]">Umrah Savings</span>
+                <img src="assets/svgs/savings.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
+              </div>
+              <h3 class="font-bold text-lg text-primary">PKR 250,000</h3>
+              <p class="text-sm text-gray-400 mt-1">
+                You’re getting close to your Umrah - keep moving at your pace.
+              </p>
+            </div>
+            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+              <div class="flex justify-between items-start mb-1">
+                <span class="text-md font-semibold text-[#627497]">Ihram Points</span>
+                <img src="assets/svgs/ihram_points.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
+              </div>
+              <h3 class="text-lg font-bold text-primary">1,259</h3>
+              <p class="text-sm text-gray-400 mt-1">
+                Collect points with every booking and step closer to exclusive Umrah rewards.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tip Card -->
+          <div class="px-5">
+            <div class="bg-[#F4F8FB] rounded-2xl p-5 border border-gray-100 px-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <div
+                  class="w-6 h-6 bg-primary-pale text-primary rounded-full flex items-center justify-center bg-[#E8EDF5] text-[#1E3A6D]">
+                  <span class="text-xs">💡</span>
+                </div>
+                <h3 class="text-md font-bold text-primary">Ibrahim's Tip</h3>
+              </div>
+              <p class="text-sm text-[#627497] leading-relaxed mb-3">
+                "Based on your saving rate, if you invite 2 family members to contribute, you could reach your goal
+                <span class="font-bold text-gray-800"> 2 months earlier!</span>"
+              </p>
+              <a href="plans.html"
+                class="text-primary text-xs font-bold flex items-center hover:underline text-[#1E3A6D]">
+                Ask Ibrahim <i data-lucide="chevron-right" width="14"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Lucky Draw -->
+          <div class="px-5">
+            <div class="relative lucky-draw rounded-2xl p-5 text-white overflow-hidden">
+              <div class="relative z-10 w-2/3">
+                <h3 class="text-md font-bold text-[#1E3A6D] mb-1">Umrah Lucky Draw</h3>
+                <div class="flex items-center space-x-2 text-sm text-[#1E3A6D] mb-3">
+                  <span>Next Draw: 01/11/2025</span>
+                  <span class="bg-[#CFE5D9] px-1.5 py-0.5 rounded">Entries: 5</span>
+                </div>
+                <div class="w-full bg-gray-100 h-1.5 rounded-full my-2">
+                  <div class="bg-primary h-full w-1/2 rounded-full" style="background-color: #1E3A6D;"></div>
+                </div>
+                <button
+                  class="w-[80%] bg-[#1E3A6D] hover:bg-blue-600 py-2 rounded-lg text-xs font-semibold flex items-center justify-center space-x-2 transition-colors border border-white/10 text-white">
+                  <i data-lucide="gift" width="12"></i>
+                  <span>Spin Used Today</span>
+                </button>
+              </div>
+              <div class="absolute right-[-25px] bottom-0">
+                <img src="assets/images/gift.png" class="w-[190px]" alt="" onerror="this.style.display='none'">
+              </div>
+            </div>
+          </div>
         </div>
+      </main>
 
-        <p id="faq-modal-body" class="text-sm text-gray-600 leading-relaxed"></p>
+      <!-- Bottom Navigation -->
+      <nav id="bottom-nav"
+        class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+        <div class="flex justify-between items-center pb-4 pt-2">
+          <!-- Home (Active) -->
+          <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent"
+            style="color: #26d0ce;">
+            <div class="transition-all duration-300 -translate-y-1">
+              <i data-lucide="home" width="22" stroke-width="2.5"></i>
+            </div>
+            <span class="text-[9px] font-medium tracking-wide opacity-100">
+              Home
+            </span>
+          </button>
 
+          <!-- Ihram -->
+          <a href="journey.html"
+            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+            style="color: #bfdbfe;">
+            <div class="transition-all duration-300">
+              <i data-lucide="package" width="22" stroke-width="2"></i>
+            </div>
+            <span class="text-[9px] font-medium tracking-wide opacity-70">
+              Ihram
+            </span>
+          </a>
+
+          <!-- Plans -->
+          <a href="plans.html"
+            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+            style="color: #bfdbfe;">
+            <div class="transition-all duration-300">
+              <i data-lucide="calendar" width="22" stroke-width="2"></i>
+            </div>
+            <span class="text-[9px] font-medium tracking-wide opacity-70">
+              Plans
+            </span>
+          </a>
+
+          <!-- Rewards -->
+          <a href="points.html"
+            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+            style="color: #bfdbfe;">
+            <div class="transition-all duration-300">
+              <i data-lucide="trophy" width="22" stroke-width="2"></i>
+            </div>
+            <span class="text-[9px] font-medium tracking-wide opacity-70">
+              Rewards
+            </span>
+          </a>
+
+          <!-- Profile -->
+          <a href="profile.html"
+            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+            style="color: #bfdbfe;">
+            <div class="transition-all duration-300">
+              <i data-lucide="user" width="22" stroke-width="2"></i>
+            </div>
+            <span class="text-[9px] font-medium tracking-wide opacity-70">
+              Profile
+            </span>
+          </a>
+
+          <!-- Support -->
+          <a href="support.html"
+            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+            style="color: #bfdbfe;">
+            <div class="transition-all duration-300">
+              <i data-lucide="help-circle" width="22" stroke-width="2"></i>
+            </div>
+            <span class="text-[9px] font-medium tracking-wide opacity-70">
+              Support
+            </span>
+          </a>
+        </div>
+      </nav>
     </div>
+  </div>
 
-</div>
-
-
-
-    <script src="bottomNav.js"></script>
-
-    <script src="plans.js"></script>
-    <script src="plan-details.js"></script>
-    <script src="support.js"></script>
-
-    <!-- Application Logic -->
-    <script src="journey.js"></script>
-    <script src="profile.js"></script>
-    <script src="bonusModal.js"></script>
-    <script src="points.js"></script>
-    <script src="journeyForm.js"></script>
-     <script src="script.js"></script>
-
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
+
 </html>

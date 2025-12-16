@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Create Plan - Zindigi Musafir</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A6D', // Deep Blue
+                        'primary-light': '#2A4B8D',
+                        'primary-pale': '#E8EDF5',
+                        accent: '#26d0ce', // Teal Accent
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-200 font-sans">
+    <div class="min-h-screen flex justify-center">
+        <!-- Mobile Frame -->
+        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+            <!-- Main Content Area -->
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+                <!-- Wizard Content Injected Here -->
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav id="bottom-nav"
+                class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                <div class="flex justify-between items-center pb-4 pt-2">
+                    <!-- Home -->
+                    <a href="index.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="home" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Home
+                        </span>
+                    </a>
+
+                    <!-- Ihram -->
+                    <a href="journey.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="package" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Ihram
+                        </span>
+                    </a>
+
+                    <!-- Plans (Active) -->
+                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent"
+                        style="color: #26d0ce;">
+                        <div class="transition-all duration-300 -translate-y-1">
+                            <i data-lucide="calendar" width="22" stroke-width="2.5"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-100">
+                            Plans
+                        </span>
+                    </button>
+
+                    <!-- Rewards -->
+                    <a href="points.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Rewards
+                        </span>
+                    </a>
+
+                    <!-- Profile -->
+                    <a href="profile.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Profile
+                        </span>
+                    </a>
+
+                    <!-- Support -->
+                    <a href="support.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="help-circle" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Support
+                        </span>
+                    </a>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <script>
+        // --- Constants ---
+        // (Copied from script.js mostly, simplified)
+        const UmrahPlan = { OVERVIEW: 'overview', UMRAH: 'umrah', OTHERS: 'others' };
+        const PilgrimType = { ADULT: 0, CHILDREN: 1, INFANT: 2 };
+        const pilgrimTypes = [
+            { label: 'Adults', sub: "12+ years", value: PilgrimType.ADULT },
+            { label: 'Children', sub: "2-11 years", value: PilgrimType.CHILDREN },
+            { label: 'Infant', sub: "Below 2 years", value: PilgrimType.INFANT },
+        ];
+        const years = [2025, 2026, 2027, 2028];
+        const monthsByYear = {
+            2025: ["Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025"],
+            2026: ["Jan 2026", "Feb 2026", "Mar 2026"],
+            2027: ["Jan 2027", "Feb 2027"],
+            2028: ["Jan 2028"],
+        };
+        const durations = [
+            { days: 7, label: "7 Days", icon: 'assets/svgs/watch.svg' },
+            { days: 14, label: "14 Days", popular: true, icon: 'assets/svgs/star.svg' },
+            { days: 21, label: "21 Days", icon: 'assets/svgs/premium.svg' },
+        ];
+        const PLAN_TABS = [
+            { label: "Saver", icon: 'wallet' },
+            { label: "Economy", icon: 'coins', popular: true },
+            { label: "Premium", icon: 'crown' }
+        ];
+        const RANGE_LIMITS = [{ label: "Min", value: "PKR 150K" }, { label: "Max", value: "10 Lacs+" }];
+        const BUDGET_NOTES = [{ text: "Note: Based on current market rates, packages for your criteria start from", highlight: "PKR 1,343,434" }];
+        const budgetData = {
+            totalBudget: 212000,
+            monthlyBudget: 178500,
+            departure: "Karachi",
+            travelers: 9,
+            targetDate: "May 2025",
+            monthlyBreakdown: [
+                { date: "07th Mar", amount: 15600 },
+                { date: "07th Apr", amount: 15600 },
+                { date: "07th May", amount: 15600 },
+                { date: "07th Jun", amount: 15600 },
+                { date: "07th Jul", amount: 15600 },
+                { date: "07th Aug", amount: 15600 },
+            ]
+        };
+
+        // --- State ---
+        const state = {
+            wizardStep: 1,
+            plansList: [], // Needed for logic check
+            plansMode: UmrahPlan.OVERVIEW,
+            wizardData: {
+                journeyName: '',
+                departureCity: '',
+                pilgrims: [1, 0, 0],
+                year: 2025,
+                month: '',
+                duration: null,
+                budgetPlan: 'Economy',
+                installments: 3,
+                budget: 230000,
+                progress: 30
+            }
+        };
+
+        // --- Logic ---
+        function renderApp() {
+            const app = document.getElementById('app');
+            app.innerHTML = '';
+            app.appendChild(renderCreatePlanWizard());
+            lucide.createIcons();
+        }
+
+        function setWizardStep(step) {
+            state.wizardStep = step;
+            renderApp();
+        }
+        function setPlansMode(mode) {
+            state.plansMode = mode;
+            renderApp();
+        }
+        function closeWizard() {
+            window.location.href = 'plans.html';
+        }
+        function setWizardData(key, value) {
+            state.wizardData[key] = value;
+            renderApp();
+        }
+        function updatePilgrims(index, delta) {
+            const current = state.wizardData.pilgrims[index];
+            const newValue = Math.max(0, current + delta);
+            state.wizardData.pilgrims[index] = newValue;
+            renderApp();
+        }
+        function formatPKR(amount) {
+            return `PKR ${amount.toLocaleString()}`;
+        }
+
+        // --- The Giant Render Function ---
+        // (Pasted from journeyForm.js)
+        function renderCreatePlanWizard() {
+
+            const div = document.createElement('div');
+            div.className = " pt-2 bg-white";
+            const { wizardStep, wizardData } = state;
+
+            let content = '';
+            // Header logic simplified
+            let html = `
+                <div class="px-5 pb-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-lg font-bold text-gray-800">My Journey</h1>
+                        <div class="flex space-x-3">
+                             <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                                <i data-lucide="bell" width="20"></i>
+                            </button>
+                        </div>
+                    </div>
+                 <div class="flex bg-[#F4F8FB] justify-between items-center p-1 rounded-full mt-4 mb-3 shadow-sm">
+                 <button class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md">Overview</button>
+                  <a href="journeyForm.html"
+                                class="flex items-center justify-center bg-[#E5EDF3] px-3 ml-3 py-1 rounded-full transition-all">
+                                <i data-lucide="plus" color="#1E3A6D" width="12"></i>
+                            </a>
+                </div> <!-- Simply force Overview for now since this is the create page -->
+                </div>
+            `;
+
+            // Steps 1-9 logic from journeyForm.js
+            if (wizardStep === 1) {
+                content = `
+                    <div class="px-5 pt-3 space-y-4 pb-10">
+                        <h2 class="font-bold text-lg text-primary mb-3 text-[#1E3A6D]">Name Your Journey</h2>
+                        <div class="bg-[#F4F8FB] p-5 rounded-2xl">
+                            <h2 class="font-bold text-primary text-center text-lg mb-1 text-[#1E3A6D]">Name Your Journey</h2>
+                            <p class="font-normal text-[#627497] text-center text-sm mb-3">Give your savings plan a personal name.</p>
+                            <input type="text" id="journey-name-input" placeholder="e.g., My Umrah 2025" value="${wizardData.journeyName}" class="w-full border rounded-lg px-3 py-2 mb-4">
+                            <div class="flex justify-between gap-2">
+                                <button onclick="closeWizard()" class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
+                                <button onclick="setWizardStep(2)" class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg" style="background-color: #1E3A6D;">Generate Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (wizardStep === 2) {
+                const cities = ["Karachi", "Lahore", "Islamabad", "Multan", "Quetta", "Peshawar"];
+                content = `
+                    <div class="px-5 pt-3 space-y-4 pb-10">
+                        <h2 class="font-bold text-primary text-lg mb-3 text-[#1E3A6D]">Choose your departure City in Pakistan</h2>
+                        <div class="bg-[#F4F8FB] p-5 rounded-2xl">
+                            <div class="grid grid-cols-2 gap-4">
+                                ${cities.map(city => `
+                                    <button onclick="setWizardData('departureCity', '${city}')" class="flex justify-between items-center w-full py-2 px-3 rounded-lg border border-[#DFE8EE] ${wizardData.departureCity === city ? 'bg-primary text-white' : 'bg-transparent text-[#627497]'}" ${wizardData.departureCity === city ? 'style="background-color: #1E3A6D;"' : ''}>
+                                        ${city}
+                                        ${wizardData.departureCity === city ? '<i data-lucide="circle-check" color="#F4F8FB" width="16"></i>' : ''}
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="flex justify-between gap-2 mt-4">
+                                <button onclick="setWizardStep(1)" class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
+                                <button onclick="setWizardStep(3)" class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg" style="background-color: #1E3A6D;">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (wizardStep === 3) {
+                content = `
+                    <div class="px-5 pt-3 space-y-4 pb-10">
+                        <h2 class="font-bold text-primary text-lg mb-3">Choose Number of Pilgrims</h2>
+                        <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                            ${pilgrimTypes.map((item, index) => `
+                                <div class="bg-white p-3 rounded-lg flex items-center justify-between">
+                                    <div>
+                                        <p class="text-primary m-0 text-[#1E3A6D]">${item.label}</p>
+                                        <sup class="text-sm text-[#627497]">${item.sub}</sup>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <button onclick="updatePilgrims(${index}, -1)" class="w-8 h-8 rounded-full text-primary flex items-center justify-center text-[#1E3A6D]">−</button>
+                                        <span class="text-sm bg-[#D8E9F2] rounded-full py-1 px-3">${wizardData.pilgrims[index]}</span>
+                                        <button onclick="updatePilgrims(${index}, 1)" class="w-8 h-8 rounded-full text-primary flex items-center justify-center text-[#1E3A6D]">+</button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                            <div class="flex justify-between gap-2 pt-4">
+                                <button onclick="setWizardStep(2)" class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
+                                <button onclick="setWizardStep(4)" class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg" style="background-color: #1E3A6D;">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (wizardStep === 4) {
+                content = `
+                    <div class="px-5 pt-3 space-y-4 pb-10">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h2 class="font-bold text-primary text-lg mb-0">Travel Month & Duration</h2>
+                                <p class="text-sm text-gray-500 m-0">When do you plan to perform Umrah?</p>
+                            </div>
+                            <div><span class="bg-[#F1FDFA] text-xs p-1 rounded-xl text-[#24B3BA] border border-[#24B3BA]">Gregorian Mode</span></div>
+                        </div>
+                        <div class="flex space-x-2 py-"2>
+                            ${years.map(yr => `
+                                <button onclick="setWizardData('year', ${yr}); setWizardData('month', '')" class="px-4 py-2 text-xs rounded-full font-medium ${wizardData.year === yr ? 'bg-primary text-white' : 'bg-white text-[#627497]'}" ${wizardData.year === yr ? 'style="background-color: #1E3A6D;"' : ''}>${yr}</button>
+                            `).join('')}
+                        </div>
+                        <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                ${(monthsByYear[wizardData.year] || []).map(month => `
+                                    <button onclick="setWizardData('month', '${month}')" class="py-3 px-2 rounded-lg ${wizardData.month === month ? 'gradient text-white' : 'bg-white text-[#627497]'}" ${wizardData.month === month ? 'style="background: linear-gradient(to right, #1E3A6D, #24B3BA);"' : ''}>${month}</button>
+                                `).join('')}
+                            </div>
+                            <h3 class="font-bold text-primary mt-4 mb-1 text-[#1E3A6D]">Duration</h3>
+                            <div class="grid grid-cols-3 gap-3">
+                                ${durations.map(d => `
+                                    <button onclick="setWizardData('duration', ${d.days})" class="p-4 rounded-xl relative ${wizardData.duration === d.days ? 'gradient text-white' : 'bg-white text-[#627497] border-[#DFE8EE]'}" ${wizardData.duration === d.days ? 'style="background: linear-gradient(to right, #1E3A6D, #24B3BA);"' : ''}>
+                                        ${d.popular ? '<span class="absolute -top-2 right-2 bg-[#DEC55D] text-white text-xs px-2 py-1 rounded-xl">Popular</span>' : ''}
+                                        <div class="flex justify-center mb-2"><img src="${d.icon}" alt="${d.label}" class="w-6 h-6" onerror="this.style.display='none'"></div>
+                                        ${d.label}
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="flex justify-between gap-2 mt-4">
+                                <button onclick="setWizardStep(3)" class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
+                                <button onclick="setWizardStep(5)" class="w-3/6 text-white px-5 py-2 rounded-lg ${(!wizardData.month || !wizardData.duration) ? 'bg-gray-400' : 'bg-primary'}" ${(!wizardData.month || !wizardData.duration) ? '' : 'style="background-color: #1E3A6D;"'} ${(!wizardData.month || !wizardData.duration) ? 'disabled' : ''}>Next</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (wizardStep === 5) {
+                const budgetSummary = [
+                    { heading: "Total Budget", value: `PKR ${wizardData.budget.toLocaleString()}`, sup: "(Monthly 12mo)", sub: `~ ${Math.round(wizardData.budget / 12).toLocaleString()}` }
+                ];
+                content = `
+                    <div class="bg-white p-5 rounded-2xl shadow-sm  space-y-5">
+                        <h2 class="font-bold text-primary text-lg mb-3">Budget</h2>
+                        <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                            <div class="grid grid-cols-3 gap-3">
+                                ${PLAN_TABS.map(plan => `
+                                    <button onclick="setWizardData('budgetPlan', '${plan.label}')" class="flex flex-col items-center justify-center p-4 rounded-xl transition ${wizardData.budgetPlan === plan.label ? 'gradient text-white border-transparent' : 'bg-white text-[#627497] border-[#DDE7F1]'}" ${wizardData.budgetPlan === plan.label ? 'style="background: linear-gradient(to right, #1E3A6D, #24B3BA);"' : ''}>
+                                        <div class="text-2xl mb-1"><i data-lucide="${plan.icon}" class="w-6 h-6 ${wizardData.budgetPlan === plan.label ? 'text-white' : 'text-primary'}"></i></div>
+                                        <p class="font-semibold text-sm">${plan.label}</p>
+                                        ${(plan.popular && wizardData.budgetPlan !== plan.label) ? '<span class="text-[10px] bg-[#DEC55D] text-white px-2 py-0.5 rounded-full mt-1">Popular</span>' : ''}
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="bg-white rounded-xl border shadow p-4 space-y-4">
+                                ${budgetSummary.map(item => `
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-xs text-gray-500">${item.heading}</p>
+                                            <p class="text-2xl font-bold text-primary text-[#1E3A6D]">${item.value}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-[#627497]">${item.sup}</p>
+                                            <p class="text-sm font-bold text-[#24B3BA] text-end">${item.sub}</p>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                                <div>
+                                    <div class="flex justify-between text-xs my-0 text-gray-500"><span>Progress</span><span>${wizardData.progress}%</span></div>
+                                    <div class="w-full bg-gray-200 h-2 rounded-full"><div class="bg-[#0B4DA9] h-2 rounded-full" style="width: ${wizardData.progress}%"></div></div>
+                                </div>
+                                <div class="flex justify-between text-xs m-0 text-gray-500">
+                                    ${RANGE_LIMITS.map(r => `<span>${r.label}: ${r.value}</span>`).join('')}
+                                </div>
+                                ${BUDGET_NOTES.map(note => `
+                                    <div class="lucky-draw p-2 rounded-lg">
+                                        <p class="text-xs text-[#3B6F67] leading-relaxed">${note.text} <span class="font-semibold">${note.highlight}</span>.</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="flex justify-between gap-2 mt-4">
+                                <button onclick="setWizardStep(4)" class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
+                                <button onclick="setWizardStep(6)" class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg" style="background-color: #1E3A6D;">Generate</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (wizardStep === 6) {
+
+                content = `
+                <div class="px-3 pt-3 pb-10">
+                   <h2 class="font-bold text-primary text-lg mb-3">Total Budget</h2>
+                    <div class="bg-[#F4F7FE] p-2 rounded-xl mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <div>
+                                <p class="text-[#627497] text-xs">Total Budget</p>
+                                <p class="font-bold text-primary text-lg">${formatPKR(budgetData.totalBudget)}</p>
+                                </div>
+                                <div class="text-right">
+                                <p class="text-[#627497] text-sm">Monthly (12mo)</p>
+                                <p class="text-[#24B3BA] font-semibold">~ ${formatPKR(budgetData.monthlyBudget)}</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-white mt-5 p-2 rounded-md ">
+
+                                <div class="flex justify-between  gap-1 text-xs mt-3">
+                                    <span class="bg-[#F6F9FC] px-2 py-1 rounded-lg  text-[#627497]">Departure: <span class="font-bold"> ${budgetData.departure} </span></span>
+                                    <span class="bg-[#F6F9FC] px-2 py-1 rounded-lg text-[#627497]">Travelers: <span class="font-bold">${budgetData.travelers} Persons </span></span>
+                                    <span class="bg-[#F6F9FC] px-2 py-1  rounded-lg text-[#627497]">Target Date: <span class="font-bold">${budgetData.targetDate}</span></span>
+                                </div>
+                        
+
+                            <h3 class="font-semibold text-primary my-3">Monthly Breakdown</h3>
+                            <div class="grid grid-cols-3 gap-3 mb-5">
+                                ${budgetData.monthlyBreakdown.map((item, index) => `
+                                    <div class="${index === 0 ? 'gradient text-white' : 'bg-gray-100 text-[#627497]'} p-3 rounded-lg text-center">
+                                        <p class="text-sm">${item.date}</p>
+                                        <p class="font-bold ${index === 0 ? 'text-white' : ''}">${formatPKR(item.amount)}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+
+                            <button onclick="setWizardStep(7)"  class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold">
+                            Confirm & Pay First Installment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+
+            }
+            else if (wizardStep === 7) {
+                content = `
+                    <div class=" pt-3 ">
+                        <div class="px-5 mb-6 w-100 border-b border-gray-200">
+                            <button onclick="setWizardStep(6)" class="text-primary mb-5  flex items-center gap-2 font-semibold">
+                                <span class=" bg-primary rounded-full px-1">
+                                    <i data-lucide="chevron-left" color="white" width="16"></i>
+
+                                </span>
+                                
+                                Start Saving
+                            </button>
+                        </div>
+                        <div class="px-5 mb-6 ">
+                        <h3 class="text-primary font-bold mb-2">Complete Your Down Payment</h3>
+                        <p class="text-[#627497] mb-6 text-sm ">
+                            To confirm your Umrah package, please pay the required down payment using your Zindigi Wallet.
+                        </p>
+
+                        <div class="bg-[#F4F8FB] p-4 rounded-lg mb-6 text-left text-sm">
+                            <strong class="block text-primary mb-2">Payment Summary:</strong>
+                            <ul class="list-disc list-inside text-[#627497]">
+                                <li>Down Payment: <strong class="text-primary">PKR 25,000</strong></li>
+                                <li>Remaining Payment Method: Will be paid later after confirmation</li>
+                                <li>Payment Method: Zindigi Wallet (Auto-selected)</li>
+                            </ul>
+                            <div class="lucky-draw mt-5 text-green-900 px-3 py-1 rounded-lg mb-6 text-xs">
+                                Note: This amount will be deducted instantly from your Zindigi Wallet.
+                            </div>
+                        </div>
+
+                        
+
+                        <button onclick="setWizardStep(8)" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
+                            Pay Now
+                        </button>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (wizardStep === 8) {
+                content = `
+                    <div class="pt-3">
+                        <div class="px-5 mb-6 w-100 border-b border-gray-200">
+                            <button onclick="setWizardStep(7)" class="text-primary mb-5  flex items-center gap-2 font-semibold">
+                                <span class=" bg-primary rounded-full px-1">
+                                    <i data-lucide="chevron-left" color="white" width="16"></i>
+
+                                </span>
+                                
+                                OTP Verification
+                            </button>
+                        </div>
+                        <div class="px-5 mb-6 ">
+
+                            <h3 class="font-semibold text-[#1E3A6D] mb-2">Enter Verification Code</h3>
+                            <p class="text-[#627497] text-sm mb-6 leading-relaxed">
+                                A 4-digit code has been sent to your mobile number. Enter it below to confirm your payment.
+                            </p>
+
+                            <div class="bg-[#F4F8FB] p-6 rounded-xl text-center mb-6">
+                                <div class="flex justify-center gap-4 mb-6">
+                                    <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                                    <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                                    <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                                    <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
+                                </div>
+                                <button onclick="setWizardStep(9)" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
+                                    Confirm
+                                </button>
+                                 <p class="text-xs text-[#627497] text-start">Resend Code in <span id="resendTimer">30s</span></p>
+
+                            </div>
+
+                        </div
+                    </div>
+                `;
+            }
+            else if (wizardStep === 9) {
+                content = `
+                    <div class="  px-5 mt-10 text-center">
+                            <div class="bg-[#F4F8FB] rounded-md p-4 flex flex-col items-center justify-center">
+                                <img src="assets/svgs/success.svg" alt="No Plans" class="w-[50px] mb-4" onerror="this.src='https://placehold.co/200x200?text=success'">
+                                <h5 class="text-lg font-bold text-primary text-[#1E3A6D] mb-2">Payment Successful!</h5>
+                                <p class="text-sm text-[#627497] mb-6">Your down payment of PKR 25,000 has been received.
+                                Our team will contact you soon to assist with the remaining payment and finalize your Umrah booking.</p>
+                             <button onclick="closeWizard()" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
+                                    Go to Plans
+                                </button>
+                            </div>
+                        </div>
+                `;
+            }
+
+            div.innerHTML = html + content;
+            if (wizardStep === 1) {
+                setTimeout(() => {
+                    const input = document.getElementById('journey-name-input');
+                    if (input) {
+                        input.value = state.wizardData.journeyName;
+                        input.addEventListener('input', (e) => {
+                            state.wizardData.journeyName = e.target.value;
+                        });
+                        input.focus();
+                    }
+                }, 0);
+            }
+            return div;
+        }
+
+        renderApp();
+    </script>
+</body>
+
+</html>

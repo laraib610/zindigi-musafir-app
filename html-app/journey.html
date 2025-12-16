@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Journey - Zindigi Musafir</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1E3A6D', // Deep Blue
+              'primary-light': '#2A4B8D',
+              'primary-pale': '#E8EDF5',
+              accent: '#26d0ce', // Teal Accent
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-200 font-sans">
+    <div class="min-h-screen flex justify-center">
+        <!-- Mobile Frame -->
+        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+            
+            <!-- Main Content Area -->
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+                <div class="pt-6 pb-28 space-y-6 bg-white min-h-screen">
+                    <!-- Header -->
+                   <div class="flex px-5 justify-between items-center border-b border-gray-100 pb-2">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
+                                <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <p class="text-xs text-[#627497] font-medium">Assalam o Alaikom</p>
+                                <h1 class="text-lg font-bold text-gray-800">Abdullah!</h1>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                                <i data-lucide="bell" width="20"></i>
+                            </button>
+                           
+                        </div>
+                    </div>
+                     <div class="grid grid-cols-2 gap-2 px-5">
+                        <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="text-md font-semibold text-primary">Spend & Earn</span>
+                                <img src="assets/svgs/wallet.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
+                            </div>
+                        <p class=" text-[#627497] text-sm mt-1">
+                                Earn points on every transaction with your Ihram Debit Card.
+                            </p>
+                        </div>
+                        <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="text-md font-semibold text-primary">Pay with Points</span>
+                                <img src="assets/svgs/points.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
+                            </div>
+                        <p class=" text-[#627497] text-sm mt-1">
+                                Redeem points on every transaction with your Ihram Debit Card.
+                            </p>
+                        </div>
+                        <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="text-md font-semibold text-primary">Win Umrah</span>
+                                <img src="assets/svgs/win.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
+                            </div>
+                        <p class="text-[#627497] text-sm mt-1">
+                                Get 5x entries to the monthly Lucky Draw for free trips.
+                            </p>
+                        </div>
+                        <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="text-md font-semibold text-primary">Exclusive Rates</span>
+                                <img src="assets/svgs/points.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
+                            </div>
+                        <p class=" text-[#627497] text-sm mt-1">
+                                Access discounted packages only for Ihram members.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <!-- Tip Card -->
+                    <div class="px-5">
+                        <div class="bg-[#F4F8FB] rounded-2xl p-5 border border-gray-100 px-5">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <h3 class="text-[12px] font-bold text-primary">Why Upgrade?</h3>
+                            </div>
+                            <ul class="list-none list-inside  text-[#627497] space-y-1">
+                                <li class="flex justify-start items-center gap-2"><img src="assets/svgs/CheckCircle.svg"/>Priority Visa Processing.</li>
+                                <li class="flex justify-start items-center gap-2"> <img src="assets/svgs/CheckCircle.svg"/>24/7 Dedicated Concierge.</li>
+                                <li class="flex justify-start items-center gap-2"> <img src="assets/svgs/CheckCircle.svg"/>Secure, High-Yield Savings.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                <div class="flex justify-between items-center pb-4 pt-2">
+                    <!-- Home -->
+                    <a href="index.html" class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200" style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="home" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Home
+                        </span>
+                    </a>
+
+                    <!-- Ihram (Active) -->
+                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent" style="color: #26d0ce;">
+                        <div class="transition-all duration-300 -translate-y-1">
+                            <i data-lucide="package" width="22" stroke-width="2.5"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-100">
+                            Ihram
+                        </span>
+                    </button>
+
+                    <!-- Plans -->
+                    <a href="plans.html" class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200" style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="calendar" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Plans
+                        </span>
+                    </a>
+
+                    <!-- Rewards -->
+                    <a href="points.html" class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200" style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Rewards
+                        </span>
+                    </a>
+
+                    <!-- Profile -->
+                    <a href="profile.html" class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200" style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Profile
+                        </span>
+                    </a>
+
+                     <!-- Support -->
+                    <a href="support.html" class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200" style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="help-circle" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Support
+                        </span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

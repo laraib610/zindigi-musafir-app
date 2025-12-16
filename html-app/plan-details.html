@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Plan Details - Zindigi Musafir</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A6D', // Deep Blue
+                        'primary-light': '#2A4B8D',
+                        'primary-pale': '#E8EDF5',
+                        accent: '#26d0ce', // Teal Accent
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #1E3A6D;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #1E3A6D;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200 font-sans">
+    <div class="min-h-screen flex justify-center">
+        <!-- Mobile Frame -->
+        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+
+            <!-- Main Content Area -->
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+                <div class="bg-white">
+                    <!-- Header -->
+                    <div class="px-3 border-b border-gray-100 pb-2 pt-2">
+                        <div class="flex justify-between items-center">
+                            <h1 class="text-lg font-bold text-gray-800">My Journey</h1>
+                            <div class="flex space-x-3">
+                                <button
+                                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-primary hover:bg-gray-50">
+                                    <i data-lucide="bell" color="black" width="20"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between bg-[#F4F8FB] p-1 rounded-full mt-4 mb-3 shadow-sm ">
+                            <a href="plans.html"
+                                class="px-4 py-1 rounded-full text-xs font-bold transition-all text-gray-500 hover:bg-gray-50 flex items-center">Overview</a>
+                            <button
+                                class="px-4 py-1 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md">My
+                                Umrah 2025</button>
+                            <button
+                                class="px-4 py-1 rounded-full text-xs font-bold transition-all text-gray-500 hover:bg-gray-50">Parent's
+                                Umrah</button>
+                            <!-- Link to Create Plan -->
+                            <a href="journeyForm.html"
+                                class="flex items-center justify-center bg-[#E5EDF3] px-3 ml-3 py-1 rounded-full transition-all">
+                                <i data-lucide="plus" color="#1E3A6D" width="12"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Plan Details Content -->
+                    <div class="mb-4 p-5 rounded-2xl shadow min-h-screen flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <h2 class="font-bold text-[#1E3A6D] text-lg">Family Umrah 2025</h2>
+                        </div>
+
+                        <div class="flex justify-between bg-[#F4F8FB] rounded-xl p-4 mb-6">
+                            <div>
+                                <p class="text-[#627497] text-sm">Total Saved</p>
+                                <p class="font-bold text-xl text-[#1E3A6D]">PKR 95,000</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[#627497] text-sm">Goal Amount</p>
+                                <p class="font-bold text-xl text-[#1E3A6D]">PKR 200,000</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#F4F8FB] p-4 rounded-xl mb-6">
+                            <div class="flex justify-between items-center py-3 mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <img src="assets/svgs/fast.svg" alt="Progress" class="w-10 h-10"
+                                        onerror="this.src='https://placehold.co/64x64?text=Progress'">
+                                    <div>
+                                        <h3 class="font-bold text-md text-[#1E3A6D]">Pay early & save 2% instantly!</h3>
+                                        <span class="text-xs text-[#627497]">Unlock 2x Rewards & Priority</span>
+                                    </div>
+                                </div>
+                                <img src="assets/svgs/ArrowRight.svg" alt="Rewards" class="w-5 h-5"
+                                    onerror="this.src='https://placehold.co/64x64?text=Rewards'">
+                            </div>
+                            <div class="flex justify-between items-center mb-3">
+                                <div>
+                                    <p class="text-[#627497] text-sm font-semibold">Upcoming payment</p>
+                                    <p class="text-[#1E3A6D] font-bold text-lg">PKR 25,000</p>
+                                </div>
+                                <div class="flex flex-col justify-center items-center">
+                                    <p
+                                        class="w-max h-min text-xs text-[#DC6E2A] bg-[#FFEADC] px-1 py-0 flex items-center gap-1">
+                                        <i data-lucide="clock" color="#DC6E2A" width="10"></i> Due 11/11/2025
+                                    </p>
+                                    <button onclick="openEditScheduleModal()"
+                                        class="mt-2 bg-[#F1FDFA] border border-[#24B3BA] rounded-xl py-1 px-3 text-sm font-semibold text-[#24B3BA] hover:bg-gray-50">Edit
+                                        Schedule</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between space-x-1 pt-4">
+                                <button
+                                    class="bg-transparent border border-[#DFE8EE] rounded-xl py-3 px-6 text-sm font-semibold text-[#1E3A6D] hover:bg-gray-50">Skip
+                                    Month</button>
+                                <button onclick="openManageInstallmentModal()"
+                                    class="bg-[#E7EDF1] border border-[#DFE8EE] rounded-xl py-3 px-6 text-sm font-semibold text-[#1E3A6D] hover:bg-gray-50">Merge
+                                    & Pay</button>
+                                <button onclick="openPayNowModal()"
+                                    class="bg-primary text-white rounded-xl py-3 px-6 font-semibold text-sm hover:bg-[#16315b]">Pay
+                                    Now</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-[#1E3A6D] mb-4">Transaction History</h3>
+                            <!-- Transaction 1 -->
+                            <div class="flex justify-between items-start">
+                                <div class="w-5 ">
+                                    <img src="assets/svgs/check.svg" alt="check" class="">
+                                    <div class="border-l border-dashed h-24 ml-1"></div>
+                                </div>
+                                <div class="w-96 mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
+                                    <div class="flex justify-between mb-2 items-center">
+                                        <div>
+                                            <p class="font-semibold text-sm text-[#1E3A6D]">Initial Deposit</p>
+                                            <p class="text-[#627497] text-xs mb-3">2024-01-15</p>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-xs text-right flex items-center gap-2 w-max px-2 text-[#41AB13] bg-[#E6FBDE] font-semibold">
+                                                <i data-lucide="check" color="#41AB13" width="10"></i>Paid
+                                            </p>
+                                            <p class="font-bold text-right text-[#24B3BA]">PKR 50,000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Transaction 2 -->
+                            <div class="flex justify-between items-start">
+                                <div class="w-5 ">
+                                    <img src="assets/svgs/check.svg" alt="check" class="">
+                                    <div class="border-l border-dashed h-24 ml-1"></div>
+                                </div>
+                                <div class="w-96 mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
+                                    <div class="flex justify-between mb-2 items-center">
+                                        <div>
+                                            <p class="font-semibold text-sm text-[#1E3A6D]">Second Installment</p>
+                                            <p class="text-[#627497] text-xs mb-3">2024-02-15</p>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-xs text-right flex items-center gap-2 w-max px-2 text-[#41AB13] bg-[#E6FBDE] font-semibold">
+                                                <i data-lucide="check" color="#41AB13" width="10"></i>Paid
+                                            </p>
+                                            <p class="font-bold text-right text-[#24B3BA]">PKR 45,000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav id="bottom-nav"
+                class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                <div class="flex justify-between items-center pb-4 pt-2">
+                    <a href="index.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="home" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Home</span>
+                    </a>
+                    <a href="journey.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="package" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Ihram</span>
+                    </a>
+                    <!-- Active -->
+                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent"
+                        style="color: #26d0ce;">
+                        <div class="transition-all duration-300 -translate-y-1">
+                            <i data-lucide="calendar" width="22" stroke-width="2.5"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-100">Plans</span>
+                    </button>
+                    <a href="points.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Rewards</span>
+                    </a>
+                    <a href="profile.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Profile</span>
+                    </a>
+                    <a href="support.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="help-circle" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">Support</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Edit Schedule Modal -->
+            <div id="edit-schedule-modal"
+                class="fixed p-5 inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+                <div class="p-5 flex justify-center w-full">
+                    <div
+                        class="bg-white no-scrollbar h-[400px] overflow-y-scroll p-5 rounded-2xl shadow-lg w-full max-w-md">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h2 class="font-bold text-lg text-[#1E3A6D] ">Change Installment Amount</h2>
+                                <p class="text-[#627497] text-sm mb-4">Enter the amount you want to pay for this month’s
+                                    installment.</p>
+                            </div>
+                            <button onclick="closeEditScheduleModal()" class="ml-auto block">
+                                <i data-lucide="x" color="#1E3A6D"></i>
+                            </button>
+                        </div>
+
+                        <input type="number" id="installment-input" placeholder="e.g. PKR 25,000"
+                            class="w-full border border-gray-300 rounded-xl px-3 py-2 mb-4" />
+
+                        <div id="installment-list">
+                            <!-- Injected via script -->
+                        </div>
+
+                        <p class="lucky-draw text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded mt-3">
+                            <strong>Note:</strong> Changing your installment amount may affect your overall plan and
+                            could delay your expected Umrah month. We’ll update your schedule based on your new
+                            payment..
+                        </p>
+
+                        <div class="flex justify-between gap-2 pt-4">
+                            <button onclick="closeEditScheduleModal() "
+                                class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
+                            <button onclick="closeEditScheduleModal()"
+                                class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg"
+                                style="background-color: #1E3A6D;">Update Amount</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pay Now Modal -->
+            <div id="pay-now-modal"
+                class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center z-50">
+                <div class="p-5 w-full flex justify-center">
+                    <div class="bg-white rounded-2xl p-5 w-full max-w-md shadow-2xl relative">
+                        <!-- Header -->
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-lg text-[#1E3A6D]">Confirm Payment</h3>
+                                <p class="text-xs text-gray-500">Installment Payment</p>
+                            </div>
+                            <button onclick="closePayNowModal()"><i data-lucide="x" class="text-gray-400"></i></button>
+                        </div>
+                        <!-- Content -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center bg-[#F4F8FB] p-3 rounded-lg">
+                                <span class="text-[#627497] text-sm">Monthly Installment:</span>
+                                <span class="font-bold text-[#1E3A6D]">PKR 25,000</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-[#F4F8FB] p-3 rounded-lg">
+                                <div class="flex items-center gap-2">
+                                    <span class="">👑</span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-[#1E3A6D]">Use Ihram Points</p>
+                                        <p class="text-xs text-[#627497]">Available: 1249</p>
+                                    </div>
+                                </div>
+
+                                <!-- Toggle Switch -->
+                                <div
+                                    class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                    <input type="checkbox" name="toggle" id="toggle"
+                                        class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-[#E5EDF3]" />
+                                    <label for="toggle"
+                                        class="toggle-label block overflow-hidden h-5 rounded-full bg-[#E5EDF3] cursor-pointer"></label>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-100" />
+
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-[#1E3A6D]">Total to Pay:</span>
+                                <span class="text-xl font-bold text-[#24B3BA]">PKR 25,000</span>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-gray-400 mt-4 mb-2">Zindigi Wallet</p>
+
+                        <!-- Button -->
+                        <button
+                            class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition">Pay
+                            Securely</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage Installment Modal -->
+            <div id="manage-installment-modal"
+                class="fixed inset-0 bg-black bg-opacity-30 hidden flex justify-center items-end z-50">
+                <div class="bg-white w-full max-w-md rounded-t-2xl p-5 pb-8 shadow-lg animate-slideUp">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h2 class="text-lg font-bold text-[#1E3A6D]">Manage Installment</h2>
+                            <p class="text-xs text-gray-400">Installment Payment</p>
+                        </div>
+
+                        <button onclick="closeManageInstallmentModal()">
+                            <i data-lucide="x" class="text-gray-400" width="20"></i>
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Option 1 -->
+                        <button
+                            class="w-full flex items-start p-4 border border-gray-100 rounded-xl bg-white shadow-sm hover:bg-gray-50 transition-colors text-left group">
+                            <div class="mt-1 mr-3 text-primary">
+                                <i data-lucide="link" width="18"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#1E3A6D] text-sm group-hover:text-primary-light">Merge with
+                                    Next</h3>
+                                <p class="text-xs text-gray-500 mt-0.5">Pay 2 installments together</p>
+                            </div>
+                        </button>
+
+                        <!-- Option 2 -->
+                        <button
+                            class="w-full flex items-start p-4 border border-gray-100 rounded-xl bg-white shadow-sm hover:bg-gray-50 transition-colors text-left group">
+                            <div class="mt-1 mr-3 text-primary">
+                                <i data-lucide="calendar" width="18"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#1E3A6D] text-sm group-hover:text-primary-light">Merge with
+                                    Next</h3>
+                                <p class="text-xs text-gray-500 mt-0.5">Pay 2 installments together</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Sample Installments Data
+        const installments = [
+            { id: 1, date: "2024-09-01", amount: 5000, status: "paid" },
+            { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid" },
+            { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid" }
+        ];
+
+        function openEditScheduleModal() {
+            renderInstallments();
+            document.getElementById("edit-schedule-modal").classList.remove("hidden");
+        }
+
+        function closeEditScheduleModal() {
+            document.getElementById("edit-schedule-modal").classList.add("hidden");
+        }
+
+        function openPayNowModal() {
+            document.getElementById("pay-now-modal").classList.remove("hidden");
+        }
+
+        function closePayNowModal() {
+            document.getElementById("pay-now-modal").classList.add("hidden");
+        }
+
+        function openManageInstallmentModal() {
+            document.getElementById("manage-installment-modal").classList.remove("hidden");
+            // Optional: Blur background like support.html
+            // document.getElementById('app').style.filter = "blur(3px)"; 
+        }
+
+        function closeManageInstallmentModal() {
+            document.getElementById("manage-installment-modal").classList.add("hidden");
+            // document.getElementById('app').style.filter = "none";
+        }
+
+        function renderInstallments() {
+            const container = document.getElementById("installment-list");
+            container.innerHTML = installments.map((i, index) => `
+                <div class=" mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
+                    <div class="flex justify-between mb-2 items-center">
+                        <div>
+                            <p class="font-semibold text-sm text-[#1E3A6D]">Installment ${index + 1}</p>
+                            <p class="text-[#627497] text-xs mb-3">${i.date}</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-right flex items-center gap-2 w-max px-2 text-[#41AB13] bg-[#E6FBDE] font-semibold"><i data-lucide="check" color="#41AB13" width="10"></i>${i.status === 'paid' ? 'Paid' : 'Unpaid'}</p>
+                            <p class="font-bold text-right text-[#24B3BA]">PKR ${i.amount.toLocaleString()}</p>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                         <div class="flex justify-between space-x-1 pt-4 w-full">
+                            <button class="bg-transparent border border-[#DFE8EE] rounded-xl py-2 px-4 text-xs font-semibold text-[#1E3A6D] hover:bg-gray-50 flex-1">Skip Month</button>
+                            <button onclick="openManageInstallmentModal()" class="bg-[#E7EDF1] border border-[#DFE8EE] rounded-xl py-2 px-4 text-xs font-semibold text-[#1E3A6D] hover:bg-gray-50 flex-1">Merge & Pay</button>
+                            <button onclick="openPayNowModal()" class="bg-primary text-white rounded-xl py-2 px-4 font-semibold text-xs hover:bg-[#16315b] flex-1">Pay Now</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons(); // Re-render icons for injected content
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

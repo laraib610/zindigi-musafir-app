@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Plans - Zindigi Musafir</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A6D', // Deep Blue
+                        'primary-light': '#2A4B8D',
+                        'primary-pale': '#E8EDF5',
+                        accent: '#26d0ce', // Teal Accent
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-200 font-sans">
+    <div class="min-h-screen flex justify-center">
+        <!-- Mobile Frame -->
+        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+
+            <!-- Main Content Area -->
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+                <div class="pt-2 pb-5 space-y-6 bg-white min-h-screen">
+                    <div class="px-3 border-b border-gray-100 pb-2">
+                        <div class="flex justify-between items-center">
+                            <h1 class="text-lg font-bold text-gray-800">My Journey</h1>
+                            <div class="flex space-x-3">
+                                <button
+                                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                                    <i data-lucide="bell" width="20"></i>
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between bg-[#F4F8FB] p-1 rounded-full mt-4 mb-3 shadow-sm ">
+                            <button
+                                class="px-4 py-0 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md">Overview</button>
+                            <button
+                                class="px-4 py-0 rounded-full text-xs font-bold transition-all text-gray-500 hover:bg-gray-50">My
+                                Umrah 2025</button>
+                            <button
+                                class="px-4 py-0 rounded-full text-xs font-bold transition-all text-gray-500 hover:bg-gray-50">Parent's
+                                Umrah</button>
+                            <!-- Create Plan Button - Links to Journey Form -->
+                            <a href="journeyForm.html"
+                                class="flex items-center justify-center bg-[#E5EDF3] px-3 ml-3 py-1 rounded-full transition-all">
+                                <i data-lucide="plus" color="#1E3A6D" width="12"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="px-5">
+                        <h5 class="text-lg font-bold text-primary text-[#1E3A6D]">Your Plans</h5>
+                    </div>
+
+                    <!-- Plan Item 1 -->
+                    <div class="px-5">
+                        <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm  mb-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <div>
+                                    <h6 class="text-normal font-bold text-primary text-[#1E3A6D]">Family Umrah 2025</h6>
+                                    <span class="text-sm text-[#627497]">2025-06</span>
+                                </div>
+                                <span class="text-xs bg-[#E6FBDE] text-[#41AB13] px-2 rounded-md">Active</span>
+                            </div>
+                            <small class="flex justify-between items-center">
+                                <p class="font-bold text-xs text-[#627497]">Progress</p>
+                                <p class="font-bold text-xs text-[#627497]">45%</p>
+                            </small>
+                            <div class="w-full bg-gray-100 h-1.5 rounded-full my-2 overflow-hidden">
+                                <div class="bg-primary h-full w-1/2 rounded-full"
+                                    style="width: 45%; background-color: #1E3A6D;"></div>
+                            </div>
+                            <small class="flex justify-between items-center">
+                                <p class="font-normal text-xs text-[#627497]">PKR 95,000 Paid</p>
+                                <p class="font-normal text-xs text-[#627497]">Goal: 200,000</p>
+                            </small>
+                            <!-- View Details Button -->
+                            <a href="plan-details.html"
+                                class="w-full mt-4 border border-[#BFD3E0] text-primary py-3.5 rounded-xl font-bold hover:bg-primary-light hover:text-white flex items-center justify-center space-x-2 text-sm transition-colors text-[#1E3A6D]">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav id="bottom-nav"
+                class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                <div class="flex justify-between items-center pb-4 pt-2">
+                    <!-- Home -->
+                    <a href="index.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="home" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Home
+                        </span>
+                    </a>
+
+                    <!-- Ihram -->
+                    <a href="journey.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="package" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Ihram
+                        </span>
+                    </a>
+
+                    <!-- Plans (Active) -->
+                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent"
+                        style="color: #26d0ce;">
+                        <div class="transition-all duration-300 -translate-y-1">
+                            <i data-lucide="calendar" width="22" stroke-width="2.5"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-100">
+                            Plans
+                        </span>
+                    </button>
+
+                    <!-- Rewards -->
+                    <a href="points.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Rewards
+                        </span>
+                    </a>
+
+                    <!-- Profile -->
+                    <a href="profile.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Profile
+                        </span>
+                    </a>
+
+                    <!-- Support -->
+                    <a href="support.html"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        style="color: #bfdbfe;">
+                        <div class="transition-all duration-300">
+                            <i data-lucide="help-circle" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                            Support
+                        </span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

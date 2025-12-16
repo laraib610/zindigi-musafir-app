@@ -17,3 +17,9 @@ background: linear-gradient(270deg, rgba(36, 179, 186, 0.15) -2.21%, rgba(192, 2
    background:  linear-gradient(84deg, #1E3A6D 10.01%, #24B3BA 95.25%);
 
 }
+.section-heading .section-title span {
+    color: var(--rr-color-theme-primary);
+    -webkit-text-fill-color: inherit;
+    -webkit-text-stroke-width: inherit;
+    -webkit-text-stroke-color: inherit;
+}
