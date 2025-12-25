@@ -21,7 +21,7 @@ function renderJourney() {
             </div>
         </div>
          <div class="grid grid-cols-2 gap-2 px-5">
-            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+            <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
                     <span class="text-md font-semibold text-primary">Spend & Earn</span>
                     <img src="assets/svgs/wallet.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
@@ -30,7 +30,7 @@ function renderJourney() {
                     Earn points on every transaction with your Ihram Debit Card.
                 </p>
             </div>
-            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+            <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
                     <span class="text-md font-semibold text-primary">Pay with Points</span>
                     <img src="assets/svgs/points.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
@@ -39,7 +39,7 @@ function renderJourney() {
                     Redeem points on every transaction with your Ihram Debit Card.
                 </p>
             </div>
-            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+            <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
                     <span class="text-md font-semibold text-primary">Win Umrah</span>
                     <img src="assets/svgs/win.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
@@ -48,7 +48,7 @@ function renderJourney() {
                     Get 5x entries to the monthly Lucky Draw for free trips.
                 </p>
             </div>
-            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+            <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
                     <span class="text-md font-semibold text-primary">Exclusive Rates</span>
                     <img src="assets/svgs/points.svg" class="w-[30px]" alt="" onerror="this.style.display='none'">
@@ -61,7 +61,7 @@ function renderJourney() {
 
         <!-- Tip Card -->
         <div class="px-5">
-            <div class="bg-[#F4F8FB] rounded-2xl p-5 border border-gray-100 px-5">
+            <div class="bg-[#F4F8FB] rounded-lg p-5 border border-gray-100 px-5">
                 <div class="flex items-center space-x-2 mb-3">
                     <h3 class="text-[12px] font-bold text-primary">Why Upgrade?</h3>
                 </div>

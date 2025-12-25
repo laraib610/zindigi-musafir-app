@@ -61,6 +61,10 @@
                                     class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-primary hover:bg-gray-50">
                                     <i data-lucide="bell" color="black" width="20"></i>
                                 </button>
+                                <button id="menu-btn"
+                                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                                    <i data-lucide="menu" width="20"></i>
+                                </button>
                             </div>
                         </div>
 
@@ -82,7 +86,7 @@
                     </div>
 
                     <!-- Plan Details Content -->
-                    <div class="mb-4 p-5 rounded-2xl shadow min-h-screen flex flex-col">
+                    <div class="mb-4 p-5 rounded-lg shadow min-h-screen flex flex-col">
                         <div class="flex justify-between items-center mb-3">
                             <h2 class="font-bold text-[#1E3A6D] text-lg">Family Umrah 2025</h2>
                         </div>
@@ -99,12 +103,13 @@
                         </div>
 
                         <div class="bg-[#F4F8FB] p-4 rounded-xl mb-6">
-                            <div class="flex justify-between items-center py-3 mb-4">
+                            <div class="flex justify-between items-center mb-4">
                                 <div class="flex items-center space-x-3">
                                     <img src="assets/svgs/fast.svg" alt="Progress" class="w-10 h-10"
                                         onerror="this.src='https://placehold.co/64x64?text=Progress'">
                                     <div>
-                                        <h3 class="font-bold text-md text-[#1E3A6D]">Pay early & save 2% instantly!</h3>
+                                        <h3 class="font-bold text-md text-[#1E3A6D] m-0">Pay early & save 2% instantly!
+                                        </h3>
                                         <span class="text-xs text-[#627497]">Unlock 2x Rewards & Priority</span>
                                     </div>
                                 </div>
@@ -118,7 +123,7 @@
                                 </div>
                                 <div class="flex flex-col justify-center items-center">
                                     <p
-                                        class="w-max h-min text-xs text-[#DC6E2A] bg-[#FFEADC] px-1 py-0 flex items-center gap-1">
+                                        class="w-max h-min text-[9px] rounded-md text-[#DC6E2A] bg-[#FFEADC] px-1 py-0 flex items-center gap-1">
                                         <i data-lucide="clock" color="#DC6E2A" width="10"></i> Due 11/11/2025
                                     </p>
                                     <button onclick="openEditScheduleModal()"
@@ -172,7 +177,30 @@
                                 <div class="w-96 mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
                                     <div class="flex justify-between mb-2 items-center">
                                         <div>
-                                            <p class="font-semibold text-sm text-[#1E3A6D]">Second Installment</p>
+                                            <p class="font-semibold text-sm text-[#1E3A6D]">January <sub
+                                                    class="text-xs font-normal text-grey">(Second Installment)</sub></p>
+                                            <p class="text-[#627497] text-xs mb-3">2024-02-15</p>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-xs text-right flex items-center gap-2 w-max px-2 text-[#41AB13] bg-[#E6FBDE] font-semibold">
+                                                <i data-lucide="check" color="#41AB13" width="10"></i>Paid
+                                            </p>
+                                            <p class="font-bold text-right text-[#24B3BA]">PKR 45,000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div class="w-5 ">
+                                    <img src="assets/svgs/check.svg" alt="check" class="">
+                                    <div class="border-l border-dashed h-24 ml-1"></div>
+                                </div>
+                                <div class="w-96 mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
+                                    <div class="flex justify-between mb-2 items-center">
+                                        <div>
+                                            <p class="font-semibold text-sm text-[#1E3A6D]">Feburary <sub
+                                                    class="text-xs font-normal text-grey">(Third Installment)</sub></p>
                                             <p class="text-[#627497] text-xs mb-3">2024-02-15</p>
                                         </div>
                                         <div>
@@ -190,12 +218,50 @@
                 </div>
             </main>
 
+            <!-- Side Menu Overlay -->
+            <div id="side-menu-overlay"
+                class="fixed inset-0 bg-black/20 z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+            <!-- Side Menu Drawer -->
+            <div id="side-menu"
+                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
+                <!-- Inner Container -->
+                <div class="flex flex-col h-full relative">
+                    <!-- Close Button -->
+                    <button id="menu-close-btn"
+                        class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="x" width="24"></i>
+                    </button>
+
+                    <!-- Menu Content -->
+                    <div class="mt-24 px-3 space-y-3">
+                        <a href="profile.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="user" width="20"></i>
+                            <span class="font-medium">Profile & Settings</span>
+                        </a>
+
+                        <a href="support.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="help-circle" width="20"></i>
+                            <span class="font-medium">Support</span>
+                        </a>
+
+                        <a href="terms-and-conditions.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="file-text" width="20"></i>
+                            <span class="font-medium">Terms & Conditions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Bottom Navigation -->
             <nav id="bottom-nav"
                 class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
                 <div class="flex justify-between items-center pb-4 pt-2">
                     <a href="index.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
                         style="color: #bfdbfe;">
                         <div class="transition-all duration-300">
                             <i data-lucide="home" width="22" stroke-width="2"></i>
@@ -203,7 +269,7 @@
                         <span class="text-[9px] font-medium tracking-wide opacity-70">Home</span>
                     </a>
                     <a href="journey.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
                         style="color: #bfdbfe;">
                         <div class="transition-all duration-300">
                             <i data-lucide="package" width="22" stroke-width="2"></i>
@@ -211,7 +277,7 @@
                         <span class="text-[9px] font-medium tracking-wide opacity-70">Ihram</span>
                     </a>
                     <!-- Active -->
-                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent"
+                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-accent"
                         style="color: #26d0ce;">
                         <div class="transition-all duration-300 -translate-y-1">
                             <i data-lucide="calendar" width="22" stroke-width="2.5"></i>
@@ -219,28 +285,12 @@
                         <span class="text-[9px] font-medium tracking-wide opacity-100">Plans</span>
                     </button>
                     <a href="points.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
                         style="color: #bfdbfe;">
                         <div class="transition-all duration-300">
                             <i data-lucide="trophy" width="22" stroke-width="2"></i>
                         </div>
                         <span class="text-[9px] font-medium tracking-wide opacity-70">Rewards</span>
-                    </a>
-                    <a href="profile.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="user" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">Profile</span>
-                    </a>
-                    <a href="support.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="help-circle" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">Support</span>
                     </a>
                 </div>
             </nav>
@@ -250,7 +300,7 @@
                 class="fixed p-5 inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
                 <div class="p-5 flex justify-center w-full">
                     <div
-                        class="bg-white no-scrollbar h-[400px] overflow-y-scroll p-5 rounded-2xl shadow-lg w-full max-w-md">
+                        class="bg-white no-scrollbar h-[400px] overflow-y-scroll p-5 rounded-lg shadow-lg w-full max-w-md">
                         <div class="flex items-start justify-between">
                             <div>
                                 <h2 class="font-bold text-lg text-[#1E3A6D] ">Change Installment Amount</h2>
@@ -269,7 +319,7 @@
                             <!-- Injected via script -->
                         </div>
 
-                        <p class="lucky-draw text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded mt-3">
+                        <p class="lucky-draw text-xs text-primary  px-2 py-1 rounded mt-3">
                             <strong>Note:</strong> Changing your installment amount may affect your overall plan and
                             could delay your expected Umrah month. We’ll update your schedule based on your new
                             payment..
@@ -279,7 +329,7 @@
                             <button onclick="closeEditScheduleModal() "
                                 class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
                             <button onclick="closeEditScheduleModal()"
-                                class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg"
+                                class="w-3/6 bg-primary text-white px-3 py-2 rounded-lg"
                                 style="background-color: #1E3A6D;">Update Amount</button>
                         </div>
                     </div>
@@ -290,7 +340,7 @@
             <div id="pay-now-modal"
                 class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center z-50">
                 <div class="p-5 w-full flex justify-center">
-                    <div class="bg-white rounded-2xl p-5 w-full max-w-md shadow-2xl relative">
+                    <div class="bg-white rounded-lg p-5 w-full max-w-md shadow-2xl relative">
                         <!-- Header -->
                         <div class="flex justify-between items-start mb-4">
                             <div>
@@ -305,7 +355,7 @@
                                 <span class="text-[#627497] text-sm">Monthly Installment:</span>
                                 <span class="font-bold text-[#1E3A6D]">PKR 25,000</span>
                             </div>
-                            <div class="flex justify-between items-center bg-[#F4F8FB] p-3 rounded-lg">
+                            <div class="flex justify-between items-center lucky-draw p-3 rounded-lg">
                                 <div class="flex items-center gap-2">
                                     <span class="">👑</span>
                                     <div>
@@ -393,9 +443,9 @@
     <script>
         // Sample Installments Data
         const installments = [
-            { id: 1, date: "2024-09-01", amount: 5000, status: "paid" },
-            { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid" },
-            { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid" }
+            { id: 1, date: "2024-09-01", amount: 5000, status: "paid", month: "January" },
+            { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid", month: "February" },
+            { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid", month: "March" }
         ];
 
         function openEditScheduleModal() {
@@ -432,7 +482,7 @@
                 <div class=" mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
                     <div class="flex justify-between mb-2 items-center">
                         <div>
-                            <p class="font-semibold text-sm text-[#1E3A6D]">Installment ${index + 1}</p>
+                            <p class="font-semibold text-sm text-[#1E3A6D]">${i.month} <sub class="text-xs font-normal text-grey">(Installment ${index + 1})</sub></p>
                             <p class="text-[#627497] text-xs mb-3">${i.date}</p>
                         </div>
 

@@ -4,7 +4,7 @@ function renderCreatePlanWizard() {
     const { wizardStep, wizardData } = state;
 
     let content = '';
-      // Header
+    // Header
     let html = `
         <div class="px-5 pb-2 border-b border-gray-100">
             <div class="flex justify-between items-center">
@@ -49,7 +49,7 @@ function renderCreatePlanWizard() {
         content = `
             <div class="px-5 pt-3 space-y-4 pb-10">
                 <h2 class="font-bold text-lg text-primary mb-3 text-[#1E3A6D]">Name Your Journey</h2>
-                <div class="bg-[#F4F8FB] p-5 rounded-2xl">
+                <div class="bg-[#F4F8FB] p-5 rounded-lg">
                     <h2 class="font-bold text-primary text-center text-lg mb-1 text-[#1E3A6D]">Name Your Journey</h2>
                     <p class="font-normal text-[#627497] text-center text-sm mb-3">Give your savings plan a personal name.</p>
                     <input type="text" id="journey-name-input" placeholder="e.g., My Umrah 2025" value="${wizardData.journeyName}" class="w-full border rounded-lg px-3 py-2 mb-4">
@@ -67,7 +67,7 @@ function renderCreatePlanWizard() {
         content = `
             <div class="px-5 pt-3 space-y-4 pb-10">
                 <h2 class="font-bold text-primary text-lg mb-3 text-[#1E3A6D]">Choose your departure City in Pakistan</h2>
-                <div class="bg-[#F4F8FB] p-5 rounded-2xl">
+                <div class="bg-[#F4F8FB] p-5 rounded-lg">
                     <div class="grid grid-cols-2 gap-4">
                         ${cities.map(city => `
                             <button onclick="setWizardData('departureCity', '${city}')" class="flex justify-between items-center w-full py-2 px-3 rounded-lg border border-[#DFE8EE] ${wizardData.departureCity === city ? 'bg-primary text-white' : 'bg-transparent text-[#627497]'}" ${wizardData.departureCity === city ? 'style="background-color: #1E3A6D;"' : ''}>
@@ -89,7 +89,7 @@ function renderCreatePlanWizard() {
         content = `
             <div class="px-5 pt-3 space-y-4 pb-10">
                 <h2 class="font-bold text-primary text-lg mb-3">Choose Number of Pilgrims</h2>
-                <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                <div class="bg-[#F4F8FB] p-5 rounded-lg shadow-sm space-y-4">
                     ${pilgrimTypes.map((item, index) => `
                         <div class="bg-white p-3 rounded-lg flex items-center justify-between">
                             <div>
@@ -128,7 +128,7 @@ function renderCreatePlanWizard() {
                         <button onclick="setWizardData('year', ${yr}); setWizardData('month', '')" class="px-4 py-2 text-xs rounded-full font-medium ${wizardData.year === yr ? 'bg-primary text-white' : 'bg-white text-[#627497]'}" ${wizardData.year === yr ? 'style="background-color: #1E3A6D;"' : ''}>${yr}</button>
                     `).join('')}
                 </div>
-                <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                <div class="bg-[#F4F8FB] p-5 rounded-lg shadow-sm space-y-4">
                     <!-- Months -->
                     <div class="grid grid-cols-3 gap-2">
                         ${(monthsByYear[wizardData.year] || []).map(month => `
@@ -161,10 +161,10 @@ function renderCreatePlanWizard() {
             { heading: "Total Budget", value: `PKR ${wizardData.budget.toLocaleString()}`, sup: "(Monthly 12mo)", sub: `~ ${Math.round(wizardData.budget / 12).toLocaleString()}` }
         ];
         content = `
-            <div class="bg-white p-5 rounded-2xl shadow-sm  space-y-5">
+            <div class="bg-white p-5 rounded-lg shadow-sm  space-y-5">
                 <h2 class="font-bold text-primary text-lg mb-3">Budget</h2>
                 <!-- Tabs -->
-                <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                <div class="bg-[#F4F8FB] p-5 rounded-lg shadow-sm space-y-4">
                     <div class="grid grid-cols-3 gap-3">
                         ${PLAN_TABS.map(plan => `
                             <button onclick="setWizardData('budgetPlan', '${plan.label}')" class="flex flex-col items-center justify-center p-4 rounded-xl transition ${wizardData.budgetPlan === plan.label ? 'gradient text-white border-transparent' : 'bg-white text-[#627497] border-[#DDE7F1]'}" ${wizardData.budgetPlan === plan.label ? 'style="background: linear-gradient(to right, #1E3A6D, #24B3BA);"' : ''}>
@@ -215,7 +215,7 @@ function renderCreatePlanWizard() {
     }
     // Step 6: Installments
     else if (wizardStep === 6) {
-         
+
         content = `
         <div class="px-3 pt-3 pb-10">
            <h2 class="font-bold text-primary text-lg mb-3">Total Budget</h2>
@@ -260,7 +260,7 @@ function renderCreatePlanWizard() {
     }
     // Step 7: Success
     else if (wizardStep === 7) {
-    content = `
+        content = `
         <div class=" pt-3 ">
             <div class="px-5 mb-6 w-100 border-b border-gray-200">
                 <button onclick="setWizardStep(6)" class="text-primary mb-5  flex items-center gap-2 font-semibold">
@@ -299,8 +299,8 @@ function renderCreatePlanWizard() {
         </div>
     `;
     }
-   else if (wizardStep === 8) {
-    content = `
+    else if (wizardStep === 8) {
+        content = `
         <div class="pt-3">
             <div class="px-5 mb-6 w-100 border-b border-gray-200">
                 <button onclick="setWizardStep(7)" class="text-primary mb-5  flex items-center gap-2 font-semibold">
@@ -337,8 +337,8 @@ function renderCreatePlanWizard() {
         </div>
     `;
     }
-     else if (wizardStep === 9) {
-    content = `
+    else if (wizardStep === 9) {
+        content = `
         <div class="  px-5 mt-10 text-center">
                 <div class="bg-[#F4F8FB] rounded-md p-4 flex flex-col items-center justify-center">
                     <img src="assets/svgs/success.svg" alt="No Plans" class="w-[50px] mb-4" onerror="this.src='https://placehold.co/200x200?text=success'">
@@ -349,11 +349,11 @@ function renderCreatePlanWizard() {
                 </div>
             </div>
     `;
-}
+    }
 
 
 
-    div.innerHTML = html+ content;
+    div.innerHTML = html + content;
 
     // Add event listener for input if in step 1
     if (wizardStep === 1) {

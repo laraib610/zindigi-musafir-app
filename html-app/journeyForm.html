@@ -43,13 +43,51 @@
                 <!-- Wizard Content Injected Here -->
             </main>
 
+            <!-- Side Menu Overlay -->
+            <div id="side-menu-overlay"
+                class="fixed inset-0 bg-black/20 z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+            <!-- Side Menu Drawer -->
+            <div id="side-menu"
+                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
+                <!-- Inner Container -->
+                <div class="flex flex-col h-full relative">
+                    <!-- Close Button -->
+                    <button id="menu-close-btn"
+                        class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="x" width="24"></i>
+                    </button>
+
+                    <!-- Menu Content -->
+                    <div class="mt-24 px-5 space-y-3">
+                        <a href="profile.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="user" width="20"></i>
+                            <span class="font-medium">Profile & Settings</span>
+                        </a>
+
+                        <a href="support.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="help-circle" width="20"></i>
+                            <span class="font-medium">Support</span>
+                        </a>
+
+                        <a href="terms-and-conditions.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="file-text" width="20"></i>
+                            <span class="font-medium">Terms & Conditions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Bottom Navigation -->
             <nav id="bottom-nav"
                 class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
                 <div class="flex justify-between items-center pb-4 pt-2">
                     <!-- Home -->
                     <a href="index.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
                         style="color: #bfdbfe;">
                         <div class="transition-all duration-300">
                             <i data-lucide="home" width="22" stroke-width="2"></i>
@@ -61,7 +99,7 @@
 
                     <!-- Ihram -->
                     <a href="journey.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
                         style="color: #bfdbfe;">
                         <div class="transition-all duration-300">
                             <i data-lucide="package" width="22" stroke-width="2"></i>
@@ -72,7 +110,7 @@
                     </a>
 
                     <!-- Plans (Active) -->
-                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-accent"
+                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-accent"
                         style="color: #26d0ce;">
                         <div class="transition-all duration-300 -translate-y-1">
                             <i data-lucide="calendar" width="22" stroke-width="2.5"></i>
@@ -84,37 +122,13 @@
 
                     <!-- Rewards -->
                     <a href="points.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
+                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
                         style="color: #bfdbfe;">
                         <div class="transition-all duration-300">
                             <i data-lucide="trophy" width="22" stroke-width="2"></i>
                         </div>
                         <span class="text-[9px] font-medium tracking-wide opacity-70">
                             Rewards
-                        </span>
-                    </a>
-
-                    <!-- Profile -->
-                    <a href="profile.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="user" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
-                            Profile
-                        </span>
-                    </a>
-
-                    <!-- Support -->
-                    <a href="support.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/5 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="help-circle" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
-                            Support
                         </span>
                     </a>
                 </div>
@@ -238,9 +252,13 @@
                              <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
                                 <i data-lucide="bell" width="20"></i>
                             </button>
+                            <button id="menu-btn"
+                                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                                <i data-lucide="menu" width="20"></i>
+                            </button>
                         </div>
                     </div>
-                 <div class="flex bg-[#F4F8FB] justify-between items-center p-1 rounded-full mt-4 mb-3 shadow-sm">
+                 <div class="flex lucky-draw justify-between items-center p-1 rounded-full mt-4 mb-3 shadow-sm">
                  <button class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md">Overview</button>
                   <a href="journeyForm.html"
                                 class="flex items-center justify-center bg-[#E5EDF3] px-3 ml-3 py-1 rounded-full transition-all">
@@ -255,7 +273,7 @@
                 content = `
                     <div class="px-5 pt-3 space-y-4 pb-10">
                         <h2 class="font-bold text-lg text-primary mb-3 text-[#1E3A6D]">Name Your Journey</h2>
-                        <div class="bg-[#F4F8FB] p-5 rounded-2xl">
+                        <div class="bg-[#F4F8FB] p-5 rounded-lg">
                             <h2 class="font-bold text-primary text-center text-lg mb-1 text-[#1E3A6D]">Name Your Journey</h2>
                             <p class="font-normal text-[#627497] text-center text-sm mb-3">Give your savings plan a personal name.</p>
                             <input type="text" id="journey-name-input" placeholder="e.g., My Umrah 2025" value="${wizardData.journeyName}" class="w-full border rounded-lg px-3 py-2 mb-4">
@@ -271,17 +289,17 @@
                 const cities = ["Karachi", "Lahore", "Islamabad", "Multan", "Quetta", "Peshawar"];
                 content = `
                     <div class="px-5 pt-3 space-y-4 pb-10">
-                        <h2 class="font-bold text-primary text-lg mb-3 text-[#1E3A6D]">Choose your departure City in Pakistan</h2>
-                        <div class="bg-[#F4F8FB] p-5 rounded-2xl">
-                            <div class="grid grid-cols-2 gap-4">
+                        <h2 class="font-bold text-primary text-lg mb-3 text-[#1E3A6D]">Choose your Departure City in Pakistan</h2>
+                        <div class="bg-[#F4F8FB] p-5 rounded-lg">
+                            <div class="grid grid-cols-2 gap-6">
                                 ${cities.map(city => `
-                                    <button onclick="setWizardData('departureCity', '${city}')" class="flex justify-between items-center w-full py-2 px-3 rounded-lg border border-[#DFE8EE] ${wizardData.departureCity === city ? 'bg-primary text-white' : 'bg-transparent text-[#627497]'}" ${wizardData.departureCity === city ? 'style="background-color: #1E3A6D;"' : ''}>
+                                    <button onclick="setWizardData('departureCity', '${city}')" class="flex justify-between items-center w-full py-3 px-3 rounded-lg border border-[#DFE8EE] ${wizardData.departureCity === city ? 'lucky-draw text-primary' : 'bg-transparent text-[#627497]'}" ${wizardData.departureCity === city ? '' : ''}>
                                         ${city}
-                                        ${wizardData.departureCity === city ? '<i data-lucide="circle-check" color="#F4F8FB" width="16"></i>' : ''}
+                                        ${wizardData.departureCity === city ? '<i data-lucide="circle-check" color="#1E3A6D" width="16"></i>' : ''}
                                     </button>
                                 `).join('')}
                             </div>
-                            <div class="flex justify-between gap-2 mt-4">
+                            <div class="flex justify-between gap-2 mt-6">
                                 <button onclick="setWizardStep(1)" class="w-3/6 text-primary rounded-lg bg-white border border-[#DFE8EE] text-[#1E3A6D]">Back</button>
                                 <button onclick="setWizardStep(3)" class="w-3/6 bg-primary text-white px-5 py-2 rounded-lg" style="background-color: #1E3A6D;">Continue</button>
                             </div>
@@ -293,7 +311,7 @@
                 content = `
                     <div class="px-5 pt-3 space-y-4 pb-10">
                         <h2 class="font-bold text-primary text-lg mb-3">Choose Number of Pilgrims</h2>
-                        <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                        <div class="bg-[#F4F8FB] p-5 rounded-lg shadow-sm space-y-6">
                             ${pilgrimTypes.map((item, index) => `
                                 <div class="bg-white p-3 rounded-lg flex items-center justify-between">
                                     <div>
@@ -320,26 +338,26 @@
                     <div class="px-5 pt-3 space-y-4 pb-10">
                         <div class="flex justify-between items-center">
                             <div>
-                                <h2 class="font-bold text-primary text-lg mb-0">Travel Month & Duration</h2>
+                                <h2 class="font-bold text-primary text-lg mb-0">Travel Month </h2>
                                 <p class="text-sm text-gray-500 m-0">When do you plan to perform Umrah?</p>
                             </div>
                             <div><span class="bg-[#F1FDFA] text-xs p-1 rounded-xl text-[#24B3BA] border border-[#24B3BA]">Gregorian Mode</span></div>
                         </div>
                         <div class="flex space-x-2 py-"2>
                             ${years.map(yr => `
-                                <button onclick="setWizardData('year', ${yr}); setWizardData('month', '')" class="px-4 py-2 text-xs rounded-full font-medium ${wizardData.year === yr ? 'bg-primary text-white' : 'bg-white text-[#627497]'}" ${wizardData.year === yr ? 'style="background-color: #1E3A6D;"' : ''}>${yr}</button>
+                                <button onclick="setWizardData('year', ${yr}); setWizardData('month', '')" class="px-4 py-2 text-xs rounded-full font-medium ${wizardData.year === yr ? 'bg-primary text-white' : 'bg-white text-[#627497]'}" ${wizardData.year === yr ? '' : ''}>${yr}</button>
                             `).join('')}
                         </div>
-                        <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
-                            <div class="grid grid-cols-3 gap-2">
+                        <div class="bg-[#F4F8FB] p-5 rounded-lg shadow-sm space-y-4">
+                            <div class="grid grid-cols-3 gap-4">
                                 ${(monthsByYear[wizardData.year] || []).map(month => `
-                                    <button onclick="setWizardData('month', '${month}')" class="py-3 px-2 rounded-lg ${wizardData.month === month ? 'gradient text-white' : 'bg-white text-[#627497]'}" ${wizardData.month === month ? 'style="background: linear-gradient(to right, #1E3A6D, #24B3BA);"' : ''}>${month}</button>
+                                    <button onclick="setWizardData('month', '${month}')" class="py-3 px-2 rounded-lg ${wizardData.month === month ? 'lucky-draw text-primary' : 'bg-white text-[#627497]'}" ${wizardData.month === month ? '' : ''}>${month}</button>
                                 `).join('')}
                             </div>
                             <h3 class="font-bold text-primary mt-4 mb-1 text-[#1E3A6D]">Duration</h3>
                             <div class="grid grid-cols-3 gap-3">
                                 ${durations.map(d => `
-                                    <button onclick="setWizardData('duration', ${d.days})" class="p-4 rounded-xl relative ${wizardData.duration === d.days ? 'gradient text-white' : 'bg-white text-[#627497] border-[#DFE8EE]'}" ${wizardData.duration === d.days ? 'style="background: linear-gradient(to right, #1E3A6D, #24B3BA);"' : ''}>
+                                    <button onclick="setWizardData('duration', ${d.days})" class="p-4 rounded-xl relative ${wizardData.duration === d.days ? 'lucky-draw text-primary' : 'bg-white text-[#627497] border-[#DFE8EE]'}" ${wizardData.duration === d.days ? '' : ''}>
                                         ${d.popular ? '<span class="absolute -top-2 right-2 bg-[#DEC55D] text-white text-xs px-2 py-1 rounded-xl">Popular</span>' : ''}
                                         <div class="flex justify-center mb-2"><img src="${d.icon}" alt="${d.label}" class="w-6 h-6" onerror="this.style.display='none'"></div>
                                         ${d.label}
@@ -359,13 +377,13 @@
                     { heading: "Total Budget", value: `PKR ${wizardData.budget.toLocaleString()}`, sup: "(Monthly 12mo)", sub: `~ ${Math.round(wizardData.budget / 12).toLocaleString()}` }
                 ];
                 content = `
-                    <div class="bg-white p-5 rounded-2xl shadow-sm  space-y-5">
+                    <div class="bg-white p-5 rounded-lg shadow-sm  space-y-5">
                         <h2 class="font-bold text-primary text-lg mb-3">Budget</h2>
-                        <div class="bg-[#F4F8FB] p-5 rounded-2xl shadow-sm space-y-4">
+                        <div class="bg-[#F4F8FB] p-5 rounded-lg shadow-sm space-y-6">
                             <div class="grid grid-cols-3 gap-3">
                                 ${PLAN_TABS.map(plan => `
-                                    <button onclick="setWizardData('budgetPlan', '${plan.label}')" class="flex flex-col items-center justify-center p-4 rounded-xl transition ${wizardData.budgetPlan === plan.label ? 'gradient text-white border-transparent' : 'bg-white text-[#627497] border-[#DDE7F1]'}" ${wizardData.budgetPlan === plan.label ? 'style="background: linear-gradient(to right, #1E3A6D, #24B3BA);"' : ''}>
-                                        <div class="text-2xl mb-1"><i data-lucide="${plan.icon}" class="w-6 h-6 ${wizardData.budgetPlan === plan.label ? 'text-white' : 'text-primary'}"></i></div>
+                                    <button onclick="setWizardData('budgetPlan', '${plan.label}')" class="flex flex-col items-center justify-center p-4 rounded-xl transition ${wizardData.budgetPlan === plan.label ? 'lucky-draw text-primary border-transparent' : 'bg-white text-[#627497] border-[#DDE7F1]'}" ${wizardData.budgetPlan === plan.label ? '' : ''}>
+                                        <div class="text-2xl mb-1"><i data-lucide="${plan.icon}" class="w-6 h-6 ${wizardData.budgetPlan === plan.label ? 'text-primary' : 'text-primary'}"></i></div>
                                         <p class="font-semibold text-sm">${plan.label}</p>
                                         ${(plan.popular && wizardData.budgetPlan !== plan.label) ? '<span class="text-[10px] bg-[#DEC55D] text-white px-2 py-0.5 rounded-full mt-1">Popular</span>' : ''}
                                     </button>
@@ -384,13 +402,7 @@
                                         </div>
                                     </div>
                                 `).join('')}
-                                <div>
-                                    <div class="flex justify-between text-xs my-0 text-gray-500"><span>Progress</span><span>${wizardData.progress}%</span></div>
-                                    <div class="w-full bg-gray-200 h-2 rounded-full"><div class="bg-[#0B4DA9] h-2 rounded-full" style="width: ${wizardData.progress}%"></div></div>
-                                </div>
-                                <div class="flex justify-between text-xs m-0 text-gray-500">
-                                    ${RANGE_LIMITS.map(r => `<span>${r.label}: ${r.value}</span>`).join('')}
-                                </div>
+                                
                                 ${BUDGET_NOTES.map(note => `
                                     <div class="lucky-draw p-2 rounded-lg">
                                         <p class="text-xs text-[#3B6F67] leading-relaxed">${note.text} <span class="font-semibold">${note.highlight}</span>.</p>
@@ -406,6 +418,70 @@
                 `;
             }
             else if (wizardStep === 6) {
+                const budgetSummary = [
+                    { heading: "Total Budget", value: `PKR ${wizardData.budget.toLocaleString()}`, sup: "(Monthly 12mo)", sub: `~ ${Math.round(wizardData.budget / 12).toLocaleString()}` }
+                ];
+                content = `
+                    <div class="bg-white p-5 rounded-lg shadow-sm  space-y-5">
+                        <div class="bg-white p-5 rounded-lg border shadow-sm space-y-6">
+                            <div>
+                                <h2 class="font-bold text-primary text-center text-lg m-0">Package Summary</h2>
+                                <h4 class="text-md font-bold text-primary m-0 my-2"> Umrah Package</h4>
+                            </div>
+                                                       
+                            <div class="grid grid-cols-2 gap-4">   
+                                <div class="text-sm text-[#627497] flex items-center gap-2">
+                                    <div class="p-2 bg-[#EDF5F9] rounded-lg">
+                                        <img class="w-4 h-4 " src="assets/svgs/AirplaneTilt.svg"/> 
+                                    </div>
+                                    <div>
+                                        <p class="text-[#24B3BA]">Departure City</p>
+                                        <p>Karachi</p>
+                                    </div>
+                                </div> 
+                                <div class="text-sm text-[#627497] flex items-center gap-2">
+                                    <div class="p-2 bg-[#EDF5F9] rounded-lg">
+                                        <img class="w-4 h-4" src="assets/svgs/User.svg"/> 
+                                    </div>
+                                    <div>
+                                        <p class="text-[#24B3BA]"> Number of travelers</p>
+                                        <p> 1 Adult</p>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-[#627497] flex items-center gap-2">
+                                    <div class="p-2 bg-[#EDF5F9] rounded-lg">
+                                        <img class="w-4 h-4" src="assets/svgs/CalendarDots.svg"/> 
+                                    </div>
+                                    <div>
+                                        <p class="text-[#24B3BA]"> Travel Month</p>
+                                        <p> December, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-[#627497] flex items-center gap-2">
+                                    <div class="p-2 bg-[#EDF5F9] rounded-lg">
+                                        <img class="w-4 h-4" src="assets/svgs/Seat.svg"/> 
+                                    </div> 
+                                    <div>
+                                        <p class="text-[#24B3BA]"> Cabin class </p>
+                                        <p> Economy </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <span class="lucky-draw w-1/2 text-center rounded-xl mt-3 text-sm px-2 py-2 text-primary">Makkah 5 Nights</span>
+                                <span class="lucky-draw w-1/2 text-center rounded-xl mt-3 text-sm px-2 py-2 text-primary">Makkah 5 Nights</span>
+                            </div>
+                            <div class="flex justify-between gap-2 mt-4">
+
+                                <button onclick="setWizardStep(7)"  class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold">
+                                 Confirm & Continue
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (wizardStep === 7) {
 
                 content = `
                 <div class="px-3 pt-3 pb-10">
@@ -415,8 +491,8 @@
                             <div>
                                 <p class="text-[#627497] text-xs">Total Budget</p>
                                 <p class="font-bold text-primary text-lg">${formatPKR(budgetData.totalBudget)}</p>
-                                </div>
-                                <div class="text-right">
+                            </div>
+                            <div class="text-right">
                                 <p class="text-[#627497] text-sm">Monthly (12mo)</p>
                                 <p class="text-[#24B3BA] font-semibold">~ ${formatPKR(budgetData.monthlyBudget)}</p>
                             </div>
@@ -433,23 +509,133 @@
                             <h3 class="font-semibold text-primary my-3">Monthly Breakdown</h3>
                             <div class="grid grid-cols-3 gap-3 mb-5">
                                 ${budgetData.monthlyBreakdown.map((item, index) => `
-                                    <div class="${index === 0 ? 'gradient text-white' : 'bg-gray-100 text-[#627497]'} p-3 rounded-lg text-center">
+                                    <div class="${index === 0 ? 'lucky-draw text-primary' : 'bg-gray-100 text-[#627497]'} p-3 rounded-lg text-center">
                                         <p class="text-sm">${item.date}</p>
-                                        <p class="font-bold ${index === 0 ? 'text-white' : ''}">${formatPKR(item.amount)}</p>
+                                        <p class="font-bold ${index === 0 ? 'text-primary' : ''}">${formatPKR(item.amount)}</p>
                                     </div>
                                 `).join('')}
                             </div>
 
-                            <button onclick="setWizardStep(7)"  class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold">
-                            Confirm & Pay First Installment
-                            </button>
+                            <div class="flex gap-3">
+                                <button onclick="setWizardStep(11)" class="w-1/2 bg-[#E5EDF3] text-primary py-3 rounded-xl font-bold hover:bg-gray-200 transition">
+                                    Modify my plan
+                                </button>
+                                <button onclick="setWizardStep(9)" class="w-1/2 bg-[#1E3A6D] text-white py-3 rounded-xl font-bold hover:bg-[#16315b] transition">
+                                    Pay Now
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 `;
 
             }
-            else if (wizardStep === 7) {
+            else if (wizardStep === 11) { // Modify Plan View
+                content = `
+                
+                    <div class="px-5">
+                         <div class="flex justify-between items-end mb-4">
+                            <h3 class="font-bold text-[#1E3A6D] text-lg">Installment Details</h3>
+                            <span class="text-xs text-gray-500">5 Total</span>
+                        </div>
+
+                        <div class="space-y-3 bg-white  rounded-xl">
+                            <!-- Header Row -->
+                            <div class="flex justify-between text-xs text-gray-400 px-4 mb-2">
+                                <span>Date</span>
+                                <span>Amount</span>
+                                <span>Manage</span>
+                            </div>
+
+                            <!-- Editable Item -->
+                            <div class="flex bg-[#F4F8FB] justify-between items-center p-4 rounded-xl ">
+                                <div>
+                                    <p class="font-bold text-[#1E3A6D] text-sm">07th March</p>
+                                    <span class="text-[10px] text-[#24B3BA] font-bold bg-[#E6FBDE] px-1.5 py-0.5 rounded">SCHEDULED</span>
+                                </div>
+                                <div>
+                                     <div class="border border-[#BFD3E0] rounded-lg px-2 py-1.5 flex items-center bg-white ">
+                                        <span class="text-[10px] text-gray-500 mr-1">PKR</span>
+                                        <input type="text" value="10,000" class="w-12 bg-transparent text-sm font-bold text-[#1E3A6D] focus:outline-none text-right">
+                                    </div>
+                                </div>
+                                <button class="bg-[#24B3BA] text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 font-bold shadow-sm hover:bg-[#1e959b]">
+                                    <i data-lucide="check-circle" width="12"></i> Save
+                                </button>
+                            </div>
+
+                             <!-- Readonly Item -->
+                            <div class="flex justify-between items-center bg-white p-4 rounded-xl ">
+                                <div>
+                                    <p class="font-bold text-[#1E3A6D] text-sm">07th March</p>
+                                    <span class="text-[10px] text-[#24B3BA] font-bold bg-[#E6FBDE] px-1.5 py-0.5 rounded">SCHEDULED</span>
+                                </div>
+                                <div>
+                                     <p class="font-bold text-[#1E3A6D] text-sm">PKR 10,000</p>
+                                     <p class="text-[10px] text-gray-400">UPCOMING</p>
+                                </div>
+                                <button class="text-[#627497] bg-gray-50 border border-gray-200 text-xs px-3 py-1.5 rounded-lg font-bold hover:bg-gray-100">
+                                    Modify
+                                </button>
+                            </div>
+                             <!-- Readonly Item -->
+                            <div class="flex justify-between items-center bg-white p-4 rounded-xl ">
+                                <div>
+                                    <p class="font-bold text-[#1E3A6D] text-sm">07th March</p>
+                                    <span class="text-[10px] text-[#24B3BA] font-bold bg-[#E6FBDE] px-1.5 py-0.5 rounded">SCHEDULED</span>
+                                </div>
+                                <div>
+                                     <p class="font-bold text-[#1E3A6D] text-sm">PKR 10,000</p>
+                                     <p class="text-[10px] text-gray-400">UPCOMING</p>
+                                </div>
+                                <button class="text-[#627497] bg-gray-50 border border-gray-200 text-xs px-3 py-1.5 rounded-lg font-bold hover:bg-gray-100">
+                                    Modify
+                                </button>
+                            </div>
+                             <!-- Readonly Item -->
+                            <div class="flex justify-between items-center bg-white p-4 rounded-xl ">
+                                <div>
+                                    <p class="font-bold text-[#1E3A6D] text-sm">07th March</p>
+                                    <span class="text-[10px] text-[#24B3BA] font-bold bg-[#E6FBDE] px-1.5 py-0.5 rounded">SCHEDULED</span>
+                                </div>
+                                <div>
+                                     <p class="font-bold text-[#1E3A6D] text-sm">PKR 10,000</p>
+                                     <p class="text-[10px] text-gray-400">UPCOMING</p>
+                                </div>
+                                <button class="text-[#627497] bg-gray-50 border border-gray-200 text-xs px-3 py-1.5 rounded-lg font-bold hover:bg-gray-100">
+                                    Modify
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 mb-6">
+                            <h4 class="font-bold text-[#1E3A6D] text-sm mb-2">Payment Summary:</h4>
+                            <ul class="text-xs text-gray-500 space-y-1 ml-4 list-disc mb-4">
+                                <li>Down Payment: <span class="font-bold text-[#1E3A6D]">PKR 25,000</span></li>
+                                <li>Remaining Payment Method: Will be paid later after confirmation</li>
+                                <li>Payment Method: Zindigi Wallet (Auto-selected)</li>
+                            </ul>
+                            
+                            <div class="lucky-draw p-3 rounded-lg text-[10px] text-[#3B6F67] mb-6">
+                                <span class="font-bold">Note:</span> This amount will be deducted instantly from your Zindigi Wallet.
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="w-1/2">
+                                    <span class="text-[#1E3A6D] text-sm">Total Package</span>
+                                    <h5 class="font-bold text-[#1E3A6D] text-md">PKR 212K</h5>
+                                </div>
+                                <button onclick="setWizardStep(9)" class="w-1/2 bg-[#1E3A6D] text-white py-3 rounded-xl font-bold hover:bg-[#16315b] transition flex justify-center px-6 items-center">
+                                <span class="text-md">Pay Now</span>
+                            </button>
+                            </div>  
+
+                            
+                        </div>
+                    </div>
+                 `;
+
+            }
+            else if (wizardStep === 8) {
                 content = `
                     <div class=" pt-3 ">
                         <div class="px-5 mb-6 w-100 border-b border-gray-200">
@@ -482,14 +668,14 @@
 
                         
 
-                        <button onclick="setWizardStep(8)" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
+                        <button onclick="setWizardStep(9)" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
                             Pay Now
                         </button>
                         </div>
                     </div>
                 `;
             }
-            else if (wizardStep === 8) {
+            else if (wizardStep === 9) {
                 content = `
                     <div class="pt-3">
                         <div class="px-5 mb-6 w-100 border-b border-gray-200">
@@ -516,7 +702,7 @@
                                     <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
                                     <input type="text" maxlength="1" class="w-12 h-12 bg-[#E0EAF0] text-primary text-center rounded-lg bg-white  text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D]" />
                                 </div>
-                                <button onclick="setWizardStep(9)" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
+                                <button onclick="setWizardStep(10)" class="w-full bg-[#1E3A6D] text-white py-3 rounded-xl font-semibold hover:bg-[#16315b] transition">
                                     Confirm
                                 </button>
                                  <p class="text-xs text-[#627497] text-start">Resend Code in <span id="resendTimer">30s</span></p>
@@ -527,7 +713,7 @@
                     </div>
                 `;
             }
-            else if (wizardStep === 9) {
+            else if (wizardStep === 10) {
                 content = `
                     <div class="  px-5 mt-10 text-center">
                             <div class="bg-[#F4F8FB] rounded-md p-4 flex flex-col items-center justify-center">
@@ -561,6 +747,7 @@
 
         renderApp();
     </script>
+    <script src="js/sidebar.js"></script>
 </body>
 
 </html>

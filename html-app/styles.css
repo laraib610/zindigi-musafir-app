@@ -1,5 +1,5 @@
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', sans-serif !important;
     background-color: #f3f4f6;
 }
 
@@ -10,8 +10,10 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* Safe area for bottom nav on mobile */
@@ -23,19 +25,28 @@ body {
 .gradient {
     background: linear-gradient(to right, #1E3A6D, #24B3BA);
 }
+.banner-gradient {
+background-image:  url('assets/images/bg.png'), linear-gradient(83.98deg, #1E3A6D 10.01%, #24B3BA 95.25%);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
 
+}
 /* Lucky draw background */
 .lucky-draw {
-background: linear-gradient(270deg, rgba(36, 179, 186, 0.15) -2.21%, rgba(192, 216, 87, 0.35) 100%);
+    background: linear-gradient(270deg, rgba(36, 179, 186, 0.15) -2.21%, rgba(192, 216, 87, 0.35) 100%);
 }
 
 @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0%); }
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
 }
+
 .animate-slideUp {
     animation: slideUp 0.3s ease-out;
 }
-
-
-   

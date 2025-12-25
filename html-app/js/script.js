@@ -66,20 +66,20 @@ const BUDGET_NOTES = [
     }
 ];
 const budgetData = {
-            totalBudget: 212000, // PKR
-            monthlyBudget: 178500, // PKR
-            departure: "Karachi",
-            travelers: 9,
-            targetDate: "May 2025",
-            monthlyBreakdown: [
-            { date: "07th Mar", amount: 15600 },
-            { date: "07th Apr", amount: 15600 },
-            { date: "07th May", amount: 15600 },
-            { date: "07th Jun", amount: 15600 },
-            { date: "07th Jul", amount: 15600 },
-            { date: "07th Aug", amount: 15600 },
-            ]
-        };
+    totalBudget: 212000, // PKR
+    monthlyBudget: 178500, // PKR
+    departure: "Karachi",
+    travelers: 9,
+    targetDate: "May 2025",
+    monthlyBreakdown: [
+        { date: "07th Mar", amount: 15600 },
+        { date: "07th Apr", amount: 15600 },
+        { date: "07th May", amount: 15600 },
+        { date: "07th Jun", amount: 15600 },
+        { date: "07th Jul", amount: 15600 },
+        { date: "07th Aug", amount: 15600 },
+    ]
+};
 
 // --- State ---
 const state = {
@@ -101,10 +101,10 @@ const state = {
                 { title: "Second Installment", date: "2024-02-15", amount: 45000, status: "paid" },
             ],
             installments: [
-            { id: 1, date: "2024-09-01", amount: 5000, status: "paid" },
-            { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid" },
-            { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid" }
-        ],
+                { id: 1, date: "2024-09-01", amount: 5000, status: "paid" },
+                { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid" },
+                { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid" }
+            ],
         },
     ], // Start empty
     isCreatingPlan: false,
@@ -206,7 +206,7 @@ function renderHome() {
 
         <!-- Upgrade Banner -->
         <div class="px-5">
-            <div class="relative px-5 rounded-2xl top-card mt-5 text-white p-5 shadow-lg shadow-blue-900/10" style="background-color: #1E3A6D;">
+            <div class="relative px-5 rounded-lg top-card mt-5 text-white p-5 shadow-lg shadow-blue-900/10" style="background-color: #1E3A6D;">
                 <div class="relative z-10 w-2/3">
                     <h2 class="text-lg font-bold mb-1">Upgrade to Ihram Account</h2>
                     <p class="text-sm text-blue-100 mb-4 leading-relaxed">
@@ -225,7 +225,7 @@ function renderHome() {
 
         <!-- Stats Grid -->
         <div class="grid grid-cols-2 gap-2 px-5">
-            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+            <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
                     <span class="text-md font-semibold text-[#627497]">Umrah Savings</span>
                     <img src="assets/svgs/savings.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
@@ -235,7 +235,7 @@ function renderHome() {
                     You’re getting close to your Umrah - keep moving at your pace.
                 </p>
             </div>
-            <div class="bg-[#F4F8FB] rounded-2xl p-4 shadow-sm">
+            <div class="bg-[#F4F8FB] rounded-lg p-4 shadow-sm">
                 <div class="flex justify-between items-start mb-1">
                     <span class="text-md font-semibold text-[#627497]">Ihram Points</span>
                     <img src="assets/svgs/ihram_points.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
@@ -249,7 +249,7 @@ function renderHome() {
 
         <!-- Tip Card -->
         <div class="px-5">
-            <div class="bg-[#F4F8FB] rounded-2xl p-5 border border-gray-100 px-5">
+            <div class="bg-[#F4F8FB] rounded-lg p-5 border border-gray-100 px-5">
                 <div class="flex items-center space-x-2 mb-3">
                     <div class="w-6 h-6 bg-primary-pale text-primary rounded-full flex items-center justify-center bg-[#E8EDF5] text-[#1E3A6D]">
                         <span class="text-xs">💡</span>
@@ -268,7 +268,7 @@ function renderHome() {
 
         <!-- Lucky Draw -->
         <div class="px-5">
-            <div class="relative lucky-draw rounded-2xl p-5 text-white overflow-hidden">
+            <div class="relative lucky-draw rounded-lg p-5 text-white overflow-hidden">
                 <div class="relative z-10 w-2/3">
                     <h3 class="text-md font-bold text-[#1E3A6D] mb-1">Umrah Lucky Draw</h3>
                     <div class="flex items-center space-x-2 text-sm text-[#1E3A6D] mb-3">
@@ -335,7 +335,7 @@ function closeWizard() {
     renderApp();
 }
 function formatPKR(amount) {
-return `PKR ${amount.toLocaleString()}`;
+    return `PKR ${amount.toLocaleString()}`;
 }
 
 function finishWizard() {

@@ -2,7 +2,7 @@ function renderPlanDetails(plan) {
 
     const div = document.createElement('div');
     div.className = "bg-white";
-       // Header
+    // Header
     let html = `
         <div class="px-3 border-b border-gray-100 pb-2">
             <div class="flex justify-between items-center">
@@ -42,7 +42,7 @@ function renderPlanDetails(plan) {
 
 
     let secondDiv = `
-        <div class="mb-4 p-5 rounded-2xl shadow min-h-screen flex flex-col">
+        <div class="mb-4 p-5 rounded-lg shadow min-h-screen flex flex-col">
             <div class="flex justify-between items-center mb-3">
                 <h2 class="font-bold text-[#1E3A6D] text-lg">${plan.name} ${plan.year || ''}</h2>
             </div>
