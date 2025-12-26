@@ -340,7 +340,7 @@
             <div id="pay-now-modal"
                 class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center z-50">
                 <div class="p-5 w-full flex justify-center">
-                    <div class="bg-white rounded-lg p-5 w-full max-w-md shadow-2xl relative">
+                    <div class="bg-white rounded-lg p-5 w-full max-w-sm shadow-2xl relative">
                         <!-- Header -->
                         <div class="flex justify-between items-start mb-4">
                             <div>
@@ -368,9 +368,9 @@
                                 <div
                                     class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                                     <input type="checkbox" name="toggle" id="toggle"
-                                        class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-[#E5EDF3]" />
+                                        class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-[#b5bdc4]" />
                                     <label for="toggle"
-                                        class="toggle-label block overflow-hidden h-5 rounded-full bg-[#E5EDF3] cursor-pointer"></label>
+                                        class="toggle-label block overflow-hidden h-5 rounded-full bg-[#b5bdc4] cursor-pointer"></label>
                                 </div>
                             </div>
 
@@ -385,53 +385,226 @@
                         <p class="text-xs text-gray-400 mt-4 mb-2">Zindigi Wallet</p>
 
                         <!-- Button -->
-                        <button
+                        <button onclick="proceedToOTP()"
                             class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition">Pay
                             Securely</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Manage Installment Modal -->
+            <!-- Merge Installments Modal -->
             <div id="manage-installment-modal"
-                class="fixed inset-0 bg-black bg-opacity-30 hidden flex justify-center items-end z-50">
-                <div class="bg-white w-full max-w-md rounded-t-2xl p-5 pb-8 shadow-lg animate-slideUp">
-                    <div class="flex justify-between items-center mb-4">
-                        <div>
-                            <h2 class="text-lg font-bold text-[#1E3A6D]">Manage Installment</h2>
-                            <p class="text-xs text-gray-400">Installment Payment</p>
+                class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center z-50">
+                <div class="px-3 w-full flex justify-center">
+                    <div
+                        class="bg-white rounded-2xl p-4 relative w-full max-w-sm shadow-2xl transition-all duration-300">
+                        <!-- Close Icon -->
+                        <button onclick="closeManageInstallmentModal()"
+                            class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors">
+                            <i data-lucide="x" width="20"></i>
+                        </button>
+
+                        <!-- Header -->
+                        <div class="mb-2">
+                            <h2 class="text-xl font-bold text-[#1E3A6D]">Merge Installments</h2>
+                        </div>
+                        <p class="text-sm text-[#627497] mb-6 leading-relaxed">
+                            Two upcoming installments will be merged into one payment and your plan will be updated.
+                        </p>
+
+                        <div class="bg-[#F8FAFC] rounded-2xl p-3 mb-6">
+                            <!-- List Header -->
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs font-semibold text-[#627497]">Upcoming Months</span>
+                                <button onclick="togglePayAllRemaining()"
+                                    class="text-xs font-bold text-[#24B3BA] hover:underline transition-all">Pay All
+                                    Remaining</button>
+                            </div>
+
+                            <!-- Installment List -->
+                            <div class="space-y-2 mb-4 max-h-[220px] overflow-y-auto no-scrollbar pr-1">
+                                <!-- Month 1 -->
+                                <div onclick="toggleInstallment(this)"
+                                    class="installment-row border border-[#DFE8EE] rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B3BA]"
+                                    data-amount="5000">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
+                                            <i data-lucide="check" class="text-white" width="12"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-[#1E3A6D]">January 2026</p>
+                                            <p class="text-[10px] text-[#627497]">Month 1</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
+                                </div>
+
+                                <!-- Month 2 -->
+                                <div onclick="toggleInstallment(this)"
+                                    class="installment-row border border-[#DFE8EE] rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B3BA]"
+                                    data-amount="5000">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
+                                            <i data-lucide="check" class="text-white" width="12"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-[#1E3A6D]">February 2026</p>
+                                            <p class="text-[10px] text-[#627497]">Month 1</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
+                                </div>
+
+                                <!-- Month 3 -->
+                                <div onclick="toggleInstallment(this)"
+                                    class="installment-row border border-[#DFE8EE] rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B3BA]"
+                                    data-amount="5000">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
+                                            <i data-lucide="check" class="text-white" width="12"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-[#1E3A6D]">March 2026</p>
+                                            <p class="text-[10px] text-[#627497]">Month 1</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
+                                </div>
+                                <div onclick="toggleInstallment(this)"
+                                    class="installment-row border border-[#DFE8EE] rounded-lg p-2 flex items-center justify-between cursor-pointer transition-all hover:border-[#DFE8EE] "
+                                    data-amount="5000">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
+                                            <i data-lucide="check" class="text-white" width="12"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-bold text-[#1E3A6D]">April 2026</p>
+                                            <p class="text-[10px] text-[#627497]">Month 1</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
+                                </div>
+                            </div>
+
+                            <!-- Summary -->
+                            <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                                <span class="text-xs font-bold text-[#1E3A6D]">Total merged amount:</span>
+                                <span id="merged-total-display" class="text-md font-bold text-[#24B3BA]">PKR
+                                    15,000</span>
+                            </div>
                         </div>
 
-                        <button onclick="closeManageInstallmentModal()">
-                            <i data-lucide="x" class="text-gray-400" width="20"></i>
-                        </button>
+                        <!-- Info Note -->
+                        <div class="lucky-draw border border-[#D1FAE5] rounded-xl p-3 mb-6">
+                            <p class="text-[10px] text-[#065F46] leading-relaxed">
+                                <span class="font-bold">Note:</span> The payment schedule and future installments will
+                                automatically adjust after this payment is confirmed.
+                            </p>
+                        </div>
+
+                        <!-- Buttons Row -->
+                        <div class="flex gap-3">
+                            <button onclick="closeManageInstallmentModal()"
+                                class="flex-1 border border-gray-200 text-[#627497] py-3 rounded-xl font-bold text-sm hover:bg-gray-50 transition">
+                                Cancel
+                            </button>
+                            <button onclick="proceedToOTP()"
+                                class="flex-1 bg-[#1E3A6D] text-white py-3 rounded-xl font-bold text-sm hover:bg-[#16315b] transition shadow-lg shadow-blue-900/20">
+                                Pay Securely
+                            </button>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="space-y-3">
-                        <!-- Option 1 -->
-                        <button
-                            class="w-full flex items-start p-4 border border-gray-100 rounded-xl bg-white shadow-sm hover:bg-gray-50 transition-colors text-left group">
-                            <div class="mt-1 mr-3 text-primary">
-                                <i data-lucide="link" width="18"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-[#1E3A6D] text-sm group-hover:text-primary-light">Merge with
-                                    Next</h3>
-                                <p class="text-xs text-gray-500 mt-0.5">Pay 2 installments together</p>
-                            </div>
-                        </button>
+            <style>
+                .installment-row.selected {
+                    background-color: #E7EDF1;
+                    border-color: #24B3BA;
+                }
 
-                        <!-- Option 2 -->
-                        <button
-                            class="w-full flex items-start p-4 border border-gray-100 rounded-xl bg-white shadow-sm hover:bg-gray-50 transition-colors text-left group">
-                            <div class="mt-1 mr-3 text-primary">
-                                <i data-lucide="calendar" width="18"></i>
+                .installment-row.selected .checkbox-wrapper {
+                    background-color: #24B3BA;
+                    border-color: #24B3BA;
+                }
+
+                .installment-row.selected i {
+                    display: block;
+                    color: white;
+                }
+            </style>
+
+            <!-- OTP Verification Modal -->
+            <div id="otp-modal"
+                class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center z-50">
+                <div class="px-5 w-full flex justify-center">
+                    <div class="bg-white rounded-2xl p-6 relative w-full max-w-sm shadow-2xl">
+                        <!-- Header -->
+                        <div class="flex justify-between items-start mb-6">
+                            <button onclick="backToMergeModal()"
+                                class="text-primary hover:bg-gray-100 p-1 rounded-full transition-colors">
+                                <i data-lucide="chevron-left" width="24"></i>
+                            </button>
+                            <h3 class="text-lg font-bold text-[#1E3A6D] pr-8">OTP Verification</h3>
+                            <div class="w-8"></div>
+                        </div>
+
+                        <div class="text-center">
+                            <h4 class="font-bold text-[#1E3A6D] mb-2">Enter Verification Code</h4>
+                            <p class="text-xs text-[#627497] mb-8 px-4">
+                                A 4-digit code has been sent to your mobile number. Enter it below to confirm your
+                                payment.
+                            </p>
+
+                            <!-- OTP Inputs -->
+                            <div class="flex justify-center gap-3 mb-8">
+                                <input type="text" maxlength="1"
+                                    class="w-12 h-14 bg-[#F4F8FB] text-primary text-center rounded-xl text-xl font-bold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D] border border-transparent shadow-sm" />
+                                <input type="text" maxlength="1"
+                                    class="w-12 h-14 bg-[#F4F8FB] text-primary text-center rounded-xl text-xl font-bold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D] border border-transparent shadow-sm" />
+                                <input type="text" maxlength="1"
+                                    class="w-12 h-14 bg-[#F4F8FB] text-primary text-center rounded-xl text-xl font-bold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D] border border-transparent shadow-sm" />
+                                <input type="text" maxlength="1"
+                                    class="w-12 h-14 bg-[#F4F8FB] text-primary text-center rounded-xl text-xl font-bold focus:outline-none focus:ring-2 focus:ring-[#1E3A6D] border border-transparent shadow-sm" />
                             </div>
-                            <div>
-                                <h3 class="font-bold text-[#1E3A6D] text-sm group-hover:text-primary-light">Merge with
-                                    Next</h3>
-                                <p class="text-xs text-gray-500 mt-0.5">Pay 2 installments together</p>
-                            </div>
+
+                            <button onclick="confirmPayment()"
+                                class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition shadow-lg shadow-blue-900/20 mb-4">
+                                Confirm
+                            </button>
+
+                            <p class="text-xs text-[#627497]">Resend Code in <span
+                                    class="text-primary font-bold">30s</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Modal -->
+            <div id="success-modal"
+                class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center z-50">
+                <div class="px-5 w-full flex justify-center">
+                    <div class="bg-white rounded-2xl p-8 relative w-full max-w-sm shadow-2xl text-center">
+                        <div
+                            class="w-16 h-16 bg-[#F0FDF4] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#DCFCE7]">
+                            <img src="assets/svgs/success.svg" alt="Success" class="w-8 h-8"
+                                onerror="this.src='https://placehold.co/64x64?text=✓'">
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#1E3A6D] mb-2">Payment Successful!</h3>
+                        <p class="text-sm text-[#627497] mb-8 leading-relaxed">
+                            Your payment of PKR 10,000 has been received. Two installments have been merged into your
+                            plan.
+                        </p>
+
+                        <button onclick="closeAllModals()"
+                            class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition shadow-lg shadow-blue-900/20">
+                            Done
                         </button>
                     </div>
                 </div>
@@ -467,13 +640,74 @@
 
         function openManageInstallmentModal() {
             document.getElementById("manage-installment-modal").classList.remove("hidden");
-            // Optional: Blur background like support.html
-            // document.getElementById('app').style.filter = "blur(3px)"; 
+            // Reset state
+            const rows = document.querySelectorAll('.installment-row');
+            rows.forEach(r => r.classList.remove('selected'));
+            updateMergedTotal();
+        }
+
+        function toggleInstallment(element) {
+            lucide.createIcons();
+            element.classList.toggle('selected');
+            updateMergedTotal();
+        }
+
+        function togglePayAllRemaining() {
+            const rows = document.querySelectorAll('.installment-row');
+            const allSelected = Array.from(rows).every(r => r.classList.contains('selected'));
+
+            rows.forEach(r => {
+                if (allSelected) {
+                    r.classList.remove('selected');
+                } else {
+                    r.classList.add('selected');
+                    lucide.createIcons();
+                }
+            });
+            updateMergedTotal();
+        }
+
+        function updateMergedTotal() {
+            const selectedRows = document.querySelectorAll('.installment-row.selected');
+            let total = 0;
+            selectedRows.forEach(row => {
+                total += parseInt(row.dataset.amount);
+            });
+
+            document.getElementById('merged-total-display').innerText = `PKR ${total.toLocaleString()}`;
         }
 
         function closeManageInstallmentModal() {
             document.getElementById("manage-installment-modal").classList.add("hidden");
-            // document.getElementById('app').style.filter = "none";
+        }
+
+        function proceedToOTP() {
+            closeManageInstallmentModal();
+            setTimeout(() => {
+                document.getElementById("otp-modal").classList.remove("hidden");
+            }, 100);
+        }
+
+        function backToMergeModal() {
+            document.getElementById("otp-modal").classList.add("hidden");
+            setTimeout(() => {
+                openManageInstallmentModal();
+            }, 100);
+        }
+
+        function confirmPayment() {
+            document.getElementById("otp-modal").classList.add("hidden");
+            setTimeout(() => {
+                document.getElementById("success-modal").classList.remove("hidden");
+            }, 100);
+        }
+
+        function closeAllModals() {
+            document.getElementById("manage-installment-modal").classList.add("hidden");
+            document.getElementById("otp-modal").classList.add("hidden");
+            document.getElementById("success-modal").classList.add("hidden");
+            document.getElementById("pay-now-modal").classList.add("hidden");
+            document.getElementById("edit-schedule-modal").classList.add("hidden");
         }
 
         function renderInstallments() {
@@ -487,13 +721,13 @@
                         </div>
 
                         <div>
-                            <p class="text-xs text-right flex items-center gap-2 w-max px-2 text-[#41AB13] bg-[#E6FBDE] font-semibold"><i data-lucide="check" color="#41AB13" width="10"></i>${i.status === 'paid' ? 'Paid' : 'Unpaid'}</p>
+                            <p class="text-xs text-right flex items-center gap-2 w-max px-2 rounded-md" style="color: ${i.status === 'paid' ? '#41AB13' : '#E26F31'}; background-color: ${i.status === 'paid' ? '#E6FBDE' : '#F7EADB'};" ><i data-lucide="${i.status === 'paid' ? 'check' : 'clock'}" color="${i.status === 'paid' ? '#41AB13' : '#E26F31'}" width="10"></i>${i.status === 'paid' ? 'Paid' : 'Pending'}</p>
                             <p class="font-bold text-right text-[#24B3BA]">PKR ${i.amount.toLocaleString()}</p>
                         </div>
 
                     </div>
-                    <div class="flex justify-between items-center mt-2">
-                         <div class="flex justify-between space-x-1 pt-4 w-full">
+                    <div class="flex justify-between items-center mt-2" style="display: ${i.status === 'paid' ? 'none' : 'flex'};">
+                        <div class="flex justify-between space-x-1 pt-4 w-full">
                             <button class="bg-transparent border border-[#DFE8EE] rounded-xl py-2 px-4 text-xs font-semibold text-[#1E3A6D] hover:bg-gray-50 flex-1">Skip Month</button>
                             <button onclick="openManageInstallmentModal()" class="bg-[#E7EDF1] border border-[#DFE8EE] rounded-xl py-2 px-4 text-xs font-semibold text-[#1E3A6D] hover:bg-gray-50 flex-1">Merge & Pay</button>
                             <button onclick="openPayNowModal()" class="bg-primary text-white rounded-xl py-2 px-4 font-semibold text-xs hover:bg-[#16315b] flex-1">Pay Now</button>

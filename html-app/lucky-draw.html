@@ -35,31 +35,35 @@
     <div class="min-h-screen flex justify-center">
         <!-- Mobile Frame -->
         <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+            <main class="flex-1 overflow-y-auto no-scrollbar px-3 pb-28 pt-4">
 
-            <!-- Header -->
-            <div
-                class="flex px-5 pt-8 pb-4 justify-between items-center bg-white sticky top-0 z-10 border-b border-gray-100">
-                <button onclick="history.back()"
-                    class="w-10 h-10 rounded-full flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                    <i data-lucide="arrow-left" width="24"></i>
-                </button>
-                <h1 class="text-lg font-bold text-[#627497]">Lucky Draw</h1>
-                <div class="flex space-x-3">
-                    <button
-                        class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                        <i data-lucide="bell" width="20"></i>
-                    </button>
-                    <button id="menu-btn"
-                        class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                        <i data-lucide="menu" width="20"></i>
-                    </button>
+                <!-- Header -->
+                <div class="flex  justify-between items-center border-b border-gray-100 py-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
+                            <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah"
+                                class="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <p class="text-xs text-[#627497] font-medium">Assalam o Alaikom</p>
+                            <h1 class="text-lg font-bold text-gray-800">Abdullah!</h1>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                            <i data-lucide="bell" width="20"></i>
+                        </button>
+                        <button id="menu-btn"
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                            <i data-lucide="menu" width="20"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Main Content Area -->
-            <main class="flex-1 overflow-y-auto no-scrollbar px-6 pb-10 pt-4">
+                <!-- Main Content Area -->
 
-                <h2 class="text-xl font-bold text-center text-[#1E3A6D] mb-6">Lucky Draw Joining Criteria</h2>
+                <h2 class="text-xl font-bold text-center text-[#1E3A6D] my-6">Lucky Draw Joining Criteria</h2>
 
                 <div class="space-y-6">
                     <div>
@@ -99,7 +103,7 @@
                         </ul>
                     </div>
 
-                    <div class="pt-2">
+                    <div class="lucky-draw rounded-lg p-2">
                         <p class="text-sm text-gray-500 leading-relaxed font-medium">
                             <span class="font-bold text-[#627497]">Note:</span> Please stay alert and protected from
                             scams. Always rely on official communication and approved channels only.
@@ -114,7 +118,7 @@
 
             <!-- Side Menu Drawer -->
             <div id="side-menu"
-                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full shadow-2xl">
+                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
                 <!-- Inner Container -->
                 <div class="flex flex-col h-full relative">
                     <!-- Close Button -->
