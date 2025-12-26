@@ -69,24 +69,9 @@
             </div>
           </div>
 
-          <!-- Upgrade Banner -->
-          <div class="px-3">
-            <div class="banner-gradient relative px-3 rounded-lg mt-5 text-white p-5">
-              <div class="relative w-2/3">
-                <h2 class="text-md font-semibold mb-1">Upgrade to Ihram Account</h2>
-                <p class="text-xs text-blue-100 mb-4 leading-relaxed">
-                  Make your dream Umrah a reality. Every point you earn brings you closer to Makkah.
-                </p>
-                <button onclick="showUpgradeModal()"
-                  class="bg-[#24B3BA] flex items-center gap-1 hover:bg-primary hover:text-white text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-colors shadow-md w-fit">
-                  <img src="assets/svgs/sparkles.svg" alt="" onerror="this.style.display='none'"> Upgrade Now
-                </button>
-              </div>
-              <div class="absolute right-[-5px] bottom-[-20px] w-40 h-40">
-                <img src="assets/images/ibrahim.png" alt="Pilgrim" style="height: 190px; transform: translateY(-50px);"
-                  onerror="this.style.display='none'">
-              </div>
-            </div>
+          <!-- Hero Section Container -->
+          <div id="hero-banner-container" class="px-3">
+            <!-- Rendered via JS -->
           </div>
 
           <!-- Stats Grid -->
@@ -292,7 +277,7 @@
               <i data-lucide="calendar" width="22" stroke-width="2"></i>
             </div>
             <span class="text-[9px] font-medium tracking-wide opacity-70">
-              Plans
+              Umrah
             </span>
           </a>
 
@@ -313,6 +298,57 @@
   </div>
 
   <script>
+    // --- State ---
+    const state = {
+      isUpgraded: localStorage.getItem('isUpgraded') === 'true'
+    };
+
+    function renderHero() {
+      const container = document.getElementById('hero-banner-container');
+      if (state.isUpgraded) {
+        container.innerHTML = `
+          <div class="banner-gradient relative px-3 rounded-lg mt-5 text-white p-5">
+            <div class="relative w-2/3">
+              <h2 class="text-md font-bold mb-1">From Intention To Preparation</h2>
+              <p class="text-xs text-blue-100 mb-4 leading-relaxed">
+                Your Ihram Account is now active. May this step bring barakah and help you move closer to Umrah with confidence and calm.
+              </p>
+              <a href="journeyForm.html"
+                class="bg-[#24B3BA] flex items-center gap-1 hover:bg-primary hover:text-white text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-colors shadow-md w-fit">
+                <i data-lucide="plus" width="14"></i> Start Your Umrah Plan
+              </a>
+            </div>
+            <div class="absolute right-[10px] bottom-[-20px] h-40">
+              <img src="assets/images/upgraded.png" alt="Pilgrim Upgraded" style="height: 200px; transform: translateY(-60px);"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <div class="banner-gradient relative px-3 rounded-lg mt-5 text-white p-5">
+            <div class="relative w-2/3">
+              <h2 class="text-md font-semibold mb-1">Upgrade to Ihram Account</h2>
+              <p class="text-xs text-blue-100 mb-4 leading-relaxed">
+                Make your dream Umrah a reality. Every point you earn brings you closer to Makkah.
+              </p>
+              <button onclick="showUpgradeModal()"
+                class="bg-[#24B3BA] flex items-center gap-1 hover:bg-primary hover:text-white text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-colors shadow-md w-fit">
+                <img src="assets/svgs/sparkles.svg" alt="" onerror="this.style.display='none'"> Upgrade Now
+              </button>
+            </div>
+            <div class="absolute right-[-5px] bottom-[-20px] w-40 h-40">
+              <img src="assets/images/ibrahim.png" alt="Pilgrim" style="height: 190px; transform: translateY(-50px);"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+        `;
+      }
+      lucide.createIcons();
+    }
+
+    // Initial render
+    renderHero();
     lucide.createIcons();
   </script>
   <script src="js/sidebar.js"></script>
@@ -346,7 +382,8 @@
         <div class="absolute -left-2 -bottom-2 w-12 h-12 bg-[#41AB13] rounded-full opacity-10"></div>
       </div>
 
-      <button class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition">
+      <button onclick="completeUpgrade()"
+        class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition">
         Continue
       </button>
     </div>
@@ -448,6 +485,27 @@
       // Attempt to play sound if browser allows
       // const audio = new Audio('assets/sounds/win.mp3'); 
       // audio.play().catch(e => console.log('Audio play failed', e));
+    }
+
+    function completeUpgrade() {
+      // Set upgraded state
+      state.isUpgraded = true;
+      localStorage.setItem('isUpgraded', 'true');
+
+      // Update UI
+      renderHero();
+
+      // Close win modal
+      const modal = document.getElementById('upgrade-modal');
+      const modalContent = modal.querySelector('div');
+
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      modal.classList.add('opacity-0');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
     }
   </script>
 </body>
