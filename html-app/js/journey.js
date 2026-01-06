@@ -9,7 +9,7 @@ function renderJourney() {
                     <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah" class="w-full h-full object-cover" />
                 </div>
                 <div>
-                    <p class="text-xs text-[#627497] font-medium">Assalam o Alaikom</p>
+                    <p class="text-xs text-[#627497] font-medium">Assalam O Alaikum</p>
                     <h1 class="text-lg font-bold text-gray-800">Abdullah!</h1>
                 </div>
             </div>

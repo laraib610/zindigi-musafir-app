@@ -35,74 +35,84 @@
     <div class="min-h-screen flex justify-center">
         <!-- Mobile Frame -->
         <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+            <main class="flex-1 overflow-y-auto no-scrollbar">
 
-            <!-- Header -->
-            <div
-                class="flex px-5 pt-8 pb-4 justify-between items-center bg-white sticky top-0 z-10 border-b border-gray-100">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
-                        <img src="https://picsum.photos/seed/abdullah/100/100" alt="Profile"
-                            class="w-full h-full object-cover" />
+                <!-- Header -->
+                <div
+                    class="flex px-5 pt-5 pb-3 justify-between items-center bg-white sticky top-0 z-10 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
+                            <img src="https://picsum.photos/seed/abdullah/100/100" alt="Profile"
+                                class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                            <i data-lucide="bell" width="20"></i>
+                        </button>
+                        <button id="menu-btn"
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                            <i data-lucide="menu" width="20"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="flex space-x-3">
-                    <button
-                        class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                        <i data-lucide="bell" width="20"></i>
-                    </button>
-                    <button id="menu-btn"
-                        class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                        <i data-lucide="menu" width="20"></i>
-                    </button>
-                </div>
-            </div>
 
-            <!-- Main Content Area -->
-            <main class="flex-1 overflow-y-auto no-scrollbar px-6 pb-10">
-                <h1 class="text-xl font-bold text-center text-primary mb-8 mt-2">Terms & Conditions</h1>
+                <!-- Main Content Area -->
+                <div class=" px-6 pb-10 mb-16">
+                    <h1 class="text-xl font-bold text-center text-primary mb-8 mt-2">Terms & Conditions</h1>
 
-                <div class="space-y-6">
-                    <div>
-                        <h2 class="text-sm font-bold text-primary mb-2">Umrah Travel</h2>
-                        <p class="text-sm text-gray-500 leading-relaxed">
-                            Welcome to the Umrah with Zindigi app. By using our app, you agree to the following terms
-                            and conditions. Please read them carefully before proceeding.
-                        </p>
-                        <p class="text-sm text-gray-500 leading-relaxed mt-4">
-                            Our comprehensive guide ensures you have a smooth and memorable experience.
-                        </p>
-                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h2 class="text-sm font-bold text-primary mb-2">Umrah Travel</h2>
+                            <p class="text-sm text-gray-500 leading-relaxed">
+                                Welcome to the Umrah with Zindigi app. By using our app, you agree to the following
+                                terms
+                                and conditions. Please read them carefully before proceeding.
+                            </p>
+                            <p class="text-sm text-gray-500 leading-relaxed mt-4">
+                                Our comprehensive guide ensures you have a smooth and memorable experience.
+                            </p>
+                        </div>
 
-                    <div>
-                        <h2 class="text-sm font-bold text-primary mb-2">Acceptance of Terms</h2>
-                        <p class="text-sm text-gray-500 leading-relaxed">
-                            By accessing and using the Umrah with Zindigi app, you accept and agree to be bound by these
-                            terms and conditions. If you do not agree to these terms, please do not use our app.
-                        </p>
-                    </div>
+                        <div>
+                            <h2 class="text-sm font-bold text-primary mb-2">Acceptance of Terms</h2>
+                            <p class="text-sm text-gray-500 leading-relaxed">
+                                By accessing and using the Umrah with Zindigi app, you accept and agree to be bound by
+                                these
+                                terms and conditions. If you do not agree to these terms, please do not use our app.
+                            </p>
+                        </div>
 
-                    <div>
-                        <h2 class="text-sm font-bold text-primary mb-2">Eligibility</h2>
-                        <p class="text-sm text-gray-500 leading-relaxed">
-                            To use the app and book Umrah packages, you must be at least 18 years old and have the legal
-                            authority to enter into a binding agreement.
-                        </p>
-                    </div>
+                        <div>
+                            <h2 class="text-sm font-bold text-primary mb-2">Eligibility</h2>
+                            <p class="text-sm text-gray-500 leading-relaxed">
+                                To use the app and book Umrah packages, you must be at least 18 years old and have the
+                                legal
+                                authority to enter into a binding agreement.
+                            </p>
+                        </div>
 
-                    <div>
-                        <h2 class="text-sm font-bold text-primary mb-2">Booking and Payment</h2>
-                        <ul class="text-sm text-gray-500 space-y-4 list-disc pl-4 leading-relaxed marker:text-primary">
-                            <li><span class="font-bold text-gray-700">Booking:</span> All bookings are subject to
-                                availability and acceptance.</li>
-                            <li><span class="font-bold text-gray-700">Payment:</span> A down payment is required at the
-                                time of booking. The remaining balance must be paid directly to Funadiq as specified in
-                                your booking details.</li>
-                            <li><span class="font-bold text-gray-700">Installments:</span> If opting for installment
-                                payments, the initial payment and subsequent installment terms will be clearly outlined
-                                at the time of booking.</li>
-                        </ul>
+                        <div>
+                            <h2 class="text-sm font-bold text-primary mb-2">Booking and Payment</h2>
+                            <ul
+                                class="text-sm text-gray-500 space-y-4 list-disc pl-4 leading-relaxed marker:text-primary">
+                                <li><span class="font-bold text-gray-700">Booking:</span> All bookings are subject to
+                                    availability and acceptance.</li>
+                                <li><span class="font-bold text-gray-700">Payment:</span> A down payment is required at
+                                    the
+                                    time of booking. The remaining balance must be paid directly to Funadiq as specified
+                                    in
+                                    your booking details.</li>
+                                <li><span class="font-bold text-gray-700">Installments:</span> If opting for installment
+                                    payments, the initial payment and subsequent installment terms will be clearly
+                                    outlined
+                                    at the time of booking.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
             </main>
 
             <!-- Side Menu Overlay -->
