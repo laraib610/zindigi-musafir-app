@@ -102,7 +102,8 @@
                         class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
                         style="color: #bfdbfe;">
                         <div class="transition-all duration-300">
-                            <i data-lucide="package" width="22" stroke-width="2"></i>
+                            <img src="assets/svgs/Line.svg" class="w-4" />
+
                         </div>
                         <span class="text-[9px] font-medium tracking-wide opacity-70">
                             Ihram
@@ -173,12 +174,12 @@
             travelers: 9,
             targetDate: "May 2025",
             monthlyBreakdown: [
-                { date: "07th Mar", amount: 15600 },
-                { date: "07th Apr", amount: 15600 },
-                { date: "07th May", amount: 15600 },
-                { date: "07th Jun", amount: 15600 },
-                { date: "07th Jul", amount: 15600 },
-                { date: "07th Aug", amount: 15600 },
+                { date: "7th Mar", amount: 15600 },
+                { date: "7th Apr", amount: 15600 },
+                { date: "7th May", amount: 15600 },
+                { date: "7th Jun", amount: 15600 },
+                { date: "7th Jul", amount: 15600 },
+                { date: "7th Aug", amount: 15600 },
             ]
         };
 
@@ -322,7 +323,7 @@
                 const cities = ["Karachi", "Lahore", "Islamabad", "Multan", "Quetta", "Peshawar"];
                 content = `
                     <div class="px-5 pt-3 space-y-4 pb-10">
-                        <h2 class="font-bold text-primary text-lg mb-3 text-[#1E3A6D]">Choose your Departure City in Pakistan</h2>
+                        <h2 class="font-bold text-primary text-lg mb-3 text-[#1E3A6D]">Choose your Departure City</h2>
                         <div class="bg-[#F4F8FB] p-5 rounded-lg">
                             <div class="grid grid-cols-2 gap-6">
                                 ${cities.map(city => `
@@ -477,7 +478,7 @@
                                         <img class="w-4 h-4" src="assets/svgs/User.svg"/> 
                                     </div>
                                     <div>
-                                        <p class="text-[#24B3BA]"> Number of travelers</p>
+                                        <p class="text-[#24B3BA]"> Number of Travelers</p>
                                         <p> 1 Adult</p>
                                     </div>
                                 </div>
@@ -495,7 +496,7 @@
                                         <img class="w-4 h-4" src="assets/svgs/Seat.svg"/> 
                                     </div> 
                                     <div>
-                                        <p class="text-[#24B3BA]"> Cabin class </p>
+                                        <p class="text-[#24B3BA]"> Cabin Class </p>
                                         <p> Economy </p>
                                     </div>
                                 </div>
@@ -779,7 +780,7 @@
                                                     ${index + 1}
                                                 </div>
                                                 <div>
-                                                    <h5 class="font-bold text-primary text-sm">Pilgrim ${index + 1} Details</h5>
+                                                    <h5 class="font-bold text-primary text-sm">Pilgrim  Details</h5>
                                                     ${!isExpanded && passport.name ? `<p class="text-[10px] text-[#627497] mt-0.5">${passport.name}</p>` : ''}
                                                 </div>
                                             </div>
