@@ -136,3 +136,8 @@ body.sidebar-open #sidebar {
     color: white;
     box-shadow: 0 10px 15px -3px rgba(30, 58, 109, 0.2);
 }
+
+.shadow-premium {
+    border: 1px solid #DEE5F1;
+    box-shadow: 0px 4px 55px 0px rgba(0, 0, 0, 0.05);
+}
