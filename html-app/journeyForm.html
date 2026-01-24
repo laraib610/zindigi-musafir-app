@@ -192,7 +192,7 @@
         function renderHeader() {
             const progress = (state.wizardStep / steps.length) * 100;
             return `
-                <div class="px-4 pt-6 pb-2">
+                <div class="px-4 pt-6 pb-4">
                     <div class="flex justify-between items-center mb-6">
                         <div class="flex items-center gap-3">
                             <button id="menu-btn" class="w-10 h-10 rounded-full bg-[#F1F6FA] flex items-center justify-center text-primary">
@@ -291,9 +291,9 @@
 
             if (wizardStep === 1) {
                 return `
-                    ${stepHeader('Name Your Journey')}
+                    ${stepHeader('Give Your Umrah Journey a Name')}
                     <div class="px-4 pt-8 space-y-6">
-                        <div class="bg-white rounded-3xl p-4 border border-[#DEE5F1] space-y-6 shadow-xl shadow-blue-100/20">
+                        <div class="bg-white rounded-3xl p-4 border border-[#DEE5F1] space-y-2 shadow-xl shadow-blue-100/20">
                             <input type="text" 
                                 class="w-full bg-[#F7F7F7] border-none rounded-xl p-4 text-base font-semibold text-primary placeholder:text-gray-300 focus:ring-1 focus:ring-primary outline-none transition-all" 
                                 placeholder="e.g. My Umrah"
@@ -313,7 +313,7 @@
             if (wizardStep === 2) {
                 const cities = ["Karachi", "Lahore", "Islamabad", "Multan", "Quetta", "Peshawar"];
                 return `
-                    ${stepHeader('Choose Your Departure City', 1)}
+                    ${stepHeader('Choose your departure City', 1)}
                     <div class="px-5 pt-8 space-y-6 ">
                         <div class="border border-[#DEE5F1] shadow-xl shadow-blue-100/20 rounded-3xl p-4">
                         <div class="grid grid-cols-2 gap-4 ">
