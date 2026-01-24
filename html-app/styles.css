@@ -25,13 +25,24 @@ body {
 .gradient {
     background: linear-gradient(to right, #1E3A6D, #24B3BA);
 }
+
 .banner-gradient {
-background-image:  url('assets/images/bg.png'), linear-gradient(83.98deg, #1E3A6D 10.01%, #24B3BA 95.25%);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
+    background-image: url('assets/images/bg.png'), linear-gradient(83.98deg, #1E3A6D 10.01%, #24B3BA 95.25%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
 
 }
+
+.g-gradient {
+    background: linear-gradient(83.98deg, #1E3A6D 10.01%, #24B3BA 95.25%);
+}
+
+.debit-card {
+    background: linear-gradient(360deg, #106A64 13.56%, #439A95 88.79%);
+
+}
+
 /* Lucky draw background */
 .lucky-draw {
     background: linear-gradient(270deg, rgba(36, 179, 186, 0.15) -2.21%, rgba(192, 216, 87, 0.35) 100%);
@@ -49,4 +60,48 @@ background-position: center;
 
 .animate-slideUp {
     animation: slideUp 0.3s ease-out;
+}
+
+/* Range Slider */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #1E3A6D;
+    cursor: pointer;
+    margin-top: -10px;
+    box-shadow: 0 0 0 4px white, 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #E5E7EB;
+    border-radius: 2px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+/* Stepper */
+.step-item.active {
+    color: #1E3A6D;
+    font-weight: 700;
+    border-bottom: 2px solid #1E3A6D;
+}
+
+.step-item {
+    color: #9CA3AF;
+    font-size: 10px;
+    padding-bottom: 4px;
+    cursor: default;
 }

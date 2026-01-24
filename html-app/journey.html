@@ -46,104 +46,26 @@
 
             <!-- Main Content Area -->
             <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
-                <div class="pt-6 pb-28 space-y-6 bg-white min-h-screen">
+                <div class="pt-6 pb-28 space-y-4 bg-white min-h-screen">
                     <!-- Header -->
-                    <div class="flex px-3 justify-between items-center border-b border-gray-100 pb-2">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
-                                <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah"
-                                    class="w-full h-full object-cover" />
-                            </div>
-                            <div>
-                                <p class="text-xs text-[#627497] font-medium">Assalam O Alaikum</p>
-                                <h1 class="text-xs font-bold text-gray-800">Abdullah!</h1>
-                            </div>
-                        </div>
-                        <div class="flex space-x-3">
-                            <button
-                                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                                <i data-lucide="bell" width="20"></i>
-                            </button>
+                    <div class="flex px-4 pt-6 justify-between items-center pb-4 border-b border-gray-100">
+                        <div class="flex items-center gap-3">
                             <button id="menu-btn"
-                                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                                class="w-10 h-10 rounded-full bg-[#F1F6FA] flex items-center justify-center text-primary">
                                 <i data-lucide="menu" width="20"></i>
                             </button>
+                            <div class="w-[1px] h-6 bg-gray-200"></div>
+                            <h2 class="text-[#1E3A6D] font-bold text-[14px] tracking-tight">Your Ihram Account</h2>
                         </div>
-                    </div>
-                    <div class="flex justify-between items-center px-3">
-                        <h1 class="text-sm font-bold text-gray-800">Your Umrah Journey Starts Here</h1>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 px-3">
-                        <div class="bg-[#F4F8FB] rounded-lg p-2 shadow-sm">
-                            <div class="flex justify-between items-center mb-1">
-                                <span class="text-xs font-semibold text-primary">Spend & Earn</span>
-                                <img src="assets/svgs/wallet.svg" class="w-[30px]" alt=""
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <p class=" text-[#627497] text-xs mt-1">
-                                Earn points on every transaction with your Ihram Debit Card.
-                            </p>
-                        </div>
-                        <div class="bg-[#F4F8FB] rounded-lg p-2 shadow-sm">
-                            <div class="flex justify-between items-center mb-1">
-                                <span class="text-xs font-semibold text-primary">Pay with Points</span>
-                                <img src="assets/svgs/points.svg" class="w-[30px]" alt=""
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <p class=" text-[#627497] text-xs mt-1">
-                                Use your debit card to redeem points on every transaction
-                            </p>
-                        </div>
-                        <div class="bg-[#F4F8FB] rounded-lg p-2 shadow-sm">
-                            <div class="flex justify-between items-center mb-1">
-                                <span class="text-xs font-semibold text-primary">Win Umrah</span>
-                                <img src="assets/svgs/trophy.svg" class="w-[30px]" alt=""
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <p class="text-[#627497] text-xs mt-1">
-                                Get 5x entries to the monthly Lucky Draw for free trips.
-                            </p>
-                        </div>
-                        <div class="bg-[#F4F8FB] rounded-lg p-2 shadow-sm">
-                            <div class="flex justify-between items-center mb-1">
-                                <span class="text-xs font-semibold text-primary">Exclusive Rates</span>
-                                <img src="assets/svgs/rates.svg" class="w-[30px]" alt=""
-                                    onerror="this.style.display='none'">
-                            </div>
-                            <p class=" text-[#627497] text-xs mt-1">
-                                Access discounted packages only for Ihram members.
-                            </p>
+                        <div class="bg-[#24B2B9] pl-3 pr-4 py-2 rounded-full flex items-center gap-1 shadow-sm">
+                            <span id="header-points" class="text-white font-bold text-sm leading-none">120+</span>
+                            <span class="text-white text-[10px] font-medium leading-none">Points</span>
                         </div>
                     </div>
 
-                    <!-- Tip Card -->
-                    <div class="px-3">
-                        <div class="bg-[#F4F8FB] rounded-lg p-2 border border-gray-100 px-3">
-                            <div class="flex items-center space-x-2 mb-3">
-                                <h3 class="text-sm font-bold text-primary">Why Upgrade?</h3>
-                            </div>
-
-                            <ul class="list-none list-inside text-xs text-[#627497] space-y-2">
-                                <li class="flex justify-start items-start gap-2"><img src="assets/svgs/CheckCircle.svg"
-                                        class="w-3 h-3 mt-1" />Better savings for Umrah, designed to help
-                                    you prepare in a disciplined and meaningful way.</li>
-                                <li class="flex justify-start items-start gap-2"> <img src="assets/svgs/CheckCircle.svg"
-                                        class="w-3 h-3 mt-1" />24/7 dedicated support to guide you whenever
-                                    you need help or reassurance.</li>
-                                <li class="flex justify-start items-start gap-2"> <img src="assets/svgs/CheckCircle.svg"
-                                        class="w-3 h-3" />Priority visa processing for a smoother and
-                                    faster journey.</li>
-                            </ul>
-                            <!-- <div class="pt-4">
-                                <div class="lucky-draw text-xs text-[#627497] rounded-lg p-3 mb-2">Upgrading to the
-                                    Ihram
-                                    Account is more
-                                    than unlocking
-                                    features. It is a choice to prepare for Umrah with peace of mind, knowing that your
-                                    finances, guidance, and paperwork are handled with care.</div>
-                            </div> -->
-                        </div>
-
+                    <!-- Journey Container (Rendered by JS) -->
+                    <div id="journey-container" class="px-3 space-y-4">
+                        <!-- Content goes here -->
                     </div>
 
                 </div>
@@ -156,28 +78,22 @@
             <!-- Side Menu Drawer -->
             <div id="side-menu"
                 class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
-                <!-- Inner Container -->
                 <div class="flex flex-col h-full relative">
-                    <!-- Close Button -->
                     <button id="menu-close-btn"
                         class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
                         <i data-lucide="x" width="24"></i>
                     </button>
-
-                    <!-- Menu Content -->
-                    <div class="mt-24 px-3 space-y-3">
+                    <div class="mt-24 px-5 space-y-3">
                         <a href="profile.html"
                             class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
                             <i data-lucide="user" width="20"></i>
                             <span class="font-medium">Profile & Settings</span>
                         </a>
-
                         <a href="support.html"
                             class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
                             <i data-lucide="help-circle" width="20"></i>
                             <span class="font-medium">Support</span>
                         </a>
-
                         <a href="terms-and-conditions.html"
                             class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
                             <i data-lucide="file-text" width="20"></i>
@@ -189,52 +105,45 @@
 
             <!-- Bottom Navigation -->
             <nav id="bottom-nav"
-                class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
                 <div class="flex justify-between items-center pb-4 pt-2">
                     <!-- Home -->
-                    <a href="index.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
+                    <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
                             <i data-lucide="home" width="22" stroke-width="2"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                        <span class="text-[9px] font-medium tracking-wide">
                             Home
                         </span>
                     </a>
 
                     <!-- Ihram (Active) -->
-                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-accent"
-                        style="color: #26d0ce;">
-                        <div class="transition-all duration-300 -translate-y-1">
-                            <img src="assets/svgs/Line.svg" class="w-4" />
+                    <button class="flex flex-col items-center space-y-1.5 w-1/4">
+                        <div class="text-white">
+                            <i data-lucide="user-round" width="22" stroke-width="2.5"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-100">
+                        <span class="text-[9px] font-bold tracking-wide">
                             Ihram
                         </span>
                     </button>
 
-                    <!-- Plans -->
-                    <a href="plans.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="calendar" width="22" stroke-width="2"></i>
+                    <!-- Umrah -->
+                    <a href="plans.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
+                            <i data-lucide="zap" width="22" stroke-width="2"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                        <span class="text-[9px] font-medium tracking-wide">
                             Umrah
                         </span>
                     </a>
 
-                    <!-- Rewards -->
-                    <a href="points.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
+                    <!-- Profile -->
+                    <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
-                            Rewards
+                        <span class="text-[9px] font-medium tracking-wide">
+                            Profile
                         </span>
                     </a>
                 </div>
@@ -242,8 +151,198 @@
         </div>
     </div>
 
+    <!-- Welcome Modal (For activation) -->
+    <div id="welcome-modal"
+        class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-white mx-5 rounded-2xl p-6 relative w-full max-w-sm scale-95 transition-transform duration-300 text-center">
+            <!-- Close Button -->
+            <button onclick="closeWelcomeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i data-lucide="x" width="20"></i>
+            </button>
+
+            <!-- Icon -->
+            <div class="w-16 h-16 bg-[#F4F8FB] rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="party-popper" class="text-[#1E3A6D] w-8 h-8"></i>
+            </div>
+
+            <h2 class="text-xl font-bold text-[#1E3A6D] mb-2">Mubarak, Abdullah!</h2>
+            <p class="text-xs text-gray-500 mb-6 leading-relaxed px-4">
+                Your pure intention brings you closer. Your journey to the House of Allah begins now.
+            </p>
+
+            <div class="bg-[#F8FAFC] rounded-xl p-4 mb-6">
+                <p class="text-xs text-gray-500 mb-1">Welcome Barakah Reward</p>
+                <div class="flex items-center justify-center gap-1">
+                    <span class="text-2xl font-bold text-[#1E3A6D]">+1,500</span>
+                    <span class="text-sm text-[#1E3A6D]">Points</span>
+                </div>
+            </div>
+
+            <button onclick="activateIhram()"
+                class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition flex items-center justify-center gap-2">
+                Bless Your Niyyah <i data-lucide="arrow-up-right" width="16"></i>
+            </button>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
+
+        // --- State Management ---
+        const state = {
+            isUpgraded: localStorage.getItem('isUpgraded') === 'true',
+            currentView: 'wallet' // 'wallet' or 'history'
+        };
+
+        function renderJourney() {
+            const container = document.getElementById('journey-container');
+            const headerPoints = document.getElementById('header-points');
+
+            // Update Header Points
+            if (state.isUpgraded) {
+                headerPoints.innerText = "120+";
+            } else {
+                headerPoints.innerText = "0";
+                // Optionally disable the whole badge visual
+                headerPoints.parentElement.classList.add('opacity-50');
+            }
+
+            renderWallet(container);
+            lucide.createIcons();
+        }
+
+        function renderWallet(container) {
+            const opacityClass = state.isUpgraded ? '' : 'opacity-60 pointer-events-none grayscale transition-all duration-500';
+
+            container.innerHTML = `
+                <div class="flex items-center gap-3 mt-2">
+                    <a href="index.html" class="w-8 h-8 rounded-full bg-[#1E3A6D] flex items-center justify-center text-white">
+                        <i data-lucide="chevron-left" width="20"></i>
+                    </a>
+                    <div>
+                        <h2 class="text-[17px] font-bold text-[#1E3A6D]">Your Rewards & Progress</h2>
+                        <p class="text-[12px] text-[#94A3B8]">Turning daily spending into Umrah rewards</p>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="relative w-full debit-card rounded-[24px] p-6 text-white shadow-lg overflow-hidden mt-2 ${opacityClass}">
+                    <div class="relative z-10 flex flex-col justify-between h-40">
+                         <div class="flex justify-between items-start">
+                            <!-- Mastercard Logo -->
+                            <img src="../assets/svgs/mastercard.svg" alt="">
+                         </div>
+
+                         <div class="space-y-4">
+                            <div class="flex items-center justify-between gap-3">
+                             <div>
+                                <h3 class="font-bold tracking-wide uppercase text-base">Muhammad Abdullah</h3>
+                                <p class="text-sm opacity-90 tracking-[3px] font-mono mt-1">**** **** **** ****</p>
+                             </div>
+                             <div class="flex items-center gap-3">
+                                   <img src="../assets/svgs/sim.svg" alt="">
+                                    <i data-lucide="wifi" class="rotate-90" width="20"></i>
+                                </div>
+                             </div>
+                             
+                             <div class="flex justify-between items-end">
+                                <span class="text-xs lowercase opacity-80">debit</span>
+                                
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+                ${!state.isUpgraded ? `
+                <div class="py-2 animation-pulse">
+                    <button onclick="openWelcomeModal()" class="w-full bg-[#1E3A6D] text-white py-4 rounded-2xl font-bold text-sm shadow-xl flex items-center justify-center gap-2 hover:bg-[#16315b] transition-all transform hover:scale-[1.02] active:scale-95">
+                        Build Your Barakah <i data-lucide="sparkles" width="16"></i>
+                    </button>
+                </div>
+                ` : ''}
+
+                <!-- Upgraded Options -->
+                <a href="history.html" class="w-full bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-center justify-between group hover:border-primary transition-all ${opacityClass}">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#F8FAFC] text-[#1E3A6D] flex items-center justify-center shadow-sm">
+                            <i data-lucide="history" width="22" class="${state.isUpgraded ? 'text-[#1E3A6D]' : 'text-gray-300'}"></i> 
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-base font-bold text-[#1E3A6D]">View Points Activity</h3>
+                            <p class="text-[12px] text-[#94A3B8]">See how your points grow</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="text-[#94A3B8] group-hover:text-primary" width="20"></i>
+                </a>
+
+                <div class="space-y-4 pt-2 ${opacityClass}">
+                    <div class="bg-white rounded-[24px] p-5 border border-gray-100 shadow-sm space-y-4">
+                        <h2 class="text-base font-bold text-[#1E3A6D]">Nurturing Your Intentions</h2>
+                        
+                        <div class="flex gap-4 items-start bg-[#F8FAFC] p-4 rounded-2xl">
+                             <div class="mt-1 text-[#1E3A6D] shrink-0">
+                                <i data-lucide="wallet" width="20"></i>
+                             </div>
+                             <p class="text-[13px] text-[#94A3B8] leading-relaxed">
+                                Your daily spending is now a spiritual act. Every purchase brings you closer to the House of Allah.
+                             </p>
+                        </div>
+
+                        <div class="flex gap-4 items-start bg-[#F8FAFC] p-4 rounded-2xl">
+                             <div class="mt-1 text-[#1E3A6D] shrink-0">
+                                 <i data-lucide="sparkles" width="20"></i>
+                             </div>
+                             <p class="text-[13px] text-[#94A3B8] leading-relaxed">
+                                Redeem your accumulated Ihram Points to reduce the cost of your future journey to the House of Allah.
+                             </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+
+        // --- Welcome Modal Logic (Copied from index.html) ---
+        function closeWelcomeModal() {
+            const modal = document.getElementById('welcome-modal');
+            const modalContent = modal.querySelector('div');
+
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            modal.classList.add('opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function openWelcomeModal() {
+            const modal = document.getElementById('welcome-modal');
+            const modalContent = modal.querySelector('div');
+
+            modal.classList.remove('hidden');
+            // Small delay
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function activateIhram() {
+            state.isUpgraded = true;
+            localStorage.setItem('isUpgraded', 'true');
+            closeWelcomeModal();
+            renderJourney();
+        }
+
+        // Initial Render
+        renderJourney();
+
+        // Menu Logic (reused roughly, or just rely on sidebar.js if it works universally)
+        const menuBtn = document.getElementById('menu-btn');
+        // sidebar.js logic is external, but we should make sure elements exist.
     </script>
     <script src="js/sidebar.js"></script>
 </body>

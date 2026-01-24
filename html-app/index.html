@@ -48,26 +48,21 @@
       <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
         <div class="pt-6 pb-5 space-y-6 bg-white min-h-screen">
           <!-- Header -->
-          <div class="flex px-3 justify-between items-center border-b border-gray-100 pb-2">
-            <div class="flex items-center space-x-3">
-              <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-100">
-                <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah"
-                  class="w-full h-full object-cover" />
-              </div>
-              <div>
-                <p class="text-xs text-[#627497] font-medium">Assalam O Alaikum</p>
-                <h1 class="text-xs font-bold text-gray-800">Abdullah!</h1>
-              </div>
-            </div>
-            <div class="flex space-x-3">
-              <button
-                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                <i data-lucide="bell" width="20"></i>
-              </button>
+          <div class="flex px-4  justify-between items-center pb-2">
+            <div class="flex items-center gap-3">
               <button id="menu-btn"
-                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
+                class="w-10 h-10 rounded-full bg-[#F1F6FA] flex items-center justify-center text-primary">
                 <i data-lucide="menu" width="20"></i>
               </button>
+              <div class="w-[1px] h-6 bg-gray-200"></div>
+              <div>
+                <p class="text-[11px] text-[#94A3B8] font-medium leading-none">Assalam o Alaikum</p>
+                <h1 class="text-[14px] font-bold text-primary mt-1">Abdullah!</h1>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-gray-100 overflow-hidden border border-gray-100 shrink-0">
+              <img src="https://picsum.photos/seed/abdullah/100/100" alt="Abdullah"
+                class="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -76,100 +71,108 @@
             <!-- Rendered via JS -->
           </div>
 
-          <!-- Stats Grid -->
-          <div class="grid grid-cols-2 gap-2 px-3">
-            <div class="bg-[#F4F8FB] rounded-lg px-2 py-3 shadow-sm">
-              <div class="flex justify-between items-start ">
-                <span class="text-xs font-semibold text-[#1E3A6D]">Umrah Savings</span>
+          <!-- Compliance Header Card -->
+          <div class="px-3">
+            <div
+              class="bg-white rounded-xl border border-gray-100 py-3 px-4 flex items-center justify-between shadow-sm">
+              <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-primary" width="18"></i>
+                <span class="text-xs font-semibold text-primary">Shariah Compliant</span>
               </div>
-              <div class="flex items-center justify-between gap-2">
-                <h3 class="font-bold text-xs text-primary">PKR 250,000</h3>
-                <img src="assets/svgs/savings.svg" class="w-8 h-8" alt="" onerror="this.style.display='none'">
+              <div class="h-4 w-[1px] bg-gray-200"></div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="lock" class="text-primary" width="18"></i>
+                <span class="text-xs font-semibold text-primary">Bank-Guaranteed</span>
               </div>
-              <p class="text-xs text-gray-400 mt-1">
-                You’re getting close to your Umrah - keep moving at your pace.
-              </p>
-            </div>
-            <div class="bg-[#F4F8FB] rounded-lg px-2 py-3 shadow-sm">
-              <div class="flex justify-between items-start">
-                <span class="text-xs font-semibold text-[#1E3A6D]">Ihram Points</span>
-              </div>
-              <div class="flex items-center justify-between gap-2">
-                <h3 class="text-xs font-bold text-primary">1,259</h3>
-
-                <img src="assets/svgs/ihram_points.svg" class="w-8 h-8" alt="" onerror="this.style.display='none'">
-              </div>
-              <p class="text-xs text-gray-400 mt-1">
-                Collect points with every booking and step closer to exclusive Umrah rewards.
-              </p>
-            </div>
-
-            <!-- Inspiration Card -->
-            <div class="bg-[#F4F8FB] rounded-lg px-2 py-3 shadow-sm relative overflow-hidden">
-              <div class="flex justify-between items-start ">
-                <h3 class="text-xs font-bold text-[#1E3A6D]">Inspiration</h3>
-                <div class="w-8 h-8 bg-[#2f7d78] rounded-full flex items-center justify-center shadow-sm">
-                  <i data-lucide="book-open" class="text-white" width="16"></i>
-                </div>
-              </div>
-              <p class="text-xs text-[#627497] italic mb-3 leading-relaxed">
-                And complete the Hajj and the ‘Umrah for Allah.
-              </p>
-              <p class="text-[10px] font-semibold text-[#627497] ">
-                Surah al-Baqarah 2:192
-              </p>
-            </div>
-
-            <!-- Community Card -->
-            <div class="bg-[#F4F8FB] rounded-lg px-2 py-3 shadow-sm">
-              <div class="flex justify-between items-start ">
-                <h3 class="text-xs font-bold text-[#1E3A6D]">Community</h3>
-                <div class="w-8 h-8 bg-[#a3d616] rounded-full flex items-center justify-center shadow-sm">
-                  <i data-lucide="users" class="text-white" width="16"></i>
-                </div>
-              </div>
-              <!-- Avatar Group -->
-              <div class="flex items-center -space-x-2 mb-3 pl-1">
-                <img class="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
-                  alt="">
-                <img class="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm"
-                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80"
-                  alt="">
-                <img class="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm"
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80"
-                  alt="">
-                <img class="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm"
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80"
-                  alt="">
-                <div
-                  class="w-7 h-7 rounded-full border-2 border-white bg-[#24B3BA] flex items-center justify-center text-[8px] text-white font-bold shadow-sm z-10">
-                  +42
-                </div>
-              </div>
-              <p class="text-[10px] text-[#627497] leading-tight">
-                <span class="font-bold text-[#1E3A6D]">45 Pilgrims</span> started their journey today.
-              </p>
             </div>
           </div>
 
-          <!-- Tip Card -->
-          <div class="px-3">
-            <div class="bg-[#F4F8FB] rounded-lg p-5 border border-gray-100 px-3">
-              <div class="flex items-center space-x-2 mb-3">
-                <div
-                  class="w-6 h-6 bg-primary-pale text-primary rounded-full flex items-center justify-center bg-[#E8EDF5] text-[#1E3A6D]">
-                  <span class="text-xs">💡</span>
+          <!-- Sacred Journey Paths Section -->
+          <div class="px-4 space-y-4">
+            <h2 class="text-base font-bold text-[#1E3A6D]">Sacred Journey Paths</h2>
+
+            <!-- Umrah On Installment Card -->
+            <div style="background: linear-gradient(270deg, #FFFFFF 10.64%, rgba(233, 238, 247, 0.7) 96.69%);"
+              class="rounded-[24px] border border-gray-100 p-5 shadow-md relative overflow-hidden group hover:border-primary transition-all">
+              <div class="flex justify-between items-start mb-4">
+                <div class="w-12 h-12 rounded-xl bg-[#1E3A6D] flex items-center justify-center text-white shadow-lg">
+                  <i data-lucide="calendar" width="22"></i>
                 </div>
-                <h3 class="text-xs font-semibold text-primary">Ibraheem's Tip</h3>
+                <span class="bg-[#24B2B9] text-white text-[10px] font-bold px-3 py-1.5 rounded-full">Plan & Save</span>
               </div>
-              <p class="text-xs text-[#627497] leading-relaxed ">
-                If you make purchases using your Zindagi card, you earn points that can later help you perform Umrah.
+              <h3 class="text-base font-bold text-[#1E3A6D] mb-2">Umrah On Installment</h3>
+              <p class="text-[13px] text-[#94A3B8] mb-6 leading-relaxed pr-8">
+                Build your Umrah savings through manageable monthly payments. No pressure just steady progress towards
+                Makkah.
               </p>
-              <a href="plans.html"
-                class="text-primary text-xs font-bold flex items-center hover:underline text-[#1E3A6D]">
-                Ask Ibraheem <i data-lucide="chevron-right" width="14"></i>
-              </a>
+              <div class="absolute bottom-6 right-6">
+                <i data-lucide="arrow-right" class="text-primary opacity-30 group-hover:opacity-100 transition-opacity"
+                  width="20"></i>
+              </div>
+              <a href="plans.html" class="absolute inset-0"></a>
+            </div>
+
+            <!-- Umrah On Cash Card -->
+            <a href="inquiry-form.html"
+              style="background: linear-gradient(270deg, #FFFFFF 10.64%, rgba(233, 238, 247, 0.7) 96.69%);"
+              class="rounded-[24px] border border-gray-100 p-5 shadow-md flex items-center justify-between group hover:border-primary transition-all">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-xl bg-[#1E3A6D] flex items-center justify-center text-white shadow-lg shrink-0">
+                  <i data-lucide="banknote" width="22"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-[#1E3A6D]">Umrah On Cash</h3>
+                  <p class="text-[12px] text-[#94A3B8]">Instant package booking for those ready for immediate departure.
+                  </p>
+                </div>
+              </div>
+              <i data-lucide="chevron-right"
+                class="text-[#94A3B8] opacity-30 group-hover:opacity-100 group-hover:text-primary transition-all"
+                width="20"></i>
+            </a>
+          </div>
+
+          <!-- Your Umrah Financial Planning Section -->
+          <div class="px-4 space-y-4 pb-10">
+            <h2 class="text-base font-bold text-[#1E3A6D]">Your Umrah Financial Planning</h2>
+
+            <div class="bg-white rounded-[24px] border border-gray-100 p-2 shadow-md space-y-1">
+              <!-- Shariah Compliant Planning -->
+              <div class="bg-[#F8FAFC] rounded-[20px] p-4 flex items-start gap-4">
+                <div class="mt-1 text-[#1E3A6D]">
+                  <i data-lucide="file-text" width="20"></i>
+                </div>
+                <div>
+                  <h4 class="text-[14px] font-bold text-[#1E3A6D]">Shariah Compliant Planning</h4>
+                  <p class="text-[12px] text-[#94A3B8] leading-relaxed mt-1">A pure savings model with transparent
+                    pricing and no extra costs.</p>
+                </div>
+              </div>
+
+              <!-- Sacred Goal Protection -->
+              <div class="bg-[#F8FAFC] rounded-[20px] p-4 flex items-start gap-4">
+                <div class="mt-1 text-[#1E3A6D]">
+                  <i data-lucide="shopping-bag" width="20"></i>
+                </div>
+                <div>
+                  <h4 class="text-[14px] font-bold text-[#1E3A6D]">Sacred Goal Protection</h4>
+                  <p class="text-[12px] text-[#94A3B8] leading-relaxed mt-1">Secure today's rates and stay protected
+                    from any future travel cost increases.</p>
+                </div>
+              </div>
+
+              <!-- Guaranteed Security -->
+              <div class="bg-[#F8FAFC] rounded-[20px] p-4 flex items-start gap-4">
+                <div class="mt-1 text-[#1E3A6D]">
+                  <i data-lucide="shield-check" width="20"></i>
+                </div>
+                <div>
+                  <h4 class="text-[14px] font-bold text-[#1E3A6D]">Guaranteed Security</h4>
+                  <p class="text-[12px] text-[#94A3B8] leading-relaxed mt-1">Your savings are protected by bank
+                    guarantees until your departure.</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -222,7 +225,7 @@
           </button>
 
           <!-- Menu Content -->
-          <div class="mt-24 px-3 space-y-3">
+          <div class="mt-24 px-5 space-y-3">
             <a href="profile.html"
               class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
               <i data-lucide="user" width="20"></i>
@@ -244,54 +247,49 @@
         </div>
       </div>
 
+      <script src="js/sidebar.js"></script>
+
       <!-- Bottom Navigation -->
       <nav id="bottom-nav"
-        class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+        class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
         <div class="flex justify-between items-center pb-4 pt-2">
           <!-- Home (Active) -->
-          <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-accent"
-            style="color: #26d0ce;">
-            <div class="transition-all duration-300 -translate-y-1">
+          <button class="flex flex-col items-center space-y-1.5 w-1/4">
+            <div class="text-white">
               <i data-lucide="home" width="22" stroke-width="2.5"></i>
             </div>
-            <span class="text-[9px] font-medium tracking-wide opacity-100">
+            <span class="text-[9px] font-bold tracking-wide">
               Home
             </span>
           </button>
 
           <!-- Ihram -->
-          <a href="journey.html"
-            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-            style="color: #bfdbfe;">
-            <div class="transition-all duration-300">
-              <img src="assets/svgs/Line.svg" class="w-4" />
+          <a href="journey.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+            <div>
+              <i data-lucide="user-round" width="22" stroke-width="2"></i>
             </div>
-            <span class="text-[9px] font-medium tracking-wide opacity-70">
+            <span class="text-[9px] font-medium tracking-wide">
               Ihram
             </span>
           </a>
 
-          <!-- Plans -->
-          <a href="plans.html"
-            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-            style="color: #bfdbfe;">
-            <div class="transition-all duration-300">
-              <i data-lucide="calendar" width="22" stroke-width="2"></i>
+          <!-- Umrah -->
+          <a href="plans.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+            <div>
+              <i data-lucide="zap" width="22" stroke-width="2"></i>
             </div>
-            <span class="text-[9px] font-medium tracking-wide opacity-70">
+            <span class="text-[9px] font-medium tracking-wide">
               Umrah
             </span>
           </a>
 
-          <!-- Rewards -->
-          <a href="points.html"
-            class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-            style="color: #bfdbfe;">
-            <div class="transition-all duration-300">
-              <i data-lucide="trophy" width="22" stroke-width="2"></i>
+          <!-- Profile -->
+          <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+            <div>
+              <i data-lucide="user" width="22" stroke-width="2"></i>
             </div>
-            <span class="text-[9px] font-medium tracking-wide opacity-70">
-              Rewards
+            <span class="text-[9px] font-medium tracking-wide">
+              Profile
             </span>
           </a>
         </div>
@@ -302,51 +300,166 @@
   <script>
     // --- State ---
     const state = {
-      isUpgraded: localStorage.getItem('isUpgraded') === 'false'
+      isUpgraded: localStorage.getItem('isUpgraded') === 'true'
     };
+
+    // --- Carousel Data ---
+    const slides = [
+      {
+        title: "Ihram Account",
+        description: "Ihram Account helps you prepare for Umrah. Save gradually, pay monthly, and focus on your niyyah.",
+        ctaText: "Build Your Barakah",
+        action: "openWelcomeModal()",
+        icon: "arrow-up-right"
+      },
+      {
+        title: "Umrah On Cash",
+        description: "The invitation is open. Embark on your pilgrimage to the House of Allah with immediate confirmed booking.",
+        ctaText: "Begin Your Umrah",
+        link: "inquiry-form.html",
+        icon: "arrow-up-right"
+      },
+      {
+        title: "Umrah On Installment",
+        description: "A path designed for every soul. Peacefully plan your arrival at the House of Allah with monthly installments.",
+        ctaText: "Start Your Niyyah",
+        link: "plans.html",
+        icon: "arrow-up-right"
+      }
+    ];
+
+    let currentSlide = 0;
+    let autoSlideInterval;
 
     function renderHero() {
       const container = document.getElementById('hero-banner-container');
-      if (state.isUpgraded) {
-        container.innerHTML = `
-          <div class="banner-gradient relative px-3 rounded-lg mt-5 text-white p-5">
-            <div class="relative w-2/3 ">
-              <h2 class="text-md font-bold mb-1">From Intention To Preparation</h2>
-              <p class="text-xs text-blue-100 mb-4 leading-relaxed">
-                Your Ihram Account is now active. May this step bring barakah and help you move closer to Umrah with confidence and calm.
+
+      const slidesHtml = slides.map((slide, index) => `
+        <div class="w-full flex-shrink-0 px-3 relative">
+          <div class="banner-gradient relative rounded-lg text-white p-5 min-h-[180px] flex flex-col justify-center">
+            <div class="relative z-10 w-3/4">
+              <h2 class="text-md font-bold mb-2">${slide.title}</h2>
+              <p class="text-[11px] text-blue-100 mb-4 leading-relaxed opacity-90 line-clamp-3">
+                ${slide.description}
               </p>
-              <a href="journeyForm.html"
-                class="bg-[#24B3BA] flex items-center gap-1 hover:bg-primary hover:text-white text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-colors shadow-md w-fit">
-                <i data-lucide="plus" width="14"></i> Start Your Umrah Plan
-              </a>
+              ${slide.action
+          ? `<a onclick="${slide.action}" class="bg-white text-primary flex items-center gap-2 hover:bg-gray-100 text-[12px] font-bold py-3 px-6 rounded-full transition-all shadow-md w-fit active:scale-95">
+                             ${slide.ctaText} 
+                             <i data-lucide="${slide.icon}" width="14"></i>
+                           </a>`
+          : `<a href="${slide.link}" class="bg-white text-primary flex items-center gap-2 hover:bg-gray-100 text-[12px] font-bold py-3 px-6 rounded-full transition-all shadow-md w-fit active:scale-95">
+                             ${slide.ctaText} 
+                             <i data-lucide="${slide.icon}" width="14"></i>
+                           </a>`
+        }
             </div>
-            <div class="absolute right-[10px] bottom-[-20px] h-40">
-              <img src="assets/images/ibrahim2.png" alt="Pilgrim Upgraded" style="height: 200px; transform: translateY(-60px);"
-                onerror="this.style.display='none'">
-            </div>
+            <!-- Background Decoration -->
+             <div class="absolute right-0 bottom-0 opacity-10">
+                <img src="assets/svgs/logo_icon.svg" class="w-24 h-24 translate-x-4 translate-y-4" alt="">
+             </div>
           </div>
-        `;
-      } else {
-        container.innerHTML = `
-          <div class="banner-gradient relative px-3 rounded-lg mt-5 text-white p-5">
-            <div class="relative w-2/3 pr-4">
-              <h2 class="text-md font-semibold mb-1">Upgrade to Ihram Account</h2>
-              <p class="text-xs text-blue-100 mb-4 leading-relaxed">
-                Make your dream Umrah a reality. Every point you earn brings you closer to Makkah.
-              </p>
-              <button onclick="showUpgradeModal()"
-                class="bg-[#24B3BA] flex items-center gap-1 hover:bg-primary hover:text-white text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-colors shadow-md w-fit">
-                <img src="assets/svgs/sparkles.svg" alt="" onerror="this.style.display='none'"> Upgrade Now
-              </button>
-            </div>
-            <div class="absolute right-[-13px] bottom-[-20px] w-40 h-40">
-              <img src="assets/images/ibrahim3.png" alt="Pilgrim" style="height: 190px; transform: translateY(-49px);"
-                onerror="this.style.display='none'">
-            </div>
+        </div>
+      `).join('');
+
+      const indicatorsHtml = slides.map((_, index) => `
+        <button onclick="goToSlide(${index})" 
+          class="w-1.5 h-1.5 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-3' : 'bg-white/50'}">
+        </button>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="relative overflow-hidden mt-2 pb-2 group">
+          <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+            ${slidesHtml}
           </div>
-        `;
-      }
+          
+          <!-- Indicators -->
+          <div class="absolute bottom-6 right-8 flex space-x-1.5 z-20">
+            ${indicatorsHtml}
+          </div>
+        </div>
+      `;
+
       lucide.createIcons();
+      startAutoSlide();
+      setupTouchEvents();
+    }
+
+    function updateCarousel() {
+      const track = document.getElementById('carousel-track');
+      const indicators = document.querySelectorAll('#hero-banner-container button');
+
+      if (track) {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      indicators.forEach((btn, index) => {
+        if (index === currentSlide) {
+          btn.className = "w-3 h-1.5 rounded-full transition-all duration-300 bg-white";
+        } else {
+          btn.className = "w-1.5 h-1.5 rounded-full transition-all duration-300 bg-white/50";
+        }
+      });
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+      resetAutoSlide();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    function setupTouchEvents() {
+      const track = document.getElementById('carousel-track');
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+
+      if (!track) return;
+
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        clearInterval(autoSlideInterval);
+      });
+
+      track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+      });
+
+      track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        const diff = startX - currentX;
+
+        // Threshold for swipe
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            // Swipe Left -> Next
+            nextSlide();
+          } else {
+            // Swipe Right -> Prev
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+          }
+        }
+
+        isDragging = false;
+        startAutoSlide();
+      });
     }
 
     // Initial render
@@ -386,6 +499,41 @@
       <button onclick="completeUpgrade()"
         class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition">
         Continue
+      </button>
+    </div>
+  </div>
+
+  <!-- Welcome Modal -->
+  <div id="welcome-modal"
+    class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <div
+      class="bg-white mx-5 rounded-2xl p-6 relative w-full max-w-sm scale-95 transition-transform duration-300 text-center">
+      <!-- Close Button -->
+      <button onclick="closeWelcomeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+        <i data-lucide="x" width="20"></i>
+      </button>
+
+      <!-- Icon -->
+      <div class="w-16 h-16 bg-[#F4F8FB] rounded-full flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="party-popper" class="text-[#1E3A6D] w-8 h-8"></i>
+      </div>
+
+      <h2 class="text-xl font-bold text-[#1E3A6D] mb-2">Mubarak, Abdullah!</h2>
+      <p class="text-xs text-gray-500 mb-6 leading-relaxed px-4">
+        Your pure intention brings you closer. Your journey to the House of Allah begins now.
+      </p>
+
+      <div class="bg-[#F8FAFC] rounded-xl p-4 mb-6">
+        <p class="text-xs text-gray-500 mb-1">Welcome Barakah Reward</p>
+        <div class="flex items-center justify-center gap-1">
+          <span class="text-2xl font-bold text-[#1E3A6D]">+1,500</span>
+          <span class="text-sm text-[#1E3A6D]">Points</span>
+        </div>
+      </div>
+
+      <button onclick="activateIhram()"
+        class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition flex items-center justify-center gap-2">
+        Bless Your Niyyah <i data-lucide="arrow-up-right" width="16"></i>
       </button>
     </div>
   </div>
@@ -488,6 +636,41 @@
       // audio.play().catch(e => console.log('Audio play failed', e));
     }
 
+    function closeWelcomeModal() {
+      const modal = document.getElementById('welcome-modal');
+      const modalContent = modal.querySelector('div');
+
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      modal.classList.add('opacity-0');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    function openWelcomeModal() {
+      const modal = document.getElementById('welcome-modal');
+      const modalContent = modal.querySelector('div');
+
+      modal.classList.remove('hidden');
+      // Small delay
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }, 10);
+    }
+
+    function activateIhram() {
+      state.isUpgraded = true;
+      localStorage.setItem('isUpgraded', 'true');
+      closeWelcomeModal();
+      // Optional: Show some feedback or just stay on page as requested "no redirection"
+      // Maybe refresh hero to show updated state if needed, but requirements say "no redirection"
+    }
+
+    // Existing functions...
     function completeUpgrade() {
       // Set upgraded state
       state.isUpgraded = true;

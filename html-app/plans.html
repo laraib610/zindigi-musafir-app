@@ -44,215 +44,178 @@
         <!-- Mobile Frame -->
         <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
 
-            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
-                <div class="pt-2 pb-5 space-y-4 bg-white min-h-screen">
-                    <!-- Common Header -->
-                    <div class="px-3 border-b border-gray-100 pb-2">
-                        <div class="flex justify-between items-center">
-                            <h1 class="text-xs font-bold text-primary">Steps Toward the Sacred House</h1>
-                            <div class="flex space-x-3">
-                                <button
-                                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                                    <i data-lucide="bell" width="20"></i>
-                                </button>
-                                <button id="menu-btn"
-                                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                                    <i data-lucide="menu" width="20"></i>
-                                </button>
-                            </div>
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-white pb-20">
+                <!-- Main Container -->
+                <div class="pt-2 pb-5 space-y-4 min-h-screen">
+                    <!-- Top Header -->
+                    <div class="flex px-4 pt-6 justify-between items-center pb-4 bg-white border-b border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <button id="menu-btn"
+                                class="w-10 h-10 rounded-full bg-[#F1F6FA] flex items-center justify-center text-primary">
+                                <i data-lucide="menu" width="20"></i>
+                            </button>
+                            <div class="w-[1px] h-6 bg-gray-200"></div>
+                            <h2 class="text-[#1E3A6D] font-bold text-[14px] tracking-tight">Your Umrah Overview</h2>
                         </div>
+                        <div class="bg-[#24B2B9] pl-3 pr-4 py-2 rounded-full flex items-center gap-1 shadow-sm">
+                            <span class="text-white font-bold text-sm leading-none">120+</span>
+                            <span class="text-white text-[10px] font-medium leading-none">Points</span>
+                        </div>
+                    </div>
 
-                        <!-- Tabs Row -->
-                        <div class="flex justify-between items-center bg-[#F4F8FB] p-2 rounded-3xl mt-4 mb-1 shadow-sm">
-                            <button
-                                class="bg-[#1E3A6D] text-white px-6 py-2 rounded-3xl text-xs font-bold shadow-md">Overview</button>
+                    <!-- Sub Header -->
+                    <div
+                        class="flex px-4 py-3 justify-between items-center sticky top-0 bg-white backdrop-blur-sm z-20">
+                        <div class="flex items-center gap-3">
+                            <a href="index.html"
+                                class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-gray-100 transition-colors">
+                                <i data-lucide="chevron-left" width="18"></i>
+                            </a>
+                            <h1 class="text-[#1E3A6D] font-bold text-lg">Your Umrah Plans</h1>
+                        </div>
+                        <a href="journeyForm.html"
+                            class="bg-[#1E3A6D] text-white px-4 py-2 rounded-full text-xs font-bold shadow-md hover:bg-[#16315b] transition-colors flex items-center gap-1">
+                            <i data-lucide="plus" width="14"></i> New Journey
+                        </a>
+                    </div>
 
-                            <!-- Add Button -->
+
+
+                    <!-- Empty State -->
+                    <div id="empty-state" class="px-4 pt-4 hidden">
+                        <div
+                            class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-50 flex flex-col items-center">
+                            <div class="w-16 h-16 bg-[#F4F8FB] rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="compass" class="text-primary" width="32"></i>
+                            </div>
+                            <h2 class="text-xl font-bold text-[#1E3A6D] mb-3">Your Journey Begins</h2>
+                            <p class="text-sm text-[#627497] mb-8 leading-relaxed px-4">
+                                Start planning your spiritual trip today. Create a personalized savings plan that fits
+                                your life.
+                            </p>
                             <a href="journeyForm.html"
-                                class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-gray-50">
-                                <i data-lucide="plus" class="text-gray-400" width="16"></i>
+                                class="w-full bg-[#1E3A6D] text-white py-4 rounded-3xl font-bold hover:bg-[#16315b] transition-all transform active:scale-[0.98] shadow-lg shadow-blue-900/10 flex items-center justify-center gap-2">
+                                <i data-lucide="plus" width="20"></i> Start New Plan
                             </a>
                         </div>
                     </div>
 
-                    <!-- Empty State -->
-                    <div id="empty-state" class="scale-up-center hidden">
-                        <div class="px-3 mt-2">
-                            <div class="bg-[#F4F8FB] rounded-lg p-4 text-center mb-6">
-                                <div
-                                    class="w-14 h-14 bg-[#1E3A6D] rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <i data-lucide="compass" class="text-white" width="24"></i>
-                                </div>
-                                <h2 class="text-xs font-bold text-[#1E3A6D] mb-3">Your Journey Begins</h2>
-                                <p class="text-xs text-gray-400 mb-3 px-2 leading-relaxed">Start planning your spiritual
-                                    trip today. Create a personalized savings plan that fits your life.</p>
-                                <a href="journeyForm.html"
-                                    class="inline-flex text-sm items-center justify-center bg-[#1E3A6D] text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition w-full">
-                                    <i data-lucide="plus" width="18" class="mr-2"></i> Start New Plan
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Contributors Card (Empty State) -->
-                        <div class="px-3">
-                            <div class="banner-gradient rounded-lg px-3 py-5 relative overflow-hidden">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <h3 class="font-semibold text-white text-xs mb-2">Invite Family, Earn Umrah
-                                            Points
-                                        </h3>
-                                        <p class="text-xs text-gray-500 mb-4 leading-relaxed ">
-                                            <span class="text-white font-normal">Invite loved ones to support your Umrah
-                                                every contribution brings you closer and shares the reward and
-                                                blessings.
-                                        </p>
-                                        <!-- <div class="flex gap-3 relative z-10">
-                                            <button
-                                                class="bg-[#24B3BA] text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center shadow-lg shadow-teal-500/20 hover:bg-[#1e959b] transition">
-                                                <i data-lucide="share-2" width="14" class="mr-2"></i> Share on Whatsapp
-                                            </button>
-                                            <button
-                                                class="bg-white border border-gray-100 px-3 py-2 rounded-lg text-gray-400 hover:text-[#24B3BA] transition shadow-sm">
-                                                <i data-lucide="copy" width="16"></i>
-                                            </button>
-                                        </div> -->
-                                    </div>
-                                    <img src="assets/images/recieve2.png" alt="">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Active State -->
-                    <div id="active-state" class="scale-up-center">
-                        <!-- Registry Banner -->
-                        <div class="px-3 mt-2">
-                            <div class="banner-gradient rounded-lg px-3 py-5 relative overflow-hidden">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <h3 class="font-semibold text-white text-sm mb-2">Invite Loved Ones to Share in
-                                            Your Umrah Reward
-                                        </h3>
-                                        <p class="text-xs text-gray-500 mb-4 leading-relaxed ">
-                                            <span class="text-white text-xs italic">
-                                                “Whoever helps another in goodness will have a share in its reward.”
-                                                (Qur’an 4:85 — meaning)
-                                            </span>
-                                        </p>
-
-                                        <!-- <div class="flex gap-3 relative z-10">
-                                            <button
-                                                class="bg-[#24B3BA] text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center shadow-lg shadow-teal-500/20 hover:bg-[#1e959b] transition">
-                                                <i data-lucide="share-2" width="14" class="mr-2"></i> Share on Whatsapp
-                                            </button>
-                                            <button
-                                                class="bg-white border border-gray-100 px-3 py-2 rounded-lg text-gray-400 hover:text-[#24B3BA] transition shadow-sm">
-                                                <i data-lucide="copy" width="16"></i>
-                                            </button>
-                                        </div> -->
-                                    </div>
-                                    <img src="assets/images/recieved3.png" alt="">
-
-                                </div>
+                    <div id="active-state" class="px-4">
+                        <!-- Horizontal Tabs -->
+                        <div class=" pb-2">
+                            <div
+                                class="flex gap-2 overflow-x-auto no-scrollbar bg-gradient-to-r from-[#F6F6F6] to-[#F6F6F6] p-2 rounded-3xl">
+                                <button
+                                    class="bg-[#24B2B9] text-white px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap shadow-sm">Overview</button>
+                                <button
+                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">My
+                                    Umrah</button>
+                                <button
+                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Parent's</button>
+                                <button
+                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Ali's
+                                    Plan</button>
+                                <button
+                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Family</button>
                             </div>
                         </div>
+                        <div class="flex justify-between items-center mb-5">
+                            <h2 class="text-sm font-bold text-[#1E3A6D]">Your Plans</h2>
+                        </div>
 
-                        <!-- Plans List -->
-                        <div class="px-3 mt-8">
-                            <h5 class="text-xs font-bold text-[#1E3A6D] mb-5">Your Plans</h5>
-
-                            <!-- Card 1 -->
-                            <div
-                                class="bg-[#F4F8FB] rounded-lg px-3 py-5 shadow-sm border border-gray-100 mb-4 transition hover:shadow-md">
-                                <div class="flex justify-between items-start mb-5">
-                                    <div>
-                                        <h3 class="font-bold text-[#1E3A6D] text-xs">Umrah 2025</h3>
-                                        <p class="text-xs text-[#627497] mt-1">2025-06-01</p>
-                                    </div>
-                                    <span
-                                        class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-2.5 py-1 rounded-md">Active</span>
+                        <!-- Card 1 -->
+                        <div
+                            class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-4 transition hover:shadow-md">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-bold text-[#1E3A6D] text-sm">My Umrah 2025</h3>
+                                    <p class="text-[11px] text-[#627497] mt-1">01-04-2026</p>
                                 </div>
-                                <div class="mb-4">
-                                    <div class="flex justify-between text-xs font-bold text-[#627497] mb-2">
-                                        <span>Progress</span>
-                                        <span>30%</span>
-                                    </div>
-                                    <div class="w-full bg-blue-100/50 rounded-full h-2">
-                                        <div class="bg-[#1E3A6D] h-2 rounded-full transition-all duration-1000"
-                                            style="width: 30%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-[10px] text-[#627497] mt-2 font-medium">
-                                        <span>PKR 150K Paid</span>
-                                        <span>Goal: 500K</span>
-                                    </div>
-                                </div>
-                                <a href="plan-details.html"
-                                    class="block w-full border border-gray-200 bg-white text-[#1E3A6D] text-center py-3 rounded-xl font-bold text-xs hover:bg-[#1E3A6D] hover:text-white transition-colors cursor-pointer">View
-                                    Details</a>
+                                <span
+                                    class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Active</span>
                             </div>
 
-                            <!-- Card 2 (Duplicate for demo) -->
-                            <div
-                                class="bg-[#F4F8FB] rounded-lg px-3 py-5 shadow-sm border border-gray-100 mb-4 transition hover:shadow-md">
-                                <div class="flex justify-between items-start mb-5">
-                                    <div>
-                                        <h3 class="font-bold text-[#1E3A6D] text-xs">My Umrah 2025</h3>
-                                        <p class="text-xs text-[#627497] mt-1">2025-06-01</p>
-                                    </div>
-                                    <span
-                                        class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-2.5 py-1 rounded-md">Active</span>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-[11px] font-bold text-[#627497]">
+                                    <span>Progress</span>
+                                    <span class="text-primary">30%</span>
                                 </div>
-                                <div class="mb-4">
-                                    <div class="flex justify-between text-xs font-bold text-[#627497] mb-2">
-                                        <span>Progress</span>
-                                        <span>30%</span>
-                                    </div>
-                                    <div class="w-full bg-blue-100/50 rounded-full h-2">
-                                        <div class="bg-[#1E3A6D] h-2 rounded-full transition-all duration-1000"
-                                            style="width: 30%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-[10px] text-[#627497] mt-2 font-medium">
-                                        <span>PKR 150K Paid</span>
-                                        <span>Goal: 500K</span>
-                                    </div>
+                                <div class="w-full bg-gray-50 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-[#24B2B9] h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_8px_rgba(36,178,185,0.3)]"
+                                        style="width: 30%"></div>
                                 </div>
-                                <a href="plan-details.html"
-                                    class="block w-full border border-gray-200 bg-white text-[#1E3A6D] text-center py-3 rounded-xl font-bold text-xs hover:bg-[#1E3A6D] hover:text-white transition-colors cursor-pointer">View
-                                    Details</a>
+                                <div class="flex justify-between text-[11px] text-[#627497] font-medium pt-1">
+                                    <span>PKR 150,000 Paid</span>
+                                    <span class="font-bold text-gray-400">Goal: 500,000</span>
+                                </div>
                             </div>
+
+                            <a href="plan-details.html"
+                                class="block w-full bg-[#1E3A6D] text-white text-center py-3.5 rounded-3xl font-bold text-sm hover:bg-[#16315b] transition-all transform active:scale-[0.98] shadow-md shadow-blue-900/10">
+                                View Details
+                            </a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-4 transition hover:shadow-md opacity-90">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-bold text-[#1E3A6D] text-sm">Family Umrah 2025</h3>
+                                    <p class="text-[11px] text-[#627497] mt-1">15-10-2025</p>
+                                </div>
+                                <span
+                                    class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Active</span>
+                            </div>
+
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-[11px] font-bold text-[#627497]">
+                                    <span>Progress</span>
+                                    <span class="text-primary">45%</span>
+                                </div>
+                                <div class="w-full bg-gray-50 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-[#24B2B9] h-full rounded-full transition-all duration-1000 ease-out"
+                                        style="width: 45%"></div>
+                                </div>
+                                <div class="flex justify-between text-[11px] text-[#627497] font-medium pt-1">
+                                    <span>PKR 225,000 Paid</span>
+                                    <span class="font-bold text-gray-400">Goal: 500,000</span>
+                                </div>
+                            </div>
+
+                            <a href="plan-details.html"
+                                class="block w-full bg-[#1E3A6D] text-white text-center py-3.5 rounded-3xl font-bold text-sm hover:bg-[#16315b] transition-all transform active:scale-[0.98]">
+                                View Details
+                            </a>
                         </div>
                     </div>
                 </div>
-            </main <!-- Side Menu Overlay -->
+            </main>
+
+            <!-- Side Menu Overlay -->
             <div id="side-menu-overlay"
                 class="fixed inset-0 bg-black/20 z-40 hidden opacity-0 transition-opacity duration-300"></div>
 
             <!-- Side Menu Drawer -->
             <div id="side-menu"
                 class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
-                <!-- Inner Container -->
                 <div class="flex flex-col h-full relative">
-                    <!-- Close Button -->
                     <button id="menu-close-btn"
                         class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
                         <i data-lucide="x" width="24"></i>
                     </button>
-
-                    <!-- Menu Content -->
-                    <div class="mt-24 px-3 space-y-3">
+                    <div class="mt-24 px-5 space-y-3">
                         <a href="profile.html"
                             class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
                             <i data-lucide="user" width="20"></i>
                             <span class="font-medium">Profile & Settings</span>
                         </a>
-
                         <a href="support.html"
                             class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
                             <i data-lucide="help-circle" width="20"></i>
                             <span class="font-medium">Support</span>
                         </a>
-
                         <a href="terms-and-conditions.html"
                             class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
                             <i data-lucide="file-text" width="20"></i>
@@ -264,52 +227,45 @@
 
             <!-- Bottom Navigation -->
             <nav id="bottom-nav"
-                class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
+                class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
                 <div class="flex justify-between items-center pb-4 pt-2">
                     <!-- Home -->
-                    <a href="index.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
+                    <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
                             <i data-lucide="home" width="22" stroke-width="2"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                        <span class="text-[9px] font-medium tracking-wide">
                             Home
                         </span>
                     </a>
 
                     <!-- Ihram -->
-                    <a href="journey.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <img src="assets/svgs/Line.svg" class="w-4" />
+                    <a href="journey.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
+                            <i data-lucide="user-round" width="22" stroke-width="2"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
+                        <span class="text-[9px] font-medium tracking-wide">
                             Ihram
                         </span>
                     </a>
 
-                    <!-- Plans (Active) -->
-                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-accent"
-                        style="color: #26d0ce;">
-                        <div class="transition-all duration-300 -translate-y-1">
-                            <i data-lucide="calendar" width="22" stroke-width="2.5"></i>
+                    <!-- Umrah (Active) -->
+                    <button class="flex flex-col items-center space-y-1.5 w-1/4">
+                        <div class="text-white">
+                            <i data-lucide="zap" width="22" stroke-width="2.5"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-100">
+                        <span class="text-[9px] font-bold tracking-wide">
                             Umrah
                         </span>
                     </button>
 
-                    <!-- Rewards -->
-                    <a href="points.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
+                    <!-- Profile -->
+                    <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
                         </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">
-                            Rewards
+                        <span class="text-[9px] font-medium tracking-wide">
+                            Profile
                         </span>
                     </a>
                 </div>

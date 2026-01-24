@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Umrah Ihram Account | Activity History</title>
+    <meta name="description" content="View your Ihram Account activity and points history." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A6D', // Deep Blue
+                        'primary-light': '#2A4B8D',
+                        'primary-pale': '#E8EDF5',
+                        accent: '#26d0ce', // Teal Accent
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-200 font-sans">
+    <div class="min-h-screen flex justify-center">
+        <!-- Mobile Frame -->
+        <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+
+            <!-- Main Content Area -->
+            <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-gray-50 pb-20">
+                <div class="pt-6 pb-28 space-y-4 bg-white min-h-screen">
+                    <!-- Header -->
+                    <div class="flex px-4 pt-6 justify-between items-center pb-4 border-b border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <button id="menu-btn"
+                                class="w-10 h-10 rounded-full bg-[#F1F6FA] flex items-center justify-center text-primary">
+                                <i data-lucide="menu" width="20"></i>
+                            </button>
+                            <div class="w-[1px] h-6 bg-gray-200"></div>
+                            <h2 class="text-[#1E3A6D] font-bold text-[14px] tracking-tight">Your Ihram Account</h2>
+                        </div>
+                        <div class="bg-[#24B2B9] pl-3 pr-4 py-2 rounded-full flex items-center gap-1 shadow-sm">
+                            <span class="text-white font-bold text-sm leading-none">120+</span>
+                            <span class="text-white text-[10px] font-medium leading-none">Points</span>
+                        </div>
+                    </div>
+
+                    <!-- History Content -->
+                    <div class="px-4 space-y-5">
+                        <div class="flex items-center gap-3 mt-2">
+                            <a href="journey.html"
+                                class="w-8 h-8 rounded-full bg-[#1E3A6D] flex items-center justify-center text-white">
+                                <i data-lucide="chevron-left" width="20"></i>
+                            </a>
+                            <div>
+                                <h2 class="text-[17px] font-bold text-[#1E3A6D]">Barakah History</h2>
+                                <p class="text-[12px] text-[#94A3B8]">Your Journey In Points</p>
+                            </div>
+                        </div>
+
+                        <!-- Balance Card -->
+                        <div
+                            class="banner-gradient rounded-[24px] p-6 text-white shadow-lg relative overflow-hidden min-h-[140px] flex items-center">
+                            <!-- Large Icon Decoration -->
+                            <div class="absolute right-[-20px] top-1/2 -translate-y-1/2 opacity-10">
+                                <i data-lucide="history" class="w-32 h-32"></i>
+                            </div>
+
+                            <div class="relative z-10 w-full">
+                                <p class="text-xs opacity-90 mb-2">Current Sacred Balance</p>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-4xl font-bold">+1,500</span>
+                                    <span class="text-sm font-medium opacity-90">Points</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- History List Header -->
+                        <div class="flex justify-between items-center pt-2">
+                            <h3 class="text-base font-bold text-[#1E3A6D]">Transaction History</h3>
+                            <div class="relative">
+                                <select
+                                    class="text-[12px] font-bold text-[#1E3A6D] bg-white border border-gray-100 rounded-lg px-3 py-1.5 focus:outline-none shadow-sm appearance-none pr-8">
+                                    <option>This Month</option>
+                                    <option>Last Month</option>
+                                </select>
+                                <div class="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
+                                    <i data-lucide="chevron-down" width="14" class="text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- History List -->
+                        <div class="space-y-3 pb-10">
+                            <!-- Item 1 -->
+                            <div
+                                class="bg-white rounded-[20px] p-4 border border-gray-100 shadow-sm flex items-center justify-between group hover:border-primary transition-all">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-[#F8FAFC] text-[#1E3A6D] flex items-center justify-center shrink-0 shadow-sm">
+                                        <i data-lucide="history" width="20"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[14px] font-bold text-[#1E3A6D]">Niyyah Activation Bonus</h4>
+                                        <div class="flex items-center gap-2 text-[11px] text-[#94A3B8] mt-0.5">
+                                            <i data-lucide="history" width="12"></i> Just Now • Today
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[15px] font-bold text-[#1E3A6D] block">+1500</span>
+                                    <span
+                                        class="text-[10px] text-[#94A3B8] font-medium uppercase tracking-tight">Gift</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div
+                                class="bg-white rounded-[20px] p-4 border border-gray-100 shadow-sm flex items-center justify-between group hover:border-primary transition-all">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-[#F8FAFC] text-[#1E3A6D] flex items-center justify-center shrink-0 shadow-sm">
+                                        <i data-lucide="history" width="20"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[14px] font-bold text-[#1E3A6D]">Cash And Carry</h4>
+                                        <div class="flex items-center gap-2 text-[11px] text-[#94A3B8] mt-0.5">
+                                            <i data-lucide="history" width="12"></i> 02:15 PM • Oct 24, 2026
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[15px] font-bold text-[#1E3A6D] block">+56</span>
+                                    <span
+                                        class="text-[10px] text-[#94A3B8] font-medium uppercase tracking-tight">Purchase</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div
+                                class="bg-white rounded-[20px] p-4 border border-gray-100 shadow-sm flex items-center justify-between group hover:border-primary transition-all">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-[#F8FAFC] text-[#1E3A6D] flex items-center justify-center shrink-0 shadow-sm">
+                                        <i data-lucide="history" width="20"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[14px] font-bold text-[#1E3A6D]">Churn Station</h4>
+                                        <div class="flex items-center gap-2 text-[11px] text-[#94A3B8] mt-0.5">
+                                            <i data-lucide="history" width="12"></i> 10:30 AM • Oct 24, 2026
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[15px] font-bold text-[#1E3A6D] block">+500</span>
+                                    <span
+                                        class="text-[10px] text-[#94A3B8] font-medium uppercase tracking-tight">Reward</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div
+                                class="bg-white rounded-[20px] p-4 border border-gray-100 shadow-sm flex items-center justify-between group hover:border-primary transition-all">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-[#F8FAFC] text-[#1E3A6D] flex items-center justify-center shrink-0 shadow-sm">
+                                        <i data-lucide="history" width="20"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[14px] font-bold text-[#1E3A6D]">Sapphire</h4>
+                                        <div class="flex items-center gap-2 text-[11px] text-[#94A3B8] mt-0.5">
+                                            <i data-lucide="history" width="12"></i> 10:30 AM • Oct 24, 2026
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[15px] font-bold text-[#1E3A6D] block">+500</span>
+                                    <span
+                                        class="text-[10px] text-[#94A3B8] font-medium uppercase tracking-tight">Reward</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div
+                                class="bg-white rounded-[20px] p-4 border border-gray-100 shadow-sm flex items-center justify-between group hover:border-primary transition-all">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-[#F8FAFC] text-[#1E3A6D] flex items-center justify-center shrink-0 shadow-sm">
+                                        <i data-lucide="history" width="20"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[14px] font-bold text-[#1E3A6D]">Cougar</h4>
+                                        <div class="flex items-center gap-2 text-[11px] text-[#94A3B8] mt-0.5">
+                                            <i data-lucide="history" width="12"></i> 10:30 AM • Oct 24, 2026
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[15px] font-bold text-[#1E3A6D] block">+500</span>
+                                    <span
+                                        class="text-[10px] text-[#94A3B8] font-medium uppercase tracking-tight">Reward</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </main>
+
+            <!-- Side Menu Overlay -->
+            <div id="side-menu-overlay"
+                class="fixed inset-0 bg-black/20 z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+            <!-- Side Menu Drawer -->
+            <div id="side-menu"
+                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
+                <!-- Inner Container -->
+                <div class="flex flex-col h-full relative">
+                    <!-- Close Button -->
+                    <button id="menu-close-btn"
+                        class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="x" width="24"></i>
+                    </button>
+
+                    <!-- Menu Content -->
+                    <div class="mt-24 px-3 space-y-3">
+                        <a href="profile.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="user" width="20"></i>
+                            <span class="font-medium">Profile & Settings</span>
+                        </a>
+
+                        <a href="support.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="help-circle" width="20"></i>
+                            <span class="font-medium">Support</span>
+                        </a>
+
+                        <a href="terms-and-conditions.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="file-text" width="20"></i>
+                            <span class="font-medium">Terms & Conditions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Bottom Navigation -->
+            <nav id="bottom-nav"
+                class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+                <div class="flex justify-between items-center pb-4 pt-2">
+                    <!-- Home -->
+                    <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
+                            <i data-lucide="home" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide">
+                            Home
+                        </span>
+                    </a>
+
+                    <!-- Ihram (Active) -->
+                    <button class="flex flex-col items-center space-y-1.5 w-1/4">
+                        <div class="text-white">
+                            <i data-lucide="user-round" width="22" stroke-width="2.5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-wide">
+                            Ihram
+                        </span>
+                    </button>
+
+                    <!-- Umrah -->
+                    <a href="plans.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
+                            <i data-lucide="zap" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide">
+                            Umrah
+                        </span>
+                    </a>
+
+                    <!-- Profile -->
+                    <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                        <div>
+                            <i data-lucide="user" width="22" stroke-width="2"></i>
+                        </div>
+                        <span class="text-[9px] font-medium tracking-wide">
+                            Profile
+                        </span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/sidebar.js"></script>
+</body>
+
+</html>

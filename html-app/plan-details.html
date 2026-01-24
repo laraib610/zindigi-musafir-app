@@ -51,257 +51,185 @@
 
             <!-- Main Content Area -->
             <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-white pb-20">
-                <div class="bg-white">
-                    <!-- Header -->
-                    <div class="px-3 border-b border-gray-100 pb-2 pt-2">
-                        <div class="flex justify-between items-center">
-                            <h1 class="text-md font-bold text-primary">My Umrah Journey</h1>
-                            <div class="flex space-x-3">
-                                <button
-                                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-primary hover:bg-gray-50">
-                                    <i data-lucide="bell" color="black" width="20"></i>
-                                </button>
-                                <button id="menu-btn"
-                                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#627497] hover:bg-gray-50">
-                                    <i data-lucide="menu" width="20"></i>
-                                </button>
-                            </div>
-                        </div>
+                <!-- Top Header -->
+                <div class="flex px-4 pt-6 justify-between items-center pb-4 bg-white border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <button id="menu-btn"
+                            class="w-10 h-10 rounded-full bg-[#F1F6FA] flex items-center justify-center text-primary">
+                            <i data-lucide="menu" width="20"></i>
+                        </button>
+                        <div class="w-[1px] h-6 bg-gray-200"></div>
+                        <h2 class="text-[#1E3A6D] font-bold text-[14px] tracking-tight">Your Umrah Overview</h2>
+                    </div>
+                    <div class="bg-[#24B2B9] pl-3 pr-4 py-2 rounded-full flex items-center gap-1 shadow-sm">
+                        <span class="text-white font-bold text-sm leading-none">120+</span>
+                        <span class="text-white text-[10px] font-medium leading-none">Points</span>
+                    </div>
+                </div>
 
-                        <div class="flex justify-between bg-[#F4F8FB] p-1 rounded-full mt-4 mb-3 shadow-sm ">
-                            <a href="plans.html"
-                                class="px-4 py-1 rounded-full text-xs font-bold transition-all text-gray-500 hover:bg-gray-50 flex items-center">Overview</a>
-                            <button
-                                class="px-4 py-1 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md">My
-                                Umrah 2025</button>
-                            <button
-                                class="px-4 py-1 rounded-full text-xs font-bold transition-all text-gray-500 hover:bg-gray-50">Parent's
-                                Umrah</button>
-                            <!-- Link to Create Plan -->
-                            <a href="journeyForm.html"
-                                class="flex items-center justify-center bg-[#E5EDF3] px-3 ml-3 py-1 rounded-full transition-all">
-                                <i data-lucide="plus" color="#1E3A6D" width="12"></i>
-                            </a>
+                <!-- Sub Header (Sticky) -->
+                <div class="flex px-4 py-3 justify-between items-center sticky top-0 bg-white backdrop-blur-sm z-20">
+                    <div class="flex items-center gap-3">
+                        <a href="plans.html"
+                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-gray-100 transition-colors">
+                            <i data-lucide="chevron-left" width="18"></i>
+                        </a>
+                        <h1 class="text-[#1E3A6D] font-bold text-lg">Your Umrah Plans</h1>
+                    </div>
+                    <a href="journeyForm.html"
+                        class="bg-[#1E3A6D] text-white px-4 py-2 rounded-full text-xs font-bold shadow-md hover:bg-[#16315b] transition-colors flex items-center gap-1">
+                        <i data-lucide="plus" width="14"></i> New Journey
+                    </a>
+                </div>
+
+                <!-- Horizontal Tabs -->
+                <div class="px-4 mb-4">
+                    <div
+                        class="flex gap-2 overflow-x-auto no-scrollbar rounded-3xl bg-gradient-to-r from-[#F6F6F6] to-[#F6F6F6] p-2">
+                        <a href="plans.html"
+                            class="bg-white text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Overview</a>
+                        <button
+                            class="bg-[#24B2B9] text-white px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap shadow-sm">My
+                            Umrah</button>
+                        <button
+                            class="bg-white text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Parent's</button>
+                        <button
+                            class="bg-white text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Ali's
+                            Plan</button>
+                        <button
+                            class="bg-white text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Family</button>
+                    </div>
+                </div>
+
+                <!-- Journey Overview Card -->
+                <div class="px-4">
+                    <h2 class="text-sm font-bold text-[#1E3A6D] mb-6">Your Journey Overview</h2>
+
+                    <div class="bg-white rounded-2xl p-4 shadow-md border border-gray-100 mb-4">
+
+                        <div class="flex justify-between items-end">
+                            <div class="space-y-1">
+                                <p class="text-[11px] font-medium text-[#627497] uppercase tracking-wider">Total Saved
+                                </p>
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-[10px] font-bold text-[#1E3A6D]">PKR</span>
+                                    <span class="text-2xl font-black text-[#1E3A6D]">250,000</span>
+                                </div>
+                            </div>
+                            <div class="text-right space-y-1">
+                                <p class="text-[11px] font-medium text-[#627497] uppercase tracking-wider">Goal Amount
+                                </p>
+                                <div class="flex items-baseline justify-end gap-1">
+                                    <span class="text-[10px] font-bold text-[#1E3A6D]">PKR</span>
+                                    <span class="text-xl font-bold text-[#1E3A6D]">500,000</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Plan Details Content -->
-                    <div class="mb-4 p-5 rounded-lg min-h-screen flex flex-col">
-                        <div class="flex justify-between items-center mb-3">
-                            <h2 class="font-bold text-[#1E3A6D] text-sm">Family Umrah 2025</h2>
+                    <!-- Promo Banner -->
+                    <button
+                        class="w-full bg-white rounded-2xl p-4 shadow-md border border-gray-100 flex items-center justify-between mb-4 hover:bg-gray-50 transition-all active:scale-[0.98] group relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center">
+                                <i data-lucide="zap" class="text-teal-500" width="24"></i>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-sm font-bold text-[#1E3A6D]">Pay early & save 2% instantly!</h3>
+                                <p class="text-[11px] text-[#627497]">Unlock 2x Rewards & Priority</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-right" width="20"
+                            class="text-gray-300 group-hover:text-teal-500 transition-colors"></i>
+                    </button>
+
+                    <!-- Upcoming Installment Section -->
+                    <div class="bg-white rounded-2xl p-4 shadow-md border border-gray-100 mb-6">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="space-y-1">
+                                <p class="text-[11px] font-medium text-[#627497] uppercase tracking-wider">Upcoming
+                                    Installment</p>
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-[10px] font-bold text-[#1E3A6D]">PKR</span>
+                                    <span class="text-2xl font-black text-[#1E3A6D]">25,000</span>
+                                </div>
+                            </div>
+                            <div
+                                class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full flex items-center gap-1.5 shadow-sm shadow-orange-500/5">
+                                <i data-lucide="clock" width="12" stroke-width="3"></i>
+                                <span class="text-[10px] font-black uppercase tracking-wider">Due 01/11/2025</span>
+                            </div>
                         </div>
 
-                        <div class="flex justify-between bg-[#F4F8FB] rounded-xl p-4 mb-6">
-                            <div>
-                                <p class="text-[#627497] text-sm mb-1">Total Saved</p>
-                                <p class="font-bold text-sm text-[#1E3A6D]">PKR 95,000</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-[#627497] text-sm mb-1">Required Amount</p>
-                                <p class="font-bold text-sm text-[#1E3A6D]">PKR 200,000</p>
-                            </div>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button
+                                class="bg-gray-50 text-[#1E3A6D] py-3 rounded-xl text-[11px] font-bold border border-gray-100 hover:bg-gray-100 transition-colors">Skip
+                                Month</button>
+                            <button onclick="openManageInstallmentModal()"
+                                class="bg-gray-50 text-[#1E3A6D] py-3 rounded-xl text-[11px] font-bold border border-gray-100 hover:bg-gray-100 transition-colors">Merge
+                                & Pay</button>
+                            <button onclick="openPayNowModal()"
+                                class="bg-[#1E3A6D] text-white py-3 rounded-xl text-[11px] font-bold hover:bg-[#16315b] transition-all shadow-lg shadow-blue-900/10">Pay
+                                Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Installment Timeline -->
+                    <div class="space-y-4 shadow-md p-4 rounded-2xl">
+                        <div class="flex justify-between items-center px-1">
+                            <h3 class="text-sm font-bold text-[#1E3A6D]">Installment Timeline</h3>
+                            <button
+                                class="flex items-center gap-1.5 text-[11px] font-bold text-[#627497] bg-white px-3 py-1.5 rounded-lg border border-gray-100 shadow-sm">
+                                This Month <i data-lucide="chevron-down" width="14"></i>
+                            </button>
                         </div>
 
-                        <div class="bg-[#F4F8FB] p-4 rounded-xl mb-6">
-                            <div class="flex justify-between items-center mb-4">
-                                <div class="flex items-center space-x-3">
-                                    <img src="assets/svgs/fast.svg" alt="Progress" class="w-10 h-10"
-                                        onerror="this.src='https://placehold.co/64x64?text=Progress'">
+                        <!-- Timeline Item 1 -->
+                        <div
+                            class="bg-[#F7F7F7] rounded-2xl p-4 shadow-sm border border-gray-100 hover:border-teal-100 transition-colors">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center">
+                                        <i data-lucide="check" class="text-teal-500" width="20" stroke-width="3"></i>
+                                    </div>
                                     <div>
-                                        <h3 class="font-bold text-sm text-[#1E3A6D] m-0">Pay early & save 2% instantly!
-                                        </h3>
-                                        <span class="text-xs text-[#627497]">Unlock 2x Rewards & Priority</span>
+                                        <h4 class="text-sm font-bold text-[#1E3A6D]">Cash And Carry</h4>
+                                        <p class="text-[11px] text-[#627497]">01-03-2026</p>
                                     </div>
                                 </div>
-                                <img src="assets/svgs/ArrowRight.svg" alt="Rewards" class="w-5 h-5"
-                                    onerror="this.src='https://placehold.co/64x64?text=Rewards'">
-                            </div>
-                            <div class="flex justify-between items-center mb-3">
-                                <div>
-                                    <p class="text-[#627497] text-sm font-semibold mb-1">Upcoming payment</p>
-                                    <p class="text-[#1E3A6D] font-bold text-md">PKR 25,000</p>
+                                <div class="text-right">
+                                    <span
+                                        class="text-[10px] font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Paid</span>
+                                    <p class="text-xs font-black text-[#1E3A6D]">PKR 25,000</p>
                                 </div>
-                                <div class="flex flex-col justify-center items-end text-right">
-                                    <div
-                                        class="h-min text-[9px] text-right rounded-md text-[#DC6E2A] bg-[#FFEADC] px-1 py-0 flex justify-end items-center gap-1">
-                                        <i data-lucide="clock" color="#DC6E2A" width="10"></i> Due 11/11/2025
-                                    </div>
-                                    <button onclick="openEditScheduleModal()"
-                                        class="mt-2 bg-[#F1FDFA] border border-[#24B3BA] rounded-xl py-1 px-3 text-xs font-semibold text-[#24B3BA] hover:bg-gray-50">Edit
-                                        Schedule</button>
-                                </div>
-                            </div>
-                            <div class="flex justify-between space-x-2 pt-4">
-                                <button
-                                    class="bg-transparent border border-[#DFE8EE] rounded-xl py-3 px-6 text-xs font-semibold text-[#1E3A6D] hover:bg-gray-50">Skip
-                                    Month</button>
-                                <button onclick="openManageInstallmentModal()"
-                                    class="bg-[#E7EDF1] border border-[#DFE8EE] rounded-xl py-3 px-6 text-xs font-semibold text-[#1E3A6D] hover:bg-gray-50">Merge
-                                    & Pay</button>
-                                <button onclick="openPayNowModal()"
-                                    class="bg-primary text-white rounded-xl py-3 px-6 font-semibold text-xs hover:bg-[#16315b]">Pay
-                                    Now</button>
                             </div>
                         </div>
 
-                        <div>
-                            <h3 class="font-bold text-[#1E3A6D] mb-4">Transaction History</h3>
-                            <!-- Transaction 1 -->
-                            <div class="flex justify-between items-start">
-                                <div class="w-5 -translate-y-3">
-                                    <img src="assets/svgs/check.svg" alt="check" class="translate-y-12 w-3 h-3">
-                                    <div class="border-l-2 border-dashed  h-20 ml-1"></div>
-                                </div>
-                                <div class="w-96 mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <p class="font-semibold text-sm text-[#1E3A6D] mb-1">Initial Deposit</p>
-                                            <p class="text-[#627497] text-xs ">2024-01-15</p>
-                                        </div>
-                                        <div>
-                                            <div
-                                                class="w-100 text-xs text-right flex flex-col items-end justify-end gap-2">
-                                                <div
-                                                    class="mb-1 text-[9px] flex items-center justify-end gap-2 px-1 text-[#41AB13] bg-[#E6FBDE] font-semibold">
-                                                    <i data-lucide="check" color="#41AB13" width="10"></i>Paid
-                                                </div>
-                                            </div>
-                                            <p class="font-bold text-xs text-right text-[#24B3BA]">PKR 50,000</p>
-                                        </div>
+                        <!-- Timeline Item 2 -->
+                        <div
+                            class="bg-[#F7F7F7] rounded-2xl p-4 shadow-sm border border-gray-100 hover:border-teal-100 transition-colors opacity-80">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center">
+                                        <i data-lucide="check" class="text-teal-500" width="20" stroke-width="3"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-[#1E3A6D]">February</h4>
+                                        <p class="text-[11px] text-[#627497]">01-02-2026</p>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Transaction 2 -->
-                            <div class="flex justify-between items-start">
-                                <div class="w-5 -translate-y-3">
-                                    <img src="assets/svgs/check.svg" alt="check" class="translate-y-12 w-3 h-3">
-                                    <div class="border-l-2 border-dashed h-20 ml-1"></div>
-                                </div>
-                                <div class="w-96 mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <p class="font-semibold text-sm text-[#1E3A6D] mb-1">January</p>
-                                            <p class="text-[#627497] text-xs ">2024-02-15</p>
-                                        </div>
-                                        <div>
-                                            <div
-                                                class="w-100 text-xs text-right flex flex-col items-end justify-end gap-2">
-                                                <div
-                                                    class="text-[9px] flex mb-1 items-center justify-end gap-2 px-1 text-[#41AB13] bg-[#E6FBDE] font-semibold">
-                                                    <i data-lucide="check" color="#41AB13" width="10"></i>Paid
-                                                </div>
-                                            </div>
-                                            <p class="font-bold text-xs text-right text-[#24B3BA]">PKR 45,000</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex justify-between items-start">
-                                <div class="w-5 -translate-y-3">
-                                    <img src="assets/svgs/check.svg" alt="check" class="translate-y-12 w-3 h-3">
-                                    <div class="border-l-2 border-dashed h-20 ml-1"></div>
-                                </div>
-                                <div class="w-96 mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <p class="font-semibold text-sm text-[#1E3A6D] mb-1">February</p>
-                                            <p class="text-[#627497] text-xs ">2024-02-15</p>
-                                        </div>
-                                        <div>
-                                            <div
-                                                class="w-100 text-xs text-right flex flex-col items-end justify-end gap-2 ">
-                                                <div
-                                                    class="text-[9px] w-max mb-1 flex items-center justify-end gap-2 px-1 text-[#41AB13] bg-[#E6FBDE] font-semibold">
-                                                    <i data-lucide="check" color="#41AB13" width="10"></i>Paid
-                                                </div>
-                                            </div>
-                                            <p class="font-bold text-xs text-right text-[#24B3BA]">PKR 45,000</p>
-                                        </div>
-                                    </div>
+                                <div class="text-right">
+                                    <span
+                                        class="text-[10px] font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Paid</span>
+                                    <p class="text-xs font-black text-[#1E3A6D]">PKR 25,000</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </main>
-
-            <!-- Side Menu Overlay -->
-            <div id="side-menu-overlay"
-                class="fixed inset-0 bg-black/20 z-40 hidden opacity-0 transition-opacity duration-300"></div>
-
-            <!-- Side Menu Drawer -->
-            <div id="side-menu"
-                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
-                <!-- Inner Container -->
-                <div class="flex flex-col h-full relative">
-                    <!-- Close Button -->
-                    <button id="menu-close-btn"
-                        class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
-                        <i data-lucide="x" width="24"></i>
-                    </button>
-
-                    <!-- Menu Content -->
-                    <div class="mt-24 px-3 space-y-3">
-                        <a href="profile.html"
-                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
-                            <i data-lucide="user" width="20"></i>
-                            <span class="font-medium">Profile & Settings</span>
-                        </a>
-
-                        <a href="support.html"
-                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
-                            <i data-lucide="help-circle" width="20"></i>
-                            <span class="font-medium">Support</span>
-                        </a>
-
-                        <a href="terms-and-conditions.html"
-                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
-                            <i data-lucide="file-text" width="20"></i>
-                            <span class="font-medium">Terms & Conditions</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Navigation -->
-            <nav id="bottom-nav"
-                class="fixed bottom-0 left-0 right-0 bg-primary text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-2xl shadow-2xl">
-                <div class="flex justify-between items-center pb-4 pt-2">
-                    <a href="index.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="home" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">Home</span>
-                    </a>
-                    <a href="journey.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <img src="assets/svgs/Line.svg" class="w-4" />
-
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">Ihram</span>
-                    </a>
-                    <!-- Active -->
-                    <button class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-accent"
-                        style="color: #26d0ce;">
-                        <div class="transition-all duration-300 -translate-y-1">
-                            <i data-lucide="calendar" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-100">Umrah</span>
-                    </button>
-                    <a href="points.html"
-                        class="flex flex-col items-center space-y-1.5 transition-all duration-300 w-1/4 text-blue-200"
-                        style="color: #bfdbfe;">
-                        <div class="transition-all duration-300">
-                            <i data-lucide="trophy" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide opacity-70">Rewards</span>
-                    </a>
-                </div>
-            </nav>
 
             <!-- Edit Schedule Modal -->
             <div id="edit-schedule-modal"
@@ -397,10 +325,10 @@
 
             <!-- Merge Installments Modal -->
             <div id="manage-installment-modal"
-                class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center z-50">
-                <div class="px-3 w-full flex justify-center">
+                class="fixed inset-0 bg-black/40 hidden flex items-center justify-center z-[60] backdrop-blur-sm">
+                <div class="px-5 w-full flex justify-center">
                     <div
-                        class="bg-white rounded-2xl p-4 relative w-full max-w-sm shadow-2xl transition-all duration-300">
+                        class="bg-white rounded-3xl p-6 relative w-full max-w-sm shadow-2xl transition-all duration-300">
                         <!-- Close Icon -->
                         <button onclick="closeManageInstallmentModal()"
                             class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors">
@@ -409,117 +337,113 @@
 
                         <!-- Header -->
                         <div class="mb-2">
-                            <h2 class="text-sm font-bold text-[#1E3A6D]">Merge Installments</h2>
+                            <h2 class="text-lg font-bold text-[#1E3A6D]">Merge Installments</h2>
                         </div>
                         <p class="text-xs text-[#627497] mb-6 leading-relaxed">
-                            Selected upcoming installments will be merged into one payment, and your plan will be
-                            updated.
+                            Two upcoming installments will be merged into one payment and your plan will be updated.
                         </p>
 
-                        <div class="bg-[#F8FAFC] rounded-2xl p-3 mb-6">
+                        <div class="bg-gray-50/50 rounded-2xl p-4 mb-6 border border-gray-100">
                             <!-- List Header -->
                             <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-semibold text-[#627497]">Upcoming Months</span>
+                                <span class="text-[11px] font-bold text-[#627497] uppercase tracking-wider">Upcoming
+                                    Months</span>
                                 <button onclick="togglePayAllRemaining()"
-                                    class="text-xs font-bold text-[#24B3BA] hover:underline transition-all">Pay All
-                                    Remaining</button>
+                                    class="text-[11px] font-bold text-[#24B2B9] hover:underline uppercase tracking-wider">Pay
+                                    All Remaining</button>
                             </div>
 
                             <!-- Installment List -->
-                            <div class="space-y-2 mb-4 max-h-[220px] overflow-y-auto no-scrollbar pr-1">
-                                <!-- Month 1 -->
+                            <div class="space-y-2 mb-6 max-h-[180px] overflow-y-auto no-scrollbar pr-1">
+                                <!-- Items -->
                                 <div onclick="toggleInstallment(this)"
-                                    class="installment-row border border-[#DFE8EE] rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B3BA]"
+                                    class="installment-row bg-white border border-gray-100 rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B2B9]"
                                     data-amount="5000">
                                     <div class="flex items-center gap-3">
                                         <div
-                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
-                                            <i data-lucide="check" class="text-white" width="12"></i>
+                                            class="checkbox-wrapper w-5 h-5 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all bg-white">
+                                            <i data-lucide="check" class="text-white hidden" width="12"
+                                                stroke-width="4"></i>
                                         </div>
-                                        <div>
-                                            <p class="text-xs font-bold text-[#1E3A6D]">January 2026</p>
-                                            <p class="text-[10px] text-[#627497]">Month 1</p>
-                                        </div>
+                                        <span class="text-sm font-bold text-[#1E3A6D]">January 2026</span>
                                     </div>
-                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
-                                </div>
-
-                                <!-- Month 2 -->
-                                <div onclick="toggleInstallment(this)"
-                                    class="installment-row border border-[#DFE8EE] rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B3BA]"
-                                    data-amount="5000">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
-                                            <i data-lucide="check" class="text-white" width="12"></i>
-                                        </div>
-                                        <div>
-                                            <p class="text-xs font-bold text-[#1E3A6D]">February 2026</p>
-                                            <p class="text-[10px] text-[#627497]">Month 1</p>
-                                        </div>
-                                    </div>
-                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
-                                </div>
-
-                                <!-- Month 3 -->
-                                <div onclick="toggleInstallment(this)"
-                                    class="installment-row border border-[#DFE8EE] rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B3BA]"
-                                    data-amount="5000">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
-                                            <i data-lucide="check" class="text-white" width="12"></i>
-                                        </div>
-                                        <div>
-                                            <p class="text-xs font-bold text-[#1E3A6D]">March 2026</p>
-                                            <p class="text-[10px] text-[#627497]">Month 1</p>
-                                        </div>
-                                    </div>
-                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
+                                    <span class="text-sm font-bold text-[#1E3A6D]">5,000</span>
                                 </div>
                                 <div onclick="toggleInstallment(this)"
-                                    class="installment-row border border-[#DFE8EE] rounded-lg p-2 flex items-center justify-between cursor-pointer transition-all hover:border-[#DFE8EE] "
+                                    class="installment-row bg-white border border-gray-100 rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B2B9]"
                                     data-amount="5000">
                                     <div class="flex items-center gap-3">
                                         <div
-                                            class="checkbox-wrapper w-4 h-4 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all">
-                                            <i data-lucide="check" class="text-white" width="12"></i>
+                                            class="checkbox-wrapper w-5 h-5 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all bg-white">
+                                            <i data-lucide="check" class="text-white hidden" width="12"
+                                                stroke-width="4"></i>
                                         </div>
-                                        <div>
-                                            <p class="text-xs font-bold text-[#1E3A6D]">April 2026</p>
-                                            <p class="text-[10px] text-[#627497]">Month 1</p>
-                                        </div>
+                                        <span class="text-sm font-bold text-[#1E3A6D]">February 2026</span>
                                     </div>
-                                    <p class="text-xs font-bold text-[#1E3A6D]">5,000</p>
+                                    <span class="text-sm font-bold text-[#1E3A6D]">5,000</span>
+                                </div>
+                                <div onclick="toggleInstallment(this)"
+                                    class="installment-row bg-white border border-gray-100 rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all hover:border-[#24B2B9]"
+                                    data-amount="5000">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="checkbox-wrapper w-5 h-5 rounded-full border-2 border-gray-200 flex items-center justify-center transition-all bg-white">
+                                            <i data-lucide="check" class="text-white hidden" width="12"
+                                                stroke-width="4"></i>
+                                        </div>
+                                        <span class="text-sm font-bold text-[#1E3A6D]">March 2026</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-[#1E3A6D]">5,000</span>
                                 </div>
                             </div>
 
-                            <!-- Summary -->
-                            <div class="flex justify-between items-center pt-2 border-t border-gray-100">
-                                <span class="text-xs font-bold text-[#1E3A6D]">Total merged amount:</span>
-                                <span id="merged-total-display" class="text-md font-bold text-[#24B3BA]">PKR
-                                    15,000</span>
+                            <!-- Points Toggle -->
+                            <div class="bg-[#24B2B9] rounded-xl p-3 mb-6 flex justify-between items-center text-white">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                                        <i data-lucide="crown" width="18"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold">Use Ihram Points</p>
+                                        <p class="text-[10px] opacity-80">Available Points: 1249</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative inline-block w-8 h-4 align-middle select-none transition duration-200 ease-in">
+                                    <input type="checkbox" name="points" id="points-toggle"
+                                        class="absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer border-transparent checked:right-0 right-4" />
+                                    <label for="points-toggle"
+                                        class="block overflow-hidden h-4 rounded-full bg-white/20 cursor-pointer"></label>
+                                </div>
+                            </div>
+
+                            <!-- Total -->
+                            <div class="flex justify-between items-center py-2 border-t border-gray-100 pt-4">
+                                <span class="text-sm font-bold text-[#1E3A6D]">Total merged amount:</span>
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-[10px] font-bold text-teal-600">PKR</span>
+                                    <span id="merged-total-display"
+                                        class="text-xl font-black text-teal-600">15,000</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Info Note -->
-                        <div class="lucky-draw border border-[#D1FAE5] rounded-xl p-3 mb-6">
-                            <p class="text-[10px] text-[#065F46] leading-relaxed">
-                                <span class="font-bold">Note:</span> The payment schedule and future installments will
-                                automatically adjust after this payment is confirmed.
-                            </p>
+                        <!-- Terms -->
+                        <div class="flex items-center gap-3 mb-6 px-1">
+                            <input type="checkbox" id="terms-check"
+                                class="w-4 h-4 rounded border-gray-300 text-[#1E3A6D] focus:ring-[#1E3A6D]">
+                            <label for="terms-check" class="text-[11px] text-[#627497]">I agree to the <a
+                                    href="terms-and-conditions.html" class="text-[#1E3A6D] underline">terms &
+                                    conditions</a>.</label>
                         </div>
 
-                        <!-- Buttons Row -->
-                        <div class="flex gap-3">
+                        <!-- Buttons -->
+                        <div class="grid grid-cols-2 gap-3">
                             <button onclick="closeManageInstallmentModal()"
-                                class="flex-1 border border-gray-200 text-[#627497] py-3 rounded-xl font-bold text-sm hover:bg-gray-50 transition">
-                                Cancel
-                            </button>
+                                class="py-3.5 rounded-xl font-bold text-sm text-[#627497] border border-gray-200 hover:bg-gray-50 transition-colors uppercase tracking-wider">Cancel</button>
                             <button onclick="proceedToOTP()"
-                                class="flex-1 bg-[#1E3A6D] text-white py-3 rounded-xl font-bold text-sm hover:bg-[#16315b] transition shadow-lg shadow-blue-900/20">
-                                Pay Securely
-                            </button>
+                                class="py-3.5 rounded-xl font-bold text-sm text-white bg-[#1E3A6D] hover:bg-[#16315b] transition-all shadow-lg shadow-blue-900/10 uppercase tracking-wider">Pay
+                                Securely</button>
                         </div>
                     </div>
                 </div>
@@ -614,109 +538,187 @@
                 </div>
             </div>
 
+            </main>
+
+            <!-- Side Menu Overlay -->
+            <div id="side-menu-overlay"
+                class="fixed inset-0 bg-black/20 z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+            <!-- Side Menu Drawer -->
+            <div id="side-menu"
+                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
+                <div class="flex flex-col h-full relative">
+                    <button id="menu-close-btn"
+                        class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="x" width="24"></i>
+                    </button>
+                    <div class="mt-24 px-5 space-y-3">
+                        <a href="profile.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="user" width="20"></i>
+                            <span class="font-medium">Profile & Settings</span>
+                        </a>
+                        <a href="support.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="help-circle" width="20"></i>
+                            <span class="font-medium">Support</span>
+                        </a>
+                        <a href="terms-and-conditions.html"
+                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
+                            <i data-lucide="file-text" width="20"></i>
+                            <span class="font-medium">Terms & Conditions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <script>
-        // Sample Installments Data
-        const installments = [
-            { id: 1, date: "2024-09-01", amount: 5000, status: "paid", month: "January" },
-            { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid", month: "February" },
-            { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid", month: "March" }
-        ];
+        <!-- Bottom Navigation -->
+        <nav id="bottom-nav"
+            class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+            <div class="flex justify-between items-center pb-4 pt-2">
+                <!-- Home -->
+                <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                    <div>
+                        <i data-lucide="home" width="22" stroke-width="2"></i>
+                    </div>
+                    <span class="text-[9px] font-medium tracking-wide">
+                        Home
+                    </span>
+                </a>
 
-        function openEditScheduleModal() {
-            renderInstallments();
-            document.getElementById("edit-schedule-modal").classList.remove("hidden");
-        }
+                <!-- Ihram -->
+                <a href="journey.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                    <div>
+                        <i data-lucide="user-round" width="22" stroke-width="2"></i>
+                    </div>
+                    <span class="text-[9px] font-medium tracking-wide">
+                        Ihram
+                    </span>
+                </a>
 
-        function closeEditScheduleModal() {
-            document.getElementById("edit-schedule-modal").classList.add("hidden");
-        }
+                <!-- Umrah (Active) -->
+                <button class="flex flex-col items-center space-y-1.5 w-1/4">
+                    <div class="text-white">
+                        <i data-lucide="zap" width="22" stroke-width="2.5"></i>
+                    </div>
+                    <span class="text-[9px] font-bold tracking-wide">
+                        Umrah
+                    </span>
+                </button>
 
-        function openPayNowModal() {
-            document.getElementById("pay-now-modal").classList.remove("hidden");
-        }
+                <!-- Profile -->
+                <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                    <div>
+                        <i data-lucide="user" width="22" stroke-width="2"></i>
+                    </div>
+                    <span class="text-[9px] font-medium tracking-wide">
+                        Profile
+                    </span>
+                </a>
+            </div>
+        </nav>
 
-        function closePayNowModal() {
-            document.getElementById("pay-now-modal").classList.add("hidden");
-        }
+        <script>
+            // Sample Installments Data
+            const installments = [
+                { id: 1, date: "2024-09-01", amount: 5000, status: "paid", month: "January" },
+                { id: 2, date: "2024-10-01", amount: 5000, status: "unpaid", month: "February" },
+                { id: 3, date: "2024-11-01", amount: 5000, status: "unpaid", month: "March" }
+            ];
 
-        function openManageInstallmentModal() {
-            document.getElementById("manage-installment-modal").classList.remove("hidden");
-            // Reset state
-            const rows = document.querySelectorAll('.installment-row');
-            rows.forEach(r => r.classList.remove('selected'));
-            updateMergedTotal();
-        }
+            function openEditScheduleModal() {
+                renderInstallments();
+                document.getElementById("edit-schedule-modal").classList.remove("hidden");
+            }
 
-        function toggleInstallment(element) {
-            lucide.createIcons();
-            element.classList.toggle('selected');
-            updateMergedTotal();
-        }
+            function closeEditScheduleModal() {
+                document.getElementById("edit-schedule-modal").classList.add("hidden");
+            }
 
-        function togglePayAllRemaining() {
-            const rows = document.querySelectorAll('.installment-row');
-            const allSelected = Array.from(rows).every(r => r.classList.contains('selected'));
+            function openPayNowModal() {
+                document.getElementById("pay-now-modal").classList.remove("hidden");
+            }
 
-            rows.forEach(r => {
-                if (allSelected) {
-                    r.classList.remove('selected');
-                } else {
-                    r.classList.add('selected');
-                    lucide.createIcons();
-                }
-            });
-            updateMergedTotal();
-        }
+            function closePayNowModal() {
+                document.getElementById("pay-now-modal").classList.add("hidden");
+            }
 
-        function updateMergedTotal() {
-            const selectedRows = document.querySelectorAll('.installment-row.selected');
-            let total = 0;
-            selectedRows.forEach(row => {
-                total += parseInt(row.dataset.amount);
-            });
+            function openManageInstallmentModal() {
+                document.getElementById("manage-installment-modal").classList.remove("hidden");
+                // Reset state
+                const rows = document.querySelectorAll('.installment-row');
+                rows.forEach(r => r.classList.remove('selected'));
+                updateMergedTotal();
+            }
 
-            document.getElementById('merged-total-display').innerText = `PKR ${total.toLocaleString()}`;
-        }
+            function toggleInstallment(element) {
+                lucide.createIcons();
+                element.classList.toggle('selected');
+                updateMergedTotal();
+            }
 
-        function closeManageInstallmentModal() {
-            document.getElementById("manage-installment-modal").classList.add("hidden");
-        }
+            function togglePayAllRemaining() {
+                const rows = document.querySelectorAll('.installment-row');
+                const allSelected = Array.from(rows).every(r => r.classList.contains('selected'));
 
-        function proceedToOTP() {
-            closeManageInstallmentModal();
-            setTimeout(() => {
-                document.getElementById("otp-modal").classList.remove("hidden");
-            }, 100);
-        }
+                rows.forEach(r => {
+                    if (allSelected) {
+                        r.classList.remove('selected');
+                    } else {
+                        r.classList.add('selected');
+                        lucide.createIcons();
+                    }
+                });
+                updateMergedTotal();
+            }
 
-        function backToMergeModal() {
-            document.getElementById("otp-modal").classList.add("hidden");
-            setTimeout(() => {
-                openManageInstallmentModal();
-            }, 100);
-        }
+            function updateMergedTotal() {
+                const selectedRows = document.querySelectorAll('.installment-row.selected');
+                let total = 0;
+                selectedRows.forEach(row => {
+                    total += parseInt(row.dataset.amount);
+                });
 
-        function confirmPayment() {
-            document.getElementById("otp-modal").classList.add("hidden");
-            setTimeout(() => {
-                document.getElementById("success-modal").classList.remove("hidden");
-            }, 100);
-        }
+                document.getElementById('merged-total-display').innerText = `PKR ${total.toLocaleString()}`;
+            }
 
-        function closeAllModals() {
-            document.getElementById("manage-installment-modal").classList.add("hidden");
-            document.getElementById("otp-modal").classList.add("hidden");
-            document.getElementById("success-modal").classList.add("hidden");
-            document.getElementById("pay-now-modal").classList.add("hidden");
-            document.getElementById("edit-schedule-modal").classList.add("hidden");
-        }
+            function closeManageInstallmentModal() {
+                document.getElementById("manage-installment-modal").classList.add("hidden");
+            }
 
-        function renderInstallments() {
-            const container = document.getElementById("installment-list");
-            container.innerHTML = installments.map((i, index) => `
+            function proceedToOTP() {
+                closeManageInstallmentModal();
+                setTimeout(() => {
+                    document.getElementById("otp-modal").classList.remove("hidden");
+                }, 100);
+            }
+
+            function backToMergeModal() {
+                document.getElementById("otp-modal").classList.add("hidden");
+                setTimeout(() => {
+                    openManageInstallmentModal();
+                }, 100);
+            }
+
+            function confirmPayment() {
+                document.getElementById("otp-modal").classList.add("hidden");
+                setTimeout(() => {
+                    document.getElementById("success-modal").classList.remove("hidden");
+                }, 100);
+            }
+
+            function closeAllModals() {
+                document.getElementById("manage-installment-modal").classList.add("hidden");
+                document.getElementById("otp-modal").classList.add("hidden");
+                document.getElementById("success-modal").classList.add("hidden");
+                document.getElementById("pay-now-modal").classList.add("hidden");
+                document.getElementById("edit-schedule-modal").classList.add("hidden");
+            }
+
+            function renderInstallments() {
+                const container = document.getElementById("installment-list");
+                container.innerHTML = installments.map((i, index) => `
                 <div class=" mb-4 p-4 rounded-xl bg-[#F4F8FB] shadow-sm">
                     <div class="flex justify-between mb-2 items-center">
                         <div>
@@ -739,11 +741,12 @@
                     </div>
                 </div>
             `).join('');
-            lucide.createIcons(); // Re-render icons for injected content
-        }
+                lucide.createIcons(); // Re-render icons for injected content
+            }
 
-        lucide.createIcons();
-    </script>
+            lucide.createIcons();
+        </script>
+        <script src="js/sidebar.js"></script>
 </body>
 
 </html>

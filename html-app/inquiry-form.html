@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Inquiry Form - Zindigi Musafir</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A6D', // Deep Blue
+                        'primary-light': '#2A4B8D',
+                        accent: '#24B2B9', // Teal
+                        'accent-light': '#E9F7F8',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .step-transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #24B2B9;
+        }
+
+        .shadow-premium {
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 109, 0.05);
+        }
+
+        /* Hide icons by default */
+        .month-item .month-check,
+        .city-card .city-check {
+            display: none !important;
+        }
+
+        /* Show icons when active */
+        .month-item.active-month .month-check,
+        .city-card.active-city .city-check,
+        .budget-card.active-budget .budget-check {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex justify-center">
+    <!-- Mobile Frame -->
+    <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-hidden flex flex-col">
+
+        <!-- Header -->
+        <header class="flex px-4 pt-6 justify-between items-center pb-4 border-b border-gray-100 bg-white">
+            <div class="flex items-center gap-3">
+                <button class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-primary">
+                    <i data-lucide="menu" width="20"></i>
+                </button>
+                <div class="w-[1px] h-6 bg-gray-200"></div>
+                <h2 class="text-primary font-bold text-[14px] tracking-tight">Begin Your Umrah Journey</h2>
+            </div>
+            <div class="bg-accent pl-3 pr-4 py-2 rounded-full flex items-center gap-1 shadow-sm">
+                <span class="text-white font-bold text-sm leading-none">120+</span>
+                <span class="text-white text-[10px] font-medium leading-none">Points</span>
+            </div>
+        </header>
+
+        <!-- Stepper Indicators -->
+        <div id="stepper" class="px-4 py-4 bg-white border-b border-gray-50">
+            <div class="flex justify-between items-center relative gap-2 overflow-x-auto no-scrollbar pb-2">
+                <div class="step-label flex flex-col items-center gap-1 min-w-[60px]" data-step="1">
+                    <span class="text-[10px] font-bold text-accent">Contact</span>
+                    <div class="h-1 w-full bg-accent rounded-full"></div>
+                </div>
+                <div class="step-label flex flex-col items-center gap-1 min-w-[60px]" data-step="2">
+                    <span class="text-[10px] font-bold text-gray-300">Pilgrims</span>
+                    <div class="h-1 w-full bg-gray-100 rounded-full"></div>
+                </div>
+                <div class="step-label flex flex-col items-center gap-1 min-w-[60px]" data-step="3">
+                    <span class="text-[10px] font-bold text-gray-300">Month</span>
+                    <div class="h-1 w-full bg-gray-100 rounded-full"></div>
+                </div>
+                <div class="step-label flex flex-col items-center gap-1 min-w-[60px]" data-step="4">
+                    <span class="text-[10px] font-bold text-gray-300">City</span>
+                    <div class="h-1 w-full bg-gray-100 rounded-full"></div>
+                </div>
+                <div class="step-label flex flex-col items-center gap-1 min-w-[60px]" data-step="5">
+                    <span class="text-[10px] font-bold text-gray-300">Budget</span>
+                    <div class="h-1 w-full bg-gray-100 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Content -->
+        <main class="flex-1 p-6 bg-[#FAFCFF] overflow-y-auto no-scrollbar pb-24">
+            <!-- Step Header (Back Button + Title) -->
+            <div id="step-header" class="flex items-center gap-4 mb-6">
+                <button id="back-btn"
+                    class="w-8 h-8 rounded-full bg-[#1E3A6D] flex items-center justify-center text-white shadow-md">
+                    <i data-lucide="chevron-left" width="18"></i>
+                </button>
+                <h1 id="step-title" class="text-[#1E3A6D] font-bold text-[18px]">Enter Your Contact Details</h1>
+            </div>
+
+            <!-- STEP 1: CONTACT DETAILS -->
+            <div id="step-1" class="step-content space-y-4">
+                <div class="bg-white rounded-3xl p-5 border border-blue-50/50 shadow-sm space-y-4">
+                    <!-- Name Box -->
+                    <div
+                        class="bg-[#F3F4F6] rounded-2xl p-4 transition-all focus-within:ring-1 focus-within:ring-accent/30">
+                        <label class="block text-[13px] font-bold text-[#1E3A6D] mb-1">Enter your full name</label>
+                        <input type="text" placeholder="e.g. Ali"
+                            class="w-full bg-transparent text-sm font-medium text-primary placeholder:text-gray-300 focus:outline-none">
+                    </div>
+
+                    <!-- Phone Box -->
+                    <div class="flex gap-3">
+                        <!-- Flag Selector -->
+                        <div
+                            class="bg-[#F3F4F6] rounded-2xl p-4 flex items-center gap-2 cursor-pointer border border-transparent">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg"
+                                class="w-5 h-5 rounded-sm object-cover" alt="PK">
+                            <span class="text-sm font-bold text-primary">+92</span>
+                            <i data-lucide="chevron-down" width="16" class="text-primary opacity-60"></i>
+                        </div>
+                        <!-- Phone Input -->
+                        <div
+                            class="flex-1 bg-[#F3F4F6] rounded-2xl p-4 focus-within:ring-1 focus-within:ring-accent/30">
+                            <label class="block text-[13px] font-bold text-[#1E3A6D] mb-1">Your Phone Number</label>
+                            <input type="tel" placeholder="3095584622"
+                                class="w-full bg-transparent text-sm font-medium text-primary placeholder:text-gray-300 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Email Box -->
+                    <div class="bg-[#F3F4F6] rounded-2xl p-4 focus-within:ring-1 focus-within:ring-accent/30">
+                        <label class="block text-[13px] font-bold text-[#1E3A6D] mb-1">Enter your email address</label>
+                        <input type="email" placeholder="e.g. abdk232@gmail.com"
+                            class="w-full bg-transparent text-sm font-medium text-primary placeholder:text-gray-300 focus:outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: PILGRIMS -->
+            <div id="step-2" class="step-content hidden space-y-4">
+                <div class="bg-white rounded-3xl p-5 border border-blue-50/50 shadow-sm space-y-4">
+                    <!-- Adults -->
+                    <div class="bg-[#F3F4F6] rounded-2xl p-4 flex justify-between items-center">
+                        <div>
+                            <p class="text-[14px] font-bold text-[#1E3A6D]">Adults</p>
+                            <p class="text-[11px] text-gray-400">12+ years</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button
+                                class="w-7 h-7 rounded-full border border-accent flex items-center justify-center text-accent bg-white"
+                                onclick="changeCount('adults', -1)">
+                                <i data-lucide="minus" width="14" stroke-width="4"></i>
+                            </button>
+                            <span id="count-adults"
+                                class="w-7 h-7 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold shadow-sm">1</span>
+                            <button
+                                class="w-7 h-7 rounded-full border border-accent flex items-center justify-center text-accent bg-white"
+                                onclick="changeCount('adults', 1)">
+                                <i data-lucide="plus" width="14" stroke-width="4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Children -->
+                    <div class="bg-[#F3F4F6] rounded-2xl p-4 flex justify-between items-center">
+                        <div>
+                            <p class="text-[14px] font-bold text-[#1E3A6D]">Children</p>
+                            <p class="text-[11px] text-gray-400">2 to 11 years</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button
+                                class="w-7 h-7 rounded-full border border-accent flex items-center justify-center text-accent bg-white"
+                                onclick="changeCount('children', -1)">
+                                <i data-lucide="minus" width="14" stroke-width="4"></i>
+                            </button>
+                            <span id="count-children"
+                                class="w-7 h-7 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold shadow-sm">0</span>
+                            <button
+                                class="w-7 h-7 rounded-full border border-accent flex items-center justify-center text-accent bg-white"
+                                onclick="changeCount('children', 1)">
+                                <i data-lucide="plus" width="14" stroke-width="4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Infants -->
+                    <div class="bg-[#F3F4F6] rounded-2xl p-4 flex justify-between items-center">
+                        <div>
+                            <p class="text-[14px] font-bold text-[#1E3A6D]">Infants</p>
+                            <p class="text-[11px] text-gray-400">under 2 years</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button
+                                class="w-7 h-7 rounded-full border border-accent flex items-center justify-center text-accent bg-white"
+                                onclick="changeCount('infants', -1)">
+                                <i data-lucide="minus" width="14" stroke-width="4"></i>
+                            </button>
+                            <span id="count-infants"
+                                class="w-7 h-7 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold shadow-sm">0</span>
+                            <button
+                                class="w-7 h-7 rounded-full border border-accent flex items-center justify-center text-accent bg-white"
+                                onclick="changeCount('infants', 1)">
+                                <i data-lucide="plus" width="14" stroke-width="4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: MONTH & YEAR -->
+            <div id="step-3" class="step-content hidden space-y-6">
+                <!-- Year Selector -->
+                <div class="flex justify-center">
+                    <div class="inline-flex bg-[#F3F4F6] rounded-full p-1 border border-gray-100 shadow-sm">
+                        <button
+                            class="year-tab px-6 py-2 rounded-full text-xs font-bold transition-all bg-accent text-white shadow-sm">2026</button>
+                        <button
+                            class="year-tab px-6 py-2 rounded-full text-xs font-bold transition-all text-gray-400">2027</button>
+                        <button
+                            class="year-tab px-6 py-2 rounded-full text-xs font-bold transition-all text-gray-400">2028</button>
+                    </div>
+                </div>
+
+                <!-- Month Card Container -->
+                <div class="bg-white rounded-3xl p-5 border border-blue-50/50 shadow-sm">
+                    <div class="grid grid-cols-3 gap-3">
+                        <button
+                            class="month-item rounded-2xl h-12 flex items-center justify-center gap-2 bg-accent text-white font-bold text-[10px] shadow-sm active-month">
+                            Jan 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Feb 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Mar 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Apr 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            May 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            June 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Jul 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Aug 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Sep 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Oct 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Nov 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                        <button
+                            class="month-item rounded-2xl h-12 bg-[#F3F4F6] text-gray-400 font-bold text-[10px] flex items-center justify-center gap-2">
+                            Dec 2026
+                            <i data-lucide="check-circle" width="14" class="text-white month-check"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4: DEPARTURE CITY -->
+            <div id="step-4" class="step-content hidden space-y-4">
+                <div class="bg-white rounded-3xl p-5 border border-blue-50/50 shadow-sm">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div
+                            class="city-card h-12 flex items-center justify-between px-4 bg-accent text-white rounded-2xl cursor-pointer shadow-sm active-city">
+                            <span class="text-[12px] font-bold">Karachi</span>
+                            <i data-lucide="check-circle" width="16" class="text-white city-check"></i>
+                        </div>
+                        <div
+                            class="city-card h-12 flex items-center justify-between px-4 bg-[#F3F4F6] text-gray-400 rounded-2xl cursor-pointer">
+                            <span class="text-[12px] font-bold">Multan</span>
+                            <i data-lucide="check-circle" width="16" class="text-white city-check"></i>
+                        </div>
+                        <div
+                            class="city-card h-12 flex items-center justify-between px-4 bg-[#F3F4F6] text-gray-400 rounded-2xl cursor-pointer">
+                            <span class="text-[12px] font-bold">Lahore</span>
+                            <i data-lucide="check-circle" width="16" class="text-white city-check"></i>
+                        </div>
+                        <div
+                            class="city-card h-12 flex items-center justify-between px-4 bg-[#F3F4F6] text-gray-400 rounded-2xl cursor-pointer">
+                            <span class="text-[12px] font-bold">Quetta</span>
+                            <i data-lucide="check-circle" width="16" class="text-white city-check"></i>
+                        </div>
+                        <div
+                            class="city-card h-12 flex items-center justify-between px-4 bg-[#F3F4F6] text-gray-400 rounded-2xl cursor-pointer">
+                            <span class="text-[12px] font-bold">Islamabad</span>
+                            <i data-lucide="check-circle" width="16" class="text-white city-check"></i>
+                        </div>
+                        <div
+                            class="city-card h-12 flex items-center justify-between px-4 bg-[#F3F4F6] text-gray-400 rounded-2xl cursor-pointer">
+                            <span class="text-[12px] font-bold">Peshawar</span>
+                            <i data-lucide="check-circle" width="16" class="text-white city-check"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5: BUDGET -->
+            <div id="step-5" class="step-content hidden space-y-4">
+                <div
+                    class="budget-card border border-accent bg-accent rounded-2xl p-5 shadow-lg relative cursor-pointer text-white active-budget">
+                    <div class="flex items-center gap-1 mb-1">
+                        <i data-lucide="star" width="12" fill="white" class="text-white"></i>
+                        <i data-lucide="star" width="12" fill="white" class="text-white"></i>
+                        <i data-lucide="star" width="12" fill="white" class="text-white"></i>
+                    </div>
+                    <h3 class="text-sm font-black mb-1">3 Star Hotels</h3>
+                    <p class="text-[10px] opacity-90">Budget Friendly option for smart travelers.</p>
+                    <div class="absolute right-5 top-1/2 -translate-y-1/2 budget-check">
+                        <div class="w-5 h-5 rounded-full border border-white/40 flex items-center justify-center">
+                            <i data-lucide="check" width="12" class="text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="budget-card border border-gray-100 bg-white rounded-2xl p-5 shadow-sm relative cursor-pointer hover:border-accent transition-all">
+                    <div class="flex items-center gap-1 mb-1 text-yellow-400 star-group">
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                    </div>
+                    <h3 class="text-sm font-black mb-1 text-primary">4 Star Hotels</h3>
+                    <p class="text-[10px] text-gray-400">Balanced Comfort and quality experience.</p>
+                    <div class="absolute right-5 top-1/2 -translate-y-1/2 budget-check">
+                        <div
+                            class="w-5 h-5 rounded-full border border-white/40 flex items-center justify-center bg-accent">
+                            <i data-lucide="check" width="12" class="text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="budget-card border border-gray-100 bg-white rounded-2xl p-5 shadow-sm relative cursor-pointer hover:border-accent transition-all">
+                    <div class="flex items-center gap-1 mb-1 text-yellow-400 star-group">
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                        <i data-lucide="star" width="12" fill="currentColor"></i>
+                    </div>
+                    <h3 class="text-sm font-black mb-1 text-primary">5 Star Hotels</h3>
+                    <p class="text-[10px] text-gray-400">Premium Stay with the luxury touch.</p>
+                    <div class="absolute right-5 top-1/2 -translate-y-1/2 budget-check">
+                        <div
+                            class="w-5 h-5 rounded-full border border-white/40 flex items-center justify-center bg-accent">
+                            <i data-lucide="check" width="12" class="text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 6: SUCCESS -->
+            <div id="step-6" class="step-content hidden pt-8 text-center space-y-6">
+                <div
+                    class="w-16 h-16 bg-[#F0FDF4] rounded-full flex items-center justify-center mx-auto border border-[#DCFCE7]">
+                    <i data-lucide="check-circle-2" class="text-[#24B2B9]" width="32"></i>
+                </div>
+
+                <div class="space-y-2">
+                    <h2 class="text-2xl font-black text-primary">Alhamdulillah!</h2>
+                    <p class="text-xs text-gray-500 leading-relaxed px-4">
+                        Your inquiry for a journey in February 2026 has been received. Our team will contact you shortly
+                        to begin the booking.
+                    </p>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="text-left bg-white border border-gray-100 rounded-3xl p-6 shadow-premium">
+                    <h3
+                        class="text-sm font-bold text-gray-400 mb-4 pb-2 border-b border-gray-50 uppercase tracking-widest text-[10px]">
+                        Summary Of Intention</h3>
+
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-gray-500">Pilgrims</span>
+                        <span class="text-xs font-black text-primary">2 Members</span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-gray-500">Budget Category</span>
+                        <span class="text-xs font-black text-primary">3-Star Hotels</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Navigation Footer -->
+        <footer id="nav-footer" class="fixed bottom-0 left-0 right-0 p-6 bg-white max-w-md mx-auto z-10">
+            <button id="next-btn"
+                class="w-full bg-[#1E3A6D] text-white py-4 rounded-full font-bold  flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all">
+                <span>Next</span>
+                <i data-lucide="chevron-right" width="18"></i>
+            </button>
+            <a id="home-btn" href="index.html"
+                class="hidden w-full bg-[#1E3A6D] text-white py-4 rounded-full font-bold  flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all">
+                Back to Home
+            </a>
+        </footer>
+
+    </div>
+
+    <script>
+        // Form Logic
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        // Element mapping
+        const stepHeader = document.getElementById('step-header');
+        const stepTitle = document.getElementById('step-title');
+        const nextBtn = document.getElementById('next-btn');
+        const homeBtn = document.getElementById('home-btn');
+        const backBtn = document.getElementById('back-btn');
+        const stepperLabels = document.querySelectorAll('.step-label');
+
+        const stepTitles = {
+            1: "Enter Your Contact Details",
+            2: "Number of Pilgrims",
+            3: "Select Month & Year",
+            4: "Departure City",
+            5: "Your Budget",
+            6: "" // Success screen has no step header
+        };
+
+        function updateStepUI() {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(s => s.classList.add('hidden'));
+
+            // Show current step
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+
+            // Update title
+            stepTitle.textContent = stepTitles[currentStep];
+
+            // Update Nav Footer
+            if (currentStep === 6) {
+                stepHeader.classList.add('hidden');
+                document.getElementById('stepper').classList.add('hidden');
+                nextBtn.classList.add('hidden');
+                homeBtn.classList.remove('hidden');
+            } else {
+                stepHeader.classList.remove('hidden');
+                document.getElementById('stepper').classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+                homeBtn.classList.add('hidden');
+            }
+
+            // Update Stepper Visuals
+            stepperLabels.forEach(label => {
+                const stepNum = parseInt(label.dataset.step);
+                const text = label.querySelector('span');
+                const bar = label.querySelector('div');
+
+                if (stepNum < currentStep) {
+                    text.classList.remove('text-gray-300', 'text-accent');
+                    text.classList.add('text-primary');
+                    bar.classList.remove('bg-gray-100', 'bg-accent');
+                    bar.classList.add('bg-primary');
+                } else if (stepNum === currentStep) {
+                    text.classList.remove('text-gray-300', 'text-primary');
+                    text.classList.add('text-accent');
+                    bar.classList.remove('bg-gray-100', 'bg-primary');
+                    bar.classList.add('bg-accent');
+                } else {
+                    text.classList.remove('text-accent', 'text-primary');
+                    text.classList.add('text-gray-300');
+                    bar.classList.remove('bg-accent', 'bg-primary');
+                    bar.classList.add('bg-gray-100');
+                }
+            });
+
+            lucide.createIcons();
+        }
+
+        // Increment/Decrement Logic for Pilgrims
+        const pilgrimCounts = { adults: 2, children: 2, infants: 2 };
+        function changeCount(type, delta) {
+            pilgrimCounts[type] = Math.max(0, pilgrimCounts[type] + delta);
+            document.getElementById(`count-${type}`).textContent = pilgrimCounts[type];
+        }
+
+        // State to track all selections for final summary
+        const userData = {
+            pilgrims: { adults: 2, children: 2, infants: 2 },
+            month: 'Jan 2026',
+            city: 'Karachi',
+            budget: '3 Star Hotels'
+        };
+
+        // Year/Month Tabs Logic
+        document.querySelectorAll('.month-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                document.querySelectorAll('.month-item').forEach(m => {
+                    m.classList.remove('bg-accent', 'text-white', 'shadow-sm', 'active-month');
+                    m.classList.add('bg-[#F3F4F6]', 'text-gray-400');
+                });
+
+                // Set active month class
+                btn.classList.remove('bg-[#F3F4F6]', 'text-gray-400');
+                btn.classList.add('bg-accent', 'text-white', 'shadow-sm', 'active-month');
+
+                // Update data for summary
+                userData.month = btn.innerText.trim();
+            });
+        });
+
+        document.querySelectorAll('.year-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.year-tab').forEach(b => {
+                    b.classList.remove('bg-accent', 'text-white', 'shadow-sm');
+                    b.classList.add('text-gray-400');
+                });
+                btn.classList.add('bg-accent', 'text-white', 'shadow-sm');
+                btn.classList.remove('text-gray-400');
+            });
+        });
+
+        // City Selection Logic
+        document.querySelectorAll('.city-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove active class from all
+                document.querySelectorAll('.city-card').forEach(c => {
+                    c.classList.remove('bg-accent', 'text-white', 'shadow-sm', 'active-city');
+                    c.classList.add('bg-[#F3F4F6]', 'text-gray-400');
+                });
+
+                // Set active city class
+                card.classList.remove('bg-[#F3F4F6]', 'text-gray-400');
+                card.classList.add('bg-accent', 'text-white', 'shadow-sm', 'active-city');
+
+                // Update data for summary
+                userData.city = card.querySelector('span').innerText.trim();
+            });
+        });
+
+        // Budget Selection Logic
+        document.querySelectorAll('.budget-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove active class from all
+                document.querySelectorAll('.budget-card').forEach(c => {
+                    c.classList.remove('bg-accent', 'text-white', 'shadow-lg', 'active-budget');
+                    c.classList.add('bg-white', 'text-primary', 'shadow-sm', 'border-gray-100');
+
+                    // Reset star colors for non-active
+                    const stars = c.querySelector('.star-group');
+                    if (stars) stars.classList.add('text-yellow-400');
+                });
+
+                // Set active budget class
+                card.classList.remove('bg-white', 'text-primary', 'shadow-sm', 'border-gray-100');
+                card.classList.add('bg-accent', 'text-white', 'shadow-lg', 'active-budget');
+
+                // Remove star-group yellow highlight if active (so they appear white)
+                const stars = card.querySelector('.star-group');
+                if (stars) stars.classList.remove('text-yellow-400');
+
+                // Update data for summary
+                userData.budget = card.querySelector('h3').innerText.trim();
+            });
+        });
+
+        // Navigation
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < 6) {
+                currentStep++;
+                updateStepUI();
+            }
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepUI();
+            }
+        });
+
+        // Initial setup
+        window.addEventListener('load', () => {
+            updateStepUI();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>
