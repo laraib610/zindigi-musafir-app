@@ -64,7 +64,7 @@
           </div>
 
           <!-- Hero Section Container -->
-          <div id="hero-banner-container" class="px-3">
+          <div id="hero-banner-container">
             <!-- Rendered via JS -->
           </div>
 
@@ -73,28 +73,28 @@
             <div class="bg-white rounded-xl shadow-premium py-3 px-4 flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <i data-lucide="shield-check" class="text-primary" width="18"></i>
-                <span class="text-xs font-semibold text-primary">Shariah Compliant</span>
+                <span class="text-[12px] font-semibold text-primary">Shariah Compliant</span>
               </div>
               <div class="h-4 w-[1px] bg-gray-200"></div>
               <div class="flex items-center gap-2">
                 <i data-lucide="lock" class="text-primary" width="18"></i>
-                <span class="text-xs font-semibold text-primary">Bank-Guaranteed</span>
+                <span class="text-[12px] font-semibold text-primary">Bank-Guaranteed</span>
               </div>
             </div>
           </div>
 
           <!-- Sacred Journey Paths Section -->
           <div class="px-4 space-y-4">
-            <h2 class="text-base font-bold text-[#1E3A6D]">Sacred Journey Paths</h2>
+            <h2 class="text-base font-bold text-[#1E3A6D]">Choose Your Umrah Path</h2>
 
             <!-- Umrah On Installment Card -->
             <div style="background: linear-gradient(270deg, #FFFFFF 10.64%, rgba(233, 238, 247, 0.7) 96.69%);"
-              class="rounded-[24px] shadow-premium p-5 relative overflow-hidden group hover:border-primary transition-all">
+              class="rounded-[24px] border-4 border-white shadow-premium p-5 relative overflow-hidden group hover:border-primary transition-all">
               <div class="flex justify-between items-start mb-4">
                 <div class="w-12 h-12 rounded-xl bg-[#1E3A6D] flex items-center justify-center text-white shadow-lg">
                   <i data-lucide="calendar" width="22"></i>
                 </div>
-                <span class="bg-[#24B2B9] text-white text-[10px] font-bold px-3 py-1.5 rounded-full">Plan & Save</span>
+                <span class="bg-[#24B2B9] text-white text-[12px] px-3 py-0.5 rounded-full">Plan & Save</span>
               </div>
               <h3 class="text-base font-bold text-[#1E3A6D] mb-2">Umrah On Installment</h3>
               <p class="text-[13px] text-[#94A3B8] mb-6 leading-relaxed pr-8">
@@ -102,7 +102,7 @@
                 Makkah.
               </p>
               <div class="absolute bottom-6 right-6">
-                <i data-lucide="arrow-right" class="text-primary opacity-30 group-hover:opacity-100 transition-opacity"
+                <i data-lucide="arrow-right" class="text-primary  group-hover:opacity-100 transition-opacity"
                   width="20"></i>
               </div>
               <a href="plans.html" class="absolute inset-0"></a>
@@ -110,7 +110,6 @@
 
             <!-- Umrah On Cash Card -->
             <a href="inquiry-form.html"
-              style="background: linear-gradient(270deg, #FFFFFF 10.64%, rgba(233, 238, 247, 0.7) 96.69%);"
               class="rounded-[24px] shadow-premium p-5 flex items-center justify-between group hover:border-primary transition-all">
               <div class="flex items-center gap-4">
                 <div
@@ -124,8 +123,7 @@
                 </div>
               </div>
               <i data-lucide="chevron-right"
-                class="text-[#94A3B8] opacity-30 group-hover:opacity-100 group-hover:text-primary transition-all"
-                width="20"></i>
+                class="text-primary group-hover:opacity-100 group-hover:text-primary transition-all" width="20"></i>
             </a>
           </div>
 
@@ -133,7 +131,7 @@
           <div class="px-4 space-y-4 pb-10">
             <h2 class="text-base font-bold text-[#1E3A6D]">Your Umrah Financial Planning</h2>
 
-            <div class="bg-white rounded-[24px] shadow-premium p-2 space-y-1">
+            <div class="bg-white rounded-[24px] shadow-premium py-[20px] px-[14px] space-y-4">
               <!-- Shariah Compliant Planning -->
               <div class="bg-[#F8FAFC] rounded-[20px] p-4 flex items-start gap-4">
                 <div class="mt-1 text-[#1E3A6D]">
@@ -268,7 +266,7 @@
       {
         title: "Ihram Account",
         description: "Ihram Account helps you prepare for Umrah. Save gradually, pay monthly, and focus on your niyyah.",
-        ctaText: "Umrah with Every Spend",
+        ctaText: "Start My Umrah Plan",
         action: "openWelcomeModal()",
         icon: "arrow-up-right"
       },
@@ -296,27 +294,24 @@
 
       const slidesHtml = slides.map((slide, index) => `
         <div class="w-full flex-shrink-0 px-3 relative">
-          <div class="banner-gradient relative rounded-lg text-white p-5 min-h-[180px] flex flex-col justify-center">
-            <div class="relative z-10 w-3/4">
+          <div class="banner-gradient relative rounded-[20px] text-white p-5 min-h-[180px] flex flex-col justify-center">
+            <div class="relative z-10 w-full">
               <h2 class="text-md font-bold mb-2">${slide.title}</h2>
-              <p class="text-[11px] text-blue-100 mb-4 leading-relaxed opacity-90 line-clamp-3">
+              <p class="text-[12px] text-white mb-4 leading-relaxed opacity-90 line-clamp-3">
                 ${slide.description}
               </p>
               ${slide.action
-          ? `<a onclick="${slide.action}" class="bg-white text-primary flex items-center gap-2 hover:bg-gray-100 text-[12px] font-bold py-3 px-6 rounded-full transition-all shadow-md w-fit active:scale-95">
+          ? `<a onclick="${slide.action}" class="bg-white text-primary flex items-center gap-2 hover:bg-gray-100 text-[14px] font-extrabold py-3 px-3 rounded-full transition-all shadow-md w-fit active:scale-95">
                              ${slide.ctaText} 
-                             <i data-lucide="${slide.icon}" width="14"></i>
+                             <i data-lucide="${slide.icon}" class="font-extrabold" width="16"></i>
                            </a>`
-          : `<a href="${slide.link}" class="bg-white text-primary flex items-center gap-2 hover:bg-gray-100 text-[12px] font-bold py-3 px-6 rounded-full transition-all shadow-md w-fit active:scale-95">
+          : `<a href="${slide.link}" class="bg-white text-primary flex items-center gap-2 hover:bg-gray-100 text-[14px] font-extrabold py-3 px-3 rounded-full transition-all shadow-md w-fit active:scale-95">
                              ${slide.ctaText} 
-                             <i data-lucide="${slide.icon}" width="14"></i>
+                             <i data-lucide="${slide.icon}" class="font-extrabold" width="16"></i>
                            </a>`
         }
             </div>
-            <!-- Background Decoration -->
-             <div class="absolute right-0 bottom-0 opacity-10">
-                <img src="assets/svgs/logo_icon.svg" class="w-24 h-24 translate-x-4 translate-y-4" alt="">
-             </div>
+            
           </div>
         </div>
       `).join('');
@@ -334,7 +329,7 @@
           </div>
           
           <!-- Indicators -->
-          <div class="absolute bottom-6 right-8 flex space-x-1.5 z-20">
+          <div class="absolute bottom-8 right-8 flex space-x-1.5 z-20">
             ${indicatorsHtml}
           </div>
         </div>
@@ -429,172 +424,46 @@
   <script src="js/sidebar.js"></script>
 
   <!-- Upgrade Modal -->
-  <div id="upgrade-modal"
-    class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
-    <div
-      class="bg-white mx-5 rounded-2xl p-4 relative w-full max-w-sm scale-95 transition-transform duration-300 text-center">
-      <!-- Icon -->
-      <div class="w-16 h-16 bg-[#1E3A6D] rounded-full flex items-center justify-center mx-auto mb-2">
-        <img class="w-10 h-10" src="assets/svgs/bonus.svg" alt="">
-      </div>
 
-      <h2 class="text-md font-bold text-[#1E3A6D] mb-2">You Won!</h2>
-      <p class="text-xs text-gray-500 mb-3">A Step Closer to Umrah</p>
-      <div class="lucky-draw text-xs p-2
-        text-gray-500 mb-3 rounded-lg">By upgrading your account, you’ve taken a meaningful step toward your Umrah
-        journey. Your Ihram Points reflect your faith and patience, bringing you closer to Umrah and reminding you that
-        preparation itself is an act of worship.</div>
-
-      <div
-        class="lucky-draw flex justify-between items-center border border-[#41AB13]/20 rounded-xl p-3 mb-3 relative overflow-hidden">
-        <p class="text-sm text-[#3B6F67] font-medium text-left">Bonus Reward</p>
-        <div class="text-right">
-          <span class="text-2xl font-bold text-[#24B3BA] block">+50</span>
-          <span class="text-xs text-[#627497] font-medium">Ihram Points</span>
-        </div>
-        <!-- Decor -->
-        <div class="absolute -left-2 -bottom-2 w-12 h-12 bg-[#41AB13] rounded-full opacity-10"></div>
-      </div>
-
-      <button onclick="completeUpgrade()"
-        class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition">
-        Continue
-      </button>
-    </div>
-  </div>
 
   <!-- Welcome Modal -->
   <div id="welcome-modal"
     class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
     <div
-      class="bg-white mx-5 rounded-2xl p-6 relative w-full max-w-sm scale-95 transition-transform duration-300 text-center">
-      <!-- Close Button -->
-      <button onclick="closeWelcomeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-        <i data-lucide="x" width="20"></i>
-      </button>
+      class="bg-white mx-5 rounded-[28px] p-8 relative w-full max-w-sm scale-95 transition-transform duration-300 text-center">
 
       <!-- Icon -->
-      <div class="w-16 h-16 bg-[#F4F8FB] rounded-full flex items-center justify-center mx-auto mb-4">
-        <i data-lucide="party-popper" class="text-[#1E3A6D] w-8 h-8"></i>
+      <div class="w-20 h-20 bg-[#F1F6FA] rounded-full flex items-center justify-center mx-auto mb-6">
+        <i data-lucide="party-popper" class="text-primary w-10 h-10"></i>
       </div>
 
-      <h2 class="text-xl font-bold text-[#1E3A6D] mb-2">Mubarak, Abdullah!</h2>
-      <p class="text-xs text-gray-500 mb-6 leading-relaxed px-4">
+      <h2 class="text-[22px] font-bold text-primary mb-3">Mubarak, Abdullah!</h2>
+      <p class="text-[14px] font-medium text-gray-400/80 mb-8 leading-relaxed">
         Your pure intention brings you closer. Your journey to the House of Allah begins now.
       </p>
 
-      <div class="bg-[#F8FAFC] rounded-xl p-4 mb-6">
-        <p class="text-xs text-gray-500 mb-1">Welcome Barakah Reward</p>
-        <div class="flex items-center justify-center gap-1">
-          <span class="text-2xl font-bold text-[#1E3A6D]">+1,500</span>
-          <span class="text-sm text-[#1E3A6D]">Points</span>
+      <div class="bg-[#F8FAFC] rounded-[24px] p-6 mb-8">
+        <p class="text-[13px] text-gray-400 font-bold mb-1">Welcome Barakah Reward</p>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-[32px] font-black text-primary">+1,500</span>
+          <span class="text-[14px] text-gray-400 font-bold">Points</span>
         </div>
       </div>
 
       <button onclick="activateIhram()"
-        class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition flex items-center justify-center gap-2">
-        Bless Your Niyyah <i data-lucide="arrow-up-right" width="16"></i>
+        class="w-full bg-[#1E3A6D] text-white py-4 rounded-[24px] font-bold text-lg hover:bg-[#16315b] transition flex items-center justify-center gap-3 active:scale-[0.98]">
+        Bless Your Niyyah <i data-lucide="arrow-up-right" width="20"></i>
       </button>
     </div>
   </div>
 
 
   <!-- Upgrade Prompt Modal (Auto Show) -->
-  <div id="upgrade-prompt-modal"
-    class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
-    <div class="bg-white mx-3 rounded-2xl p-4 relative w-full max-w-sm scale-95 transition-transform duration-300">
 
-      <!-- Close Button -->
-      <button onclick="closeUpgradePrompt()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-        <i data-lucide="x" width="20"></i>
-      </button>
-
-      <!-- Icon -->
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-12 h-12 bg-[#1E3A6D] rounded-full flex items-center justify-center  shrink-0">
-          <img src="assets/svgs/crown.svg" alt="">
-        </div>
-        <div>
-          <h2 class="text-lg font-bold text-[#1E3A6D] leading-tight">Upgrade to Ihram Account</h2>
-          <p class="text-xs text-[#627497]">Unlock 2x Rewards & Priority</p>
-        </div>
-      </div>
-
-      <p class="text-sm text-gray-500 mb-4 leading-relaxed">
-        Unlock exclusive savings, earn double points, and priority support.
-      </p>
-
-      <div class="flex gap-3">
-        <button onclick="closeUpgradePrompt()"
-          class="w-1/2 bg-[#F4F8FB] text-[#627497] py-3 rounded-xl font-bold text-sm hover:bg-gray-100 transition">
-          Remind Later
-        </button>
-        <button onclick="triggerWinModal()"
-          class="w-1/2 bg-[#1E3A6D] text-white py-3 rounded-xl font-bold text-sm hover:bg-[#16315b] transition">
-          Upgrade Now
-        </button>
-      </div>
-    </div>
-  </div>
 
   <script>
     // Logic for the new "Upgrade Prompt" modal
 
-    // Show prompt on load
-    window.addEventListener('load', () => {
-      // Small delay for better UX
-      setTimeout(() => {
-        const promptModal = document.getElementById('upgrade-prompt-modal');
-        const promptContent = promptModal.querySelector('div');
-
-        promptModal.classList.remove('hidden');
-        setTimeout(() => {
-          promptModal.classList.remove('opacity-0');
-          promptContent.classList.remove('scale-95');
-          promptContent.classList.add('scale-100');
-        }, 10);
-      }, 1000); // 1 second delay
-    });
-
-    function closeUpgradePrompt() {
-      const promptModal = document.getElementById('upgrade-prompt-modal');
-      const promptContent = promptModal.querySelector('div');
-
-      promptContent.classList.remove('scale-100');
-      promptContent.classList.add('scale-95');
-      promptModal.classList.add('opacity-0');
-
-      setTimeout(() => {
-        promptModal.classList.add('hidden');
-      }, 300);
-    }
-
-    function triggerWinModal() {
-      // Close prompt first
-      closeUpgradePrompt();
-
-      // Wait for close animation then show "You Won" modal
-      setTimeout(() => {
-        showUpgradeModal(); // Existing function for the "You Won" modal
-      }, 300);
-    }
-
-    function showUpgradeModal() {
-      const modal = document.getElementById('upgrade-modal');
-      const modalContent = modal.querySelector('div');
-
-      modal.classList.remove('hidden');
-      // Small delay to allow display:block to apply before opacity transition
-      setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        modalContent.classList.remove('scale-95');
-        modalContent.classList.add('scale-100');
-      }, 10);
-
-      // Attempt to play sound if browser allows
-      // const audio = new Audio('assets/sounds/win.mp3'); 
-      // audio.play().catch(e => console.log('Audio play failed', e));
-    }
 
     function closeWelcomeModal() {
       const modal = document.getElementById('welcome-modal');

@@ -27,7 +27,7 @@ body {
 }
 
 .banner-gradient {
-    background-image: url('assets/images/bg.png'), linear-gradient(83.98deg, #1E3A6D 10.01%, #24B3BA 95.25%);
+    background-image: url('assets/images/bg.png'), linear-gradient(83.98deg, #1E3A6D 63.07%, #24B3BA 113.75%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
