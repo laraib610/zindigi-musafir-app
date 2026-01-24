@@ -57,138 +57,98 @@
                 </div>
 
                 <!-- Main Content Area -->
-                <div class=" px-6 pb-10 mb-16">
-                    <h1 class="text-xl font-bold text-center text-primary mb-8 mt-2">Terms & Conditions</h1>
+                <div id="tnc-content" class="flex-col flex-1 overflow-y-auto no-scrollbar pb-32">
+                    <main class="p-6 space-y-8">
+                        <h1 class="text-center text-[#1E3A6D] font-black text-xl mb-8">Terms & Conditions</h1>
 
-                    <div class="space-y-6">
-                        <div>
-                            <h2 class="text-sm font-bold text-primary mb-2">Umrah Travel</h2>
-                            <p class="text-sm text-gray-500 leading-relaxed">
-                                Welcome to the Umrah with Zindigi app. By using our app, you agree to the following
-                                terms
-                                and conditions. Please read them carefully before proceeding.
+                        <section class="space-y-3">
+                            <h3 class="text-[#1E3A6D] font-bold text-[15px]">Umrah Travel</h3>
+                            <p class="text-[13px] text-gray-400 leading-relaxed">
+                                Welcome to the Umrah with Zindigi app. By accessing or using this application, you agree
+                                to comply with and be bound by the following Terms & Conditions. Please read them
+                                carefully before proceeding. These terms are designed to ensure transparency,
+                                flexibility, and a smooth experience throughout your Umrah planning and booking journey.
                             </p>
-                            <p class="text-sm text-gray-500 leading-relaxed mt-4">
-                                Our comprehensive guide ensures you have a smooth and memorable experience.
-                            </p>
-                        </div>
+                        </section>
 
-                        <div>
-                            <h2 class="text-sm font-bold text-primary mb-2">Acceptance of Terms</h2>
-                            <p class="text-sm text-gray-500 leading-relaxed">
-                                By accessing and using the Umrah with Zindigi app, you accept and agree to be bound by
-                                these
-                                terms and conditions. If you do not agree to these terms, please do not use our app.
+                        <section class="space-y-3">
+                            <h3 class="text-[#1E3A6D] font-bold text-[15px]">Acceptance of Terms</h3>
+                            <p class="text-[13px] text-gray-400 leading-relaxed">
+                                By accessing and using the Umrah with Zindigi app, you confirm that you have read,
+                                understood, and agreed to these Terms & Conditions. If you do not agree with any part of
+                                these terms, you must refrain from using the app and its services.
                             </p>
-                        </div>
+                        </section>
 
-                        <div>
-                            <h2 class="text-sm font-bold text-primary mb-2">Eligibility</h2>
-                            <p class="text-sm text-gray-500 leading-relaxed">
-                                To use the app and book Umrah packages, you must be at least 18 years old and have the
-                                legal
-                                authority to enter into a binding agreement.
+                        <section class="space-y-3">
+                            <h3 class="text-[#1E3A6D] font-bold text-[15px]">Eligibility</h3>
+                            <p class="text-[13px] text-gray-400 leading-relaxed">
+                                To use this app and access Umrah services, you must:
                             </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-sm font-bold text-primary mb-2">Booking and Payment</h2>
-                            <ul
-                                class="text-sm text-gray-500 space-y-4 list-disc pl-4 leading-relaxed marker:text-primary">
-                                <li><span class="font-bold text-gray-700">Booking:</span> All bookings are subject to
-                                    availability and acceptance.</li>
-                                <li><span class="font-bold text-gray-700">Payment:</span> A down payment is required at
-                                    the
-                                    time of booking. The remaining balance must be paid directly to Funadiq as specified
-                                    in
-                                    your booking details.</li>
-                                <li><span class="font-bold text-gray-700">Installments:</span> If opting for installment
-                                    payments, the initial payment and subsequent installment terms will be clearly
-                                    outlined
-                                    at the time of booking.</li>
+                            <ul class="text-[13px] text-gray-400 space-y-2 list-disc pl-5">
+                                <li>Be at least <span class="font-bold text-primary">18 years</span> of age</li>
+                                <li>Have the legal capacity to enter into a binding agreement</li>
+                                <li>Provide accurate and complete personal and contact information</li>
                             </ul>
-                        </div>
+                        </section>
+
+                        <section class="space-y-4">
+                            <h3 class="text-[#1E3A6D] font-bold text-[15px]">Services Offered</h3>
+                            <div class="space-y-3">
+                                <p class="text-[13px] text-gray-400 leading-relaxed">
+                                    <span class="font-bold text-primary">Ihram Account:</span> Purpose-driven Umrah
+                                    spending account.
+                                </p>
+                                <p class="text-[13px] text-gray-400 leading-relaxed">
+                                    <span class="font-bold text-primary">Umrah on Cash:</span> Instant Umrah booking
+                                    with upfront payment.
+                                </p>
+                                <p class="text-[13px] text-gray-400 leading-relaxed">
+                                    <span class="font-bold text-primary">Umrah on Installment:</span> Flexible Umrah
+                                    planning through installments.
+                                </p>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+
+                <!-- Bottom Navigation -->
+                <nav id="bottom-nav"
+                    class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+                    <div class="flex justify-between items-center pb-4 pt-2">
+                        <!-- Home -->
+                        <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                            <div>
+                                <i data-lucide="home" width="22" stroke-width="2"></i>
+                            </div>
+                            <span class="text-[9px] font-medium tracking-wide">Home</span>
+                        </a>
+
+                        <!-- Ihram -->
+                        <a href="journey.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                            <div>
+                                <i data-lucide="user-round" width="22" stroke-width="2"></i>
+                            </div>
+                            <span class="text-[9px] font-medium tracking-wide">Ihram</span>
+                        </a>
+
+                        <!-- Umrah -->
+                        <a href="plans.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                            <div>
+                                <i data-lucide="zap" width="22" stroke-width="2"></i>
+                            </div>
+                            <span class="text-[9px] font-medium tracking-wide">Umrah</span>
+                        </a>
+
+                        <!-- Profile -->
+                        <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                            <div>
+                                <i data-lucide="user" width="22" stroke-width="2"></i>
+                            </div>
+                            <span class="text-[9px] font-medium tracking-wide">Profile</span>
+                        </a>
                     </div>
-                </div>
-
-            </main>
-
-            <!-- Side Menu Overlay -->
-            <div id="side-menu-overlay"
-                class="fixed inset-0 bg-black/20 z-40 hidden opacity-0 transition-opacity duration-300"></div>
-
-            <!-- Side Menu Drawer -->
-            <div id="side-menu"
-                class="absolute top-0 bottom-0 right-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-white w-3/4 h-full">
-                <!-- Inner Container -->
-                <div class="flex flex-col h-full relative">
-                    <!-- Close Button -->
-                    <button id="menu-close-btn"
-                        class="absolute top-8 right-5 text-gray-800 p-2 hover:bg-gray-100 rounded-full">
-                        <i data-lucide="x" width="24"></i>
-                    </button>
-
-                    <!-- Menu Content -->
-                    <div class="mt-24 px-5 space-y-3">
-                        <a href="profile.html"
-                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
-                            <i data-lucide="user" width="20"></i>
-                            <span class="font-medium">Profile & Settings</span>
-                        </a>
-
-                        <a href="support.html"
-                            class="flex items-center space-x-3 px-4 py-4 text-gray-500 hover:bg-gray-50 rounded-xl transition-colors">
-                            <i data-lucide="help-circle" width="20"></i>
-                            <span class="font-medium">Support</span>
-                        </a>
-
-                        <!-- Active Item -->
-                        <a href="#"
-                            class="flex items-center space-x-3 px-4 py-4 bg-primary text-white rounded-xl shadow-lg shadow-blue-900/10">
-                            <i data-lucide="file-text" width="20"></i>
-                            <span class="font-medium">Terms & Conditions</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Navigation -->
-            <nav id="bottom-nav"
-                class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
-                <div class="flex justify-between items-center pb-4 pt-2">
-                    <!-- Home -->
-                    <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
-                        <div>
-                            <i data-lucide="home" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide">Home</span>
-                    </a>
-
-                    <!-- Ihram -->
-                    <a href="journey.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
-                        <div>
-                            <i data-lucide="user-round" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide">Ihram</span>
-                    </a>
-
-                    <!-- Umrah -->
-                    <a href="plans.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
-                        <div>
-                            <i data-lucide="zap" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide">Umrah</span>
-                    </a>
-
-                    <!-- Profile -->
-                    <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
-                        <div>
-                            <i data-lucide="user" width="22" stroke-width="2"></i>
-                        </div>
-                        <span class="text-[9px] font-medium tracking-wide">Profile</span>
-                    </a>
-                </div>
-            </nav>
+                </nav>
 
         </div>
     </div>

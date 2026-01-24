@@ -65,6 +65,7 @@ body {
 /* Range Slider */
 input[type=range] {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     background: transparent;
 }
@@ -104,4 +105,34 @@ input[type=range]:focus {
     font-size: 10px;
     padding-bottom: 4px;
     cursor: default;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    transform: translateX(-105%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+}
+
+.sidebar-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 40;
+}
+
+body.sidebar-open .sidebar-overlay {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+body.sidebar-open #sidebar {
+    transform: translateX(0);
+}
+
+.sidebar-item.active {
+    background-color: #1E3A6D;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(30, 58, 109, 0.2);
 }
