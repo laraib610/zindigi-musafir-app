@@ -64,7 +64,7 @@
                     </div>
 
                     <!-- Journey Container (Rendered by JS) -->
-                    <div id="journey-container" class="px-3 space-y-4">
+                    <div id="journey-container" class="space-y-4">
                         <!-- Content goes here -->
                     </div>
 
@@ -125,33 +125,33 @@
     <div id="welcome-modal"
         class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
         <div
-            class="bg-white mx-5 rounded-2xl p-6 relative w-full max-w-sm scale-95 transition-transform duration-300 text-center">
+            class="bg-white mx-5 rounded-2xl p-8 relative w-full max-w-sm scale-95 transition-transform duration-300 text-center">
             <!-- Close Button -->
             <button onclick="closeWelcomeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                 <i data-lucide="x" width="20"></i>
             </button>
 
             <!-- Icon -->
-            <div class="w-16 h-16 bg-[#F4F8FB] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="w-16 h-16 bg-[#E4ECFA] rounded-full flex items-center justify-center mx-auto mb-4">
                 <i data-lucide="party-popper" class="text-[#1E3A6D] w-8 h-8"></i>
             </div>
 
             <h2 class="text-xl font-bold text-[#1E3A6D] mb-2">Mubarak, Abdullah!</h2>
-            <p class="text-xs text-gray-500 mb-6 leading-relaxed px-4">
+            <p class="text-[12px] text-gray-500 mb-6 leading-relaxed px-4">
                 Your pure intention brings you closer. Your journey to the House of Allah begins now.
             </p>
 
-            <div class="bg-[#F8FAFC] rounded-xl p-4 mb-6">
-                <p class="text-xs text-gray-500 mb-1">Welcome Barakah Reward</p>
+            <div class="bg-[#F7F7F7] rounded-xl p-4 mb-6">
+                <p class="text-[12px] text-primary mb-1">Welcome Barakah Reward</p>
                 <div class="flex items-center justify-center gap-1">
                     <span class="text-2xl font-bold text-[#1E3A6D]">+1,500</span>
-                    <span class="text-sm text-[#1E3A6D]">Points</span>
+                    <span class="text-[12px] text-primary">Points</span>
                 </div>
             </div>
 
             <button onclick="activateIhram()"
                 class="w-full bg-[#1E3A6D] text-white py-3.5 rounded-xl font-bold hover:bg-[#16315b] transition flex items-center justify-center gap-2">
-                Bless Your Niyyah <i data-lucide="arrow-up-right" width="16"></i>
+                Turn Intention into Action <i data-lucide="arrow-up-right" width="16"></i>
             </button>
         </div>
     </div>
@@ -186,7 +186,8 @@
             const opacityClass = state.isUpgraded ? '' : 'opacity-60 pointer-events-none grayscale transition-all duration-500';
 
             container.innerHTML = `
-                <div class="flex items-center gap-3 mt-2">
+                <div class=" mt-2 border-b border-gray-100 pb-2">
+                    <div class="px-3 flex items-center gap-3">
                     <a href="index.html" class="w-8 h-8 rounded-full bg-[#1E3A6D] flex items-center justify-center text-white">
                         <i data-lucide="chevron-left" width="20"></i>
                     </a>
@@ -194,9 +195,11 @@
                         <h2 class="text-[17px] font-bold text-[#1E3A6D]">Your Rewards & Progress</h2>
                         <p class="text-[12px] text-[#94A3B8]">Turning daily spending into Umrah rewards</p>
                     </div>
+                    </div>
                 </div>
 
                 <!-- Card -->
+                <div class="px-3 space-y-5">
                 <div class="relative w-full debit-card rounded-[24px] p-6 text-white shadow-lg overflow-hidden mt-2 ${opacityClass}">
                     <div class="relative z-10 flex flex-col justify-between h-40">
                          <div class="flex justify-between items-start">
@@ -227,7 +230,7 @@
                 ${!state.isUpgraded ? `
                 <div class="py-2 animation-pulse">
                     <button onclick="openWelcomeModal()" class="w-full bg-[#1E3A6D] text-white py-4 rounded-2xl font-bold text-sm shadow-xl flex items-center justify-center gap-2 hover:bg-[#16315b] transition-all transform hover:scale-[1.02] active:scale-95">
-                        Build Your Barakah <i data-lucide="sparkles" width="16"></i>
+                        Start Your Umrah Plan <i data-lucide="sparkles" width="16"></i>
                     </button>
                 </div>
                 ` : ''}
@@ -248,9 +251,9 @@
 
                 <div class="space-y-4 pt-2 ${opacityClass}">
                     <div class="bg-white rounded-[24px] p-5 shadow-premium space-y-4">
-                        <h2 class="text-base font-bold text-[#1E3A6D]">Nurturing Your Intentions</h2>
+                        <h2 class="text-base font-bold text-[#1E3A6D]">Turning Spending into Umrah</h2>
                         
-                        <div class="flex gap-4 items-start bg-[#F8FAFC] p-4 rounded-2xl">
+                        <div class="flex gap-4 items-start bg-[#F7F7F7] p-4 rounded-2xl">
                              <div class="mt-1 text-[#1E3A6D] shrink-0">
                                 <i data-lucide="wallet" width="20"></i>
                              </div>
@@ -259,7 +262,7 @@
                              </p>
                         </div>
 
-                        <div class="flex gap-4 items-start bg-[#F8FAFC] p-4 rounded-2xl">
+                        <div class="flex gap-4 items-start bg-[#F7F7F7] p-4 rounded-2xl">
                              <div class="mt-1 text-[#1E3A6D] shrink-0">
                                  <i data-lucide="sparkles" width="20"></i>
                              </div>
@@ -268,6 +271,7 @@
                              </p>
                         </div>
                     </div>
+                </div>
                 </div>
             `;
         }
