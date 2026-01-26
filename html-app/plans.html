@@ -46,13 +46,9 @@
 
             <main id="app" class="flex-1 overflow-y-auto no-scrollbar bg-white pb-20">
                 <!-- Main Container -->
-                <div class="pt-4 pb-5 space-y-2  min-h-screen">
-
-
-
-
+                <div class=" pb-5 space-y-2  min-h-screen">
                     <!-- Empty State -->
-                    <div id="empty-state" class="px-4 pt-4 hidden">
+                    <div id="empty-state" class=" hidden">
                         <!-- Top Header -->
                         <div class="flex px-4  justify-between items-center pb-4 bg-white border-b border-gray-100">
                             <div class="flex items-center gap-3">
@@ -82,25 +78,28 @@
                             </div>
 
                         </div>
-                        <div
-                            class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-50 flex flex-col items-center">
-                            <div class="w-16 h-16 bg-[#F4F8FB] rounded-full flex items-center justify-center mb-6">
-                                <i data-lucide="compass" class="text-primary" width="32"></i>
+                        <div class="px-4">
+                            <div
+                                class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-50 flex flex-col items-center">
+                                <div class="w-16 h-16 bg-[#F4F8FB] rounded-full flex items-center justify-center mb-6">
+                                    <i data-lucide="compass" class="text-primary" width="32"></i>
+                                </div>
+                                <h2 class="text-xl font-bold text-[#1E3A6D] mb-3">Your Journey Begins</h2>
+                                <p class="text-sm text-[#627497] mb-8 leading-relaxed px-4">
+                                    Start planning your spiritual trip today. Create a personalized savings plan that
+                                    fits
+                                    your travel needs.
+                                </p>
+                                <a href="journeyForm.html"
+                                    class="w-full bg-[#1E3A6D] text-white py-4 rounded-3xl font-bold hover:bg-[#16315b] transition-all transform active:scale-[0.98] shadow-lg shadow-blue-900/10 flex items-center justify-center gap-2">
+                                    <i data-lucide="plus" width="20"></i> Begin Your Umrah Journey
+                                </a>
                             </div>
-                            <h2 class="text-xl font-bold text-[#1E3A6D] mb-3">Your Journey Begins</h2>
-                            <p class="text-sm text-[#627497] mb-8 leading-relaxed px-4">
-                                Start planning your spiritual trip today. Create a personalized savings plan that fits
-                                your travel needs.
-                            </p>
-                            <a href="journeyForm.html"
-                                class="w-full bg-[#1E3A6D] text-white py-4 rounded-3xl font-bold hover:bg-[#16315b] transition-all transform active:scale-[0.98] shadow-lg shadow-blue-900/10 flex items-center justify-center gap-2">
-                                <i data-lucide="plus" width="20"></i> Begin Your Umrah Journey
-                            </a>
                         </div>
                     </div>
 
                     <!-- Active State -->
-                    <div id="active-state" class="px-4">
+                    <div id="active-state" class="">
                         <!-- Top Header -->
                         <div class="flex px-4  justify-between items-center pb-4 bg-white border-b border-gray-100">
                             <div class="flex items-center gap-3">
@@ -109,7 +108,8 @@
                                     <i data-lucide="menu" width="20"></i>
                                 </button>
                                 <div class="w-[1px] h-6 bg-gray-200"></div>
-                                <h2 class="text-[#1E3A6D] font-bold text-[14px] tracking-tight">Your Umrah Overview</h2>
+                                <h2 class="text-[#1E3A6D] font-bold text-[14px] tracking-tight">Your Umrah Overview
+                                </h2>
                             </div>
                             <div class="bg-[#24B2B9] pl-3 pr-4 py-2 rounded-full flex items-center gap-1 shadow-sm">
                                 <span class="text-white font-bold text-sm leading-none">120+</span>
@@ -135,89 +135,95 @@
 
                         </div>
                         <!-- Horizontal Tabs -->
-                        <div class=" pb-2 pt-2">
+                        <div class="px-4">
+
+
+                            <div class=" pb-2 pt-2 ">
+                                <div
+                                    class="flex gap-2 overflow-x-auto no-scrollbar bg-gradient-to-r from-[#F6F6F6] to-[#F6F6F6] p-2 rounded-3xl">
+                                    <button
+                                        class="bg-[#24B2B9] text-white px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap shadow-sm">Overview</button>
+                                    <button
+                                        class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">My
+                                        Umrah</button>
+                                    <button
+                                        class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Parent's</button>
+                                    <button
+                                        class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Ali's
+                                        Plan</button>
+                                    <button
+                                        class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Family</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-5 ">
+                                <h2 class="text-[16px] font-bold text-[#1E3A6D]">Your Plans</h2>
+                            </div>
+
+                            <!-- Card 1 -->
                             <div
-                                class="flex gap-2 overflow-x-auto no-scrollbar bg-gradient-to-r from-[#F6F6F6] to-[#F6F6F6] p-2 rounded-3xl">
-                                <button
-                                    class="bg-[#24B2B9] text-white px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap shadow-sm">Overview</button>
-                                <button
-                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">My
-                                    Umrah</button>
-                                <button
-                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Parent's</button>
-                                <button
-                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Ali's
-                                    Plan</button>
-                                <button
-                                    class=" text-[#627497] px-5 py-2 border border-gray-100 rounded-full text-xs font-bold whitespace-nowrap hover:bg-gray-50 transition-colors">Family</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mb-5">
-                            <h2 class="text-[16px] font-bold text-[#1E3A6D]">Your Plans</h2>
-                        </div>
+                                class="bg-white rounded-2xl py-5 px-[14px] shadow-premium mb-4 transition hover:shadow-md">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h3 class="font-bold text-[#1E3A6D] text-sm">My Umrah 2025</h3>
+                                        <p class="text-[11px] text-[#627497] mt-1">01-04-2026</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Active</span>
+                                </div>
 
-                        <!-- Card 1 -->
-                        <div class="bg-white rounded-2xl py-5 px-[14px] shadow-premium mb-4 transition hover:shadow-md">
-                            <div class="flex justify-between items-start mb-3">
-                                <div>
-                                    <h3 class="font-bold text-[#1E3A6D] text-sm">My Umrah 2025</h3>
-                                    <p class="text-[11px] text-[#627497] mt-1">01-04-2026</p>
+                                <div class="space-y-1 mb-3">
+                                    <div class="flex justify-between text-[11px] font-bold text-[#627497]">
+                                        <span>Progress</span>
+                                        <span class="text-primary">30%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-50 rounded-full h-2 overflow-hidden">
+                                        <div class="bg-[#24B2B9] h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_8px_rgba(36,178,185,0.3)]"
+                                            style="width: 30%"></div>
+                                    </div>
+                                    <div class="flex justify-between text-[11px] text-[#627497] font-medium pt-1">
+                                        <span>PKR 150,000 Paid</span>
+                                        <span class="font-bold text-gray-400">Goal: 500,000</span>
+                                    </div>
                                 </div>
-                                <span
-                                    class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Active</span>
-                            </div>
 
-                            <div class="space-y-1 mb-3">
-                                <div class="flex justify-between text-[11px] font-bold text-[#627497]">
-                                    <span>Progress</span>
-                                    <span class="text-primary">30%</span>
-                                </div>
-                                <div class="w-full bg-gray-50 rounded-full h-2 overflow-hidden">
-                                    <div class="bg-[#24B2B9] h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_8px_rgba(36,178,185,0.3)]"
-                                        style="width: 30%"></div>
-                                </div>
-                                <div class="flex justify-between text-[11px] text-[#627497] font-medium pt-1">
-                                    <span>PKR 150,000 Paid</span>
-                                    <span class="font-bold text-gray-400">Goal: 500,000</span>
-                                </div>
+                                <a href="plan-details.html"
+                                    class="block w-full bg-[#1E3A6D] text-white text-center py-3.5 rounded-3xl font-bold text-sm hover:bg-[#16315b] transition-all transform active:scale-[0.98] shadow-md shadow-blue-900/10">
+                                    View Details
+                                </a>
                             </div>
 
-                            <a href="plan-details.html"
-                                class="block w-full bg-[#1E3A6D] text-white text-center py-3.5 rounded-3xl font-bold text-sm hover:bg-[#16315b] transition-all transform active:scale-[0.98] shadow-md shadow-blue-900/10">
-                                View Details
-                            </a>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="bg-white rounded-2xl p-5 shadow-premium mb-4 transition hover:shadow-md opacity-90">
-                            <div class="flex justify-between items-start mb-3">
-                                <div>
-                                    <h3 class="font-bold text-[#1E3A6D] text-sm">Family Umrah 2025</h3>
-                                    <p class="text-[11px] text-[#627497] mt-1">15-10-2025</p>
+                            <!-- Card 2 -->
+                            <div
+                                class="bg-white rounded-2xl p-5 shadow-premium mb-4 transition hover:shadow-md opacity-90">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h3 class="font-bold text-[#1E3A6D] text-sm">Family Umrah 2025</h3>
+                                        <p class="text-[11px] text-[#627497] mt-1">15-10-2025</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Active</span>
                                 </div>
-                                <span
-                                    class="bg-[#E6FBDE] text-[#41AB13] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Active</span>
+
+                                <div class="space-y-1 mb-3">
+                                    <div class="flex justify-between text-[11px] font-bold text-[#627497]">
+                                        <span>Progress</span>
+                                        <span class="text-primary">45%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-50 rounded-full h-2 overflow-hidden">
+                                        <div class="bg-[#24B2B9] h-full rounded-full transition-all duration-1000 ease-out"
+                                            style="width: 45%"></div>
+                                    </div>
+                                    <div class="flex justify-between text-[11px] text-[#627497] font-medium pt-1">
+                                        <span>PKR 225,000 Paid</span>
+                                        <span class="font-bold text-gray-400">Goal: 500,000</span>
+                                    </div>
+                                </div>
+
+                                <a href="plan-details.html"
+                                    class="block w-full bg-[#1E3A6D] text-white text-center py-3.5 rounded-3xl font-bold text-sm hover:bg-[#16315b] transition-all transform active:scale-[0.98]">
+                                    View Details
+                                </a>
                             </div>
-
-                            <div class="space-y-1 mb-3">
-                                <div class="flex justify-between text-[11px] font-bold text-[#627497]">
-                                    <span>Progress</span>
-                                    <span class="text-primary">45%</span>
-                                </div>
-                                <div class="w-full bg-gray-50 rounded-full h-2 overflow-hidden">
-                                    <div class="bg-[#24B2B9] h-full rounded-full transition-all duration-1000 ease-out"
-                                        style="width: 45%"></div>
-                                </div>
-                                <div class="flex justify-between text-[11px] text-[#627497] font-medium pt-1">
-                                    <span>PKR 225,000 Paid</span>
-                                    <span class="font-bold text-gray-400">Goal: 500,000</span>
-                                </div>
-                            </div>
-
-                            <a href="plan-details.html"
-                                class="block w-full bg-[#1E3A6D] text-white text-center py-3.5 rounded-3xl font-bold text-sm hover:bg-[#16315b] transition-all transform active:scale-[0.98]">
-                                View Details
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -227,10 +233,10 @@
 
             <!-- Bottom Navigation -->
             <nav id="bottom-nav"
-                class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+                class="fixed bottom-0 left-0 right-0 bg-[#1E3A6D] text-white pb-safe pt-2 px-4 z-50 max-w-md mx-auto rounded-t-3xl shadow-[0_-5px_15px_rgba(0,0,0,0.1)]">
                 <div class="flex justify-between items-center pb-4 pt-2">
                     <!-- Home -->
-                    <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                    <a href="index.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-[#617BAA]">
                         <div>
                             <i data-lucide="home" width="22" stroke-width="2"></i>
                         </div>
@@ -240,7 +246,7 @@
                     </a>
 
                     <!-- Ihram -->
-                    <a href="journey.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                    <a href="journey.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-[#617BAA]">
                         <div>
                             <i data-lucide="user-round" width="22" stroke-width="2"></i>
                         </div>
@@ -260,7 +266,7 @@
                     </button>
 
                     <!-- Profile -->
-                    <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-gray-400">
+                    <a href="profile.html" class="flex flex-col items-center space-y-1.5 w-1/4 text-[#617BAA]">
                         <div>
                             <i data-lucide="user" width="22" stroke-width="2"></i>
                         </div>
