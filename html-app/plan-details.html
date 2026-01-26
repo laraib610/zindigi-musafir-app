@@ -200,7 +200,8 @@
                                 <div class="text-right">
                                     <span
                                         class="text-[10px] font-bold text-[#469823] bg-[#E7FBDF] opacity-80 px-2 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Paid</span>
-                                    <p class="text-xs font-black text-[#1E3A6D]">PKR 25,000</p>
+                                    <p class="text-xs text-[#1E3A6D]">PKR<strong class="font-bold text-sm">
+                                            25,000</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +219,8 @@
                                 <div class="text-right">
                                     <span
                                         class="text-[10px] font-bold text-[#469823] bg-[#E7FBDF] opacity-80 px-2 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Paid</span>
-                                    <p class="text-xs font-black text-[#1E3A6D]">PKR 25,000</p>
+                                    <p class="text-xs text-[#1E3A6D]">PKR<strong class="font-bold text-sm">
+                                            25,000</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -281,11 +283,13 @@
                         <div class="space-y-2">
                             <div class="flex justify-between items-center bg-[#F4F8FB] p-3 rounded-lg">
                                 <span class="text-[#627497] text-sm">Monthly Installment:</span>
-                                <span class="font-bold text-sm text-[#1E3A6D]">PKR 25,000</span>
+                                <span class="font-bold text-sm text-[#1E3A6D]"> 25,000</span>
                             </div>
                             <div class="flex justify-between items-center bg-[#24B3BA] p-3 rounded-lg">
                                 <div class="flex items-center gap-2">
-                                    <span class="">👑</span>
+                                    <div class="w-8 text-white h-8 rounded-lg flex items-center justify-center">
+                                        <i data-lucide="crown" width="18"></i>
+                                    </div>
                                     <div>
                                         <p class="text-sm font-semibold text-white">Use Ihram Points</p>
                                         <p class="text-xs text-white">Available: 1249</p>
@@ -306,7 +310,7 @@
 
                             <div class="flex justify-between items-center mb-3">
                                 <span class="font-semibold text-[#1E3A6D]">Total Amount:</span>
-                                <span class="text-xl font-bold text-[#24B3BA]">PKR 25,000</span>
+                                <span class="text-xs text-[#24B3BA]">PKR <strong class="text-xl">25,000</strong></span>
                             </div>
                         </div>
                         <!-- Button -->
@@ -412,14 +416,15 @@
                             <div class="flex justify-between items-center py-2 border-t border-gray-100 pt-4">
                                 <span class="text-[12px]  text-[#7F8A9E]">Total merged amount:</span>
                                 <div class="flex items-baseline gap-1">
-                                    <span id="merged-total-display"
-                                        class="text-[15px] font-black text-primary">15,000</span>
+                                    <span class="text-[10px] text-primary">PKR
+                                        <strong id="merged-total-display"
+                                            class="font-bold text-[15px]">15,000</strong></span>
                                 </div>
                             </div>
                             <!-- Terms -->
                             <div class="flex items-center gap-3 mb-2 px-1">
                                 <input type="checkbox" id="terms-check"
-                                    class="w-4 h-4 rounded border-gray-300 text-[#1E3A6D] focus:ring-[#1E3A6D]">
+                                    class="w-3 h-3 rounded border-gray-300 text-[#1E3A6D] focus:ring-[#1E3A6D]">
                                 <label for="terms-check" class="text-[11px] text-[#627497]">I agree to the <a
                                         href="terms-and-conditions.html" class="text-[#1E3A6D] underline">terms &
                                         conditions</a>.</label>
@@ -453,8 +458,13 @@
                 }
 
                 .installment-row.selected .checkbox-wrapper {
-                    background-color: #24B3BA;
-                    border-color: #24B3BA;
+                    background-color: #24B3BA !important;
+                    border-color: #24B3BA !important;
+                }
+
+                input:checked+.checkbox-wrapper {
+                    background-color: #24B3BA !important;
+                    border-color: #24B3BA !important;
                 }
 
                 .installment-row.selected i {
@@ -647,7 +657,7 @@
                     total += parseInt(row.dataset.amount);
                 });
 
-                document.getElementById('merged-total-display').innerText = `PKR ${total.toLocaleString()}`;
+                document.getElementById('merged-total-display').innerText = ` ${total.toLocaleString()}`;
             }
 
             function closeManageInstallmentModal() {
@@ -695,7 +705,7 @@
 
                         <div>
                             <p class="text-xs text-right flex items-center gap-2 w-max px-2 rounded-md" style="color: ${i.status === 'paid' ? '#41AB13' : '#E26F31'}; background-color: ${i.status === 'paid' ? '#E6FBDE' : '#F7EADB'};" ><i data-lucide="${i.status === 'paid' ? 'check' : 'clock'}" color="${i.status === 'paid' ? '#41AB13' : '#E26F31'}" width="10"></i>${i.status === 'paid' ? 'Paid' : 'Pending'}</p>
-                            <p class="font-bold text-sm text-right text-[#24B3BA]">PKR ${i.amount.toLocaleString()}</p>
+                            <p class="font-bold text-sm text-right text-[#24B3BA]"> ${i.amount.toLocaleString()}</p>
                         </div>
 
                     </div>
