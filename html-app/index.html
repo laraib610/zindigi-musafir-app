@@ -258,12 +258,18 @@
   <script>
     // --- State ---
     const state = {
-      isUpgraded: localStorage.getItem('isUpgraded') === 'true'
+      isUpgraded: localStorage.getItem('isUpgraded') === 'false'
     };
 
     // --- Carousel Data ---
     const slides = [
-      {
+      state.isUpgraded ? {
+        title: "Your Ihram Account Is Active",
+        description: "Save monthly and move closer to Umrah. Plus, every debit card spend adds progress toward your Umrah goal.",
+        ctaText: "", // No CTA
+        action: "",
+        icon: ""
+      } : {
         title: "Ihram Account",
         description: "Ihram Account helps you prepare for Umrah. Save gradually, pay monthly, and focus on your niyyah.",
         ctaText: "Activate My Account",
@@ -300,7 +306,7 @@
               <p class="text-[12px] text-white mb-4 leading-relaxed opacity-90 line-clamp-3">
                 ${slide.description}
               </p>
-              ${slide.action
+              ${slide.ctaText ? (slide.action
           ? `<a onclick="${slide.action}" class="bg-white cursor-pointer text-primary flex items-center gap-2 hover:bg-gray-100 text-[14px] font-extrabold py-3 px-3 rounded-full transition-all shadow-md w-fit active:scale-95">
                              ${slide.ctaText} 
                              <i data-lucide="${slide.icon}" class="font-extrabold" width="16"></i>
@@ -308,7 +314,7 @@
           : `<a href="${slide.link}" class="bg-white text-primary cursor-pointer flex items-center gap-2 hover:bg-gray-100 text-[14px] font-extrabold py-3 px-3 rounded-full transition-all shadow-md w-fit active:scale-95">
                              ${slide.ctaText} 
                              <i data-lucide="${slide.icon}" class="font-extrabold" width="16"></i>
-                           </a>`
+                           </a>`) : ''
         }
             </div>
             
@@ -452,7 +458,7 @@
 
       <button onclick="activateIhram()"
         class="w-full bg-[#1E3A6D] text-white py-4 rounded-[24px] font-bold text-lg hover:bg-[#16315b] transition flex items-center justify-center gap-3 active:scale-[0.98]">
-        Turn Intention into Action <i data-lucide="arrow-up-right" width="20"></i>
+        Let’s Begin <i data-lucide="arrow-up-right" width="20"></i>
       </button>
     </div>
   </div>
