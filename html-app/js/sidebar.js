@@ -8,26 +8,26 @@ const sidebarHtml = `
         <div class="p-6">
             <!-- Close Button -->
             <div class="flex justify-end mb-8">
-                <button id="close-sidebar" class="text-gray-400">
+                <button id="close-sidebar" class="text-primary/80">
                     <i data-lucide="x" width="20"></i>
                 </button>
             </div>
 
             <!-- Menu Items -->
             <nav class="space-y-2 text-left">
-                <a href="journey.html" class="sidebar-item flex items-center gap-4 px-4 py-3 text-gray-400 rounded-xl transition-all">
+                <a href="journey.html" class="sidebar-item flex items-center gap-4 px-4 py-3 text-primary/80 rounded-xl transition-all">
                     <i data-lucide="user" width="18"></i>
                     <span class="text-sm font-semibold">Ihram Account</span>
                 </a>
-                <a href="terms-and-conditions.html" id="menu-tnc" class="sidebar-item flex items-center gap-4 px-4 py-3 text-gray-400 rounded-xl transition-all">
+                <a href="terms-and-conditions.html" id="menu-tnc" class="sidebar-item flex items-center gap-4 px-4 py-3 text-primary/80 rounded-xl transition-all">
                     <i data-lucide="file-text" width="18"></i>
                     <span class="text-sm font-semibold">Terms & Conditions</span>
                 </a>
-                <a href="plans.html" class="sidebar-item flex items-center gap-4 px-4 py-3 text-gray-400 rounded-xl transition-all">
+                <a href="plans.html" class="sidebar-item flex items-center gap-4 px-4 py-3 text-primary/80 rounded-xl transition-all">
                     <i data-lucide="banknote" width="18"></i>
                     <span class="text-sm font-semibold">Umrah On Cash</span>
                 </a>
-                <a href="support.html" class="sidebar-item flex items-center gap-4 px-4 py-3 text-gray-400 rounded-xl transition-all">
+                <a href="support.html" class="sidebar-item flex items-center gap-4 px-4 py-3 text-primary/80 rounded-xl transition-all">
                     <i data-lucide="help-circle" width="18"></i>
                     <span class="text-sm font-semibold">FAQs</span>
                 </a>
@@ -87,7 +87,7 @@ function initSidebar() {
         const h = link.getAttribute('href');
         if (h && (h === currentPath || (currentPath === 'index.html' && h === 'index.html'))) {
             link.classList.add('active');
-            link.classList.remove('text-gray-400');
+            link.classList.remove('text-primary/80');
             link.classList.add('text-white');
         }
 

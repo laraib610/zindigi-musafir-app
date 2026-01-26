@@ -49,7 +49,7 @@
                 </button>
                 <div class="w-[1px] h-6 bg-gray-200"></div>
                 <div>
-                    <p class="text-[11px] text-[#94A3B8] font-medium leading-none">Profile Overview</p>
+                    <p class="text-[11px] text-primary/80 font-medium leading-none">Profile Overview</p>
                     <h2 class="text-[14px] font-bold text-primary mt-1">Muhammad Abdullah!</h2>
                 </div>
             </div>
@@ -122,12 +122,12 @@
                     
                     <div class="space-y-4">
                         <div class="bg-white border border-[#DEE5F1] rounded-2xl p-4">
-                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Email</p>
+                            <p class="text-[10px] text-primary/80 font-bold uppercase tracking-wider mb-1">Email</p>
                             <p class="text-[14px] font-bold text-primary">${state.user.email}</p>
                         </div>
                         
                         <div class="bg-white border border-[#DEE5F1] rounded-2xl p-4">
-                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Phone Number</p>
+                            <p class="text-[10px] text-primary/80 font-bold uppercase tracking-wider mb-1">Phone Number</p>
                             <p class="text-[14px] font-bold text-primary">${state.user.phone}</p>
                         </div>
                     </div>
@@ -137,12 +137,12 @@
                 <div class="bg-white rounded-3xl p-6 shadow-premium">
                     ${state.isUpgraded ? `
                         <div class="flex justify-between items-center w-full">
-                            <span class="text-gray-400 font-bold text-[13px]">Account Type</span>
+                            <span class="text-primary/80 font-bold text-[13px]">Account Type</span>
                             <span class="text-accent font-bold text-[13px]">Ihram Account</span>
                         </div>
                     ` : `
                         <div class="flex justify-between items-center w-full">
-                            <span class="text-gray-400 font-medium text-[13px]">Not a member yet?</span>
+                            <span class="text-primary/80 font-medium text-[13px]">Not a member yet?</span>
                             <a href="journey.html" class="text-accent font-bold text-[13px] flex items-center gap-1 hover:opacity-80 transition-opacity">
                                 Upgrade To Ihram Account <i data-lucide="arrow-up-right" width="14"></i>
                             </a>

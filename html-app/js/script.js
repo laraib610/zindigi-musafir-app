@@ -231,7 +231,7 @@ function renderHome() {
                     <img src="assets/svgs/savings.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
                 </div>
                 <h3 class="font-bold text-lg text-primary">PKR 250,000</h3>
-                <p class="text-sm text-gray-400 mt-1">
+                <p class="text-sm text-primary/80 mt-1">
                     You’re getting close to your Umrah - keep moving at your pace.
                 </p>
             </div>
@@ -241,7 +241,7 @@ function renderHome() {
                     <img src="assets/svgs/ihram_points.svg" class="w-[25px]" alt="" onerror="this.style.display='none'">
                 </div>
                 <h3 class="text-lg font-bold text-primary">1,259</h3>
-                <p class="text-sm text-gray-400 mt-1">
+                <p class="text-sm text-primary/80 mt-1">
                     Collect points with every booking and step closer to exclusive Umrah rewards.
                 </p>
             </div>
