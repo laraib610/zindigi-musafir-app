@@ -17,6 +17,30 @@ const state = {
     error: ''
 };
 
+const PLAN_TABS = [
+    { label: "Saver", icon: 'wallet' },
+    { label: "Economy", icon: 'coins', popular: true },
+    { label: "Premium", icon: 'crown' }
+];
+
+// Budget summary for step 5
+function getBudgetSummary(data) {
+    return [
+
+        {
+            heading: "Estimated Cost",
+            value: formatPKR(data.budget),
+            sup: "selected",
+            sub: data.budgetPlan
+        }
+    ];
+}
+
+const BUDGET_NOTES = [
+    { text: "You can always modify your budget and plan later from your dashboard.", highlight: "No worries!" },
+    // { text: "The estimated cost is based on your selected plan and number of travelers.", highlight: "Subject to change" }
+];
+
 const steps = ['Home', 'City', 'Pilgrims', 'Duration', 'Budget', 'Payment'];
 
 const CITIES = ["Karachi", "Lahore", "Islamabad", "Multan", "Quetta", "Peshawar"];
@@ -282,34 +306,45 @@ function renderStep4(data) {
     `;
 }
 
+
 function renderStep5(data) {
-    const progressPercentage = ((data.estimatedCost - 150000) / (1000000 - 150000)) * 100;
+    const budgetSummary = getBudgetSummary(data);
     return `
         ${stepHeader('Set Budget Range', 4)}
         <div class="px-5 pt-8 space-y-4 pb-10">
-            <div class="relative banner-gradient rounded-2xl p-3 text-white overflow-hidden text-center">
+            <div class="relative rounded-2xl bg-white border shadow p-3 text-primary overflow-hidden text-center">
                 <p class="text-[14px] mb-2 font-medium tracking-wide">Estimated Umrah Cost</p>
-                <div class="flex items-baseline justify-center gap-2 mb-2">
-                    <span class="text-sm font-bold opacity-80">PKR</span>
-                    <span class="text-4xl font-black tracking-tight">${data.estimatedCost.toLocaleString()}</span>
-                    <span class="text-sm opacity-80 ml-1">/ Total</span>
+                <div class="grid grid-cols-3 gap-3">
+                    ${PLAN_TABS.map(plan => `
+                        <button onclick="setWizardData('budgetPlan', '${plan.label}')" class="flex flex-col items-center border border-[#DDE7F1] justify-center p-4 rounded-xl transition ${data.budgetPlan === plan.label ? 'bg-[#24B2B9] text-white border-[#DDE7F1]' : 'bg-white text-[#627497] border-[#DDE7F1]'}">
+                            <div class="text-2xl mb-1"><i data-lucide="${plan.icon}" class="w-6 h-6 ${data.budgetPlan === plan.label ? 'text-white' : 'text-primary'}"></i></div>
+                            <p class="font-semibold text-sm">${plan.label}</p>
+                            ${(plan.popular) ? '<span class="text-[10px] bg-[#DEC55D] text-white px-2 py-0.5 rounded-full mt-1">Popular</span>' : ''}
+                        </button>
+                    `).join('')}
                 </div>
-                <div class="px-2">
-                    <input type="range" 
-                        min="150000" max="1000000" step="10000" 
-                        value="${data.estimatedCost}" 
-                        oninput="state.wizardData.estimatedCost = parseInt(this.value); renderApp();" 
-                        style="--progress: ${progressPercentage}%"
-                        class="cursor-pointer">
+                <div class=" p-4 space-y-4">
+                    ${budgetSummary.map(item => `
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-left text-gray-500">${item.heading}</p>
+                                <p class="text-2xl font-bold text-primary text-[#1E3A6D]">${item.value}</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-[#627497]">${item.sup}</p>
+                                <p class="text-sm font-bold text-[#24B3BA] text-end">${item.sub}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                    ${BUDGET_NOTES.map(note => `
+                        <div class="bg-[#F7F7F7] p-2 rounded-lg">
+                            <p class="text-xs text-[#3B6F67] leading-relaxed">${note.text} <span class="font-semibold">${note.highlight}</span>.</p>
+                        </div>
+                    `).join('')}
                 </div>
-                <div class="flex justify-between items-center text-[12px] opacity-90">
-                    <span>Budget</span>
-                    <span>Economy</span>
-                    <span>Premium</span>
-                </div>
-                
+                <button onclick="setWizardStep(7)" class="w-full bg-primary text-white py-3 rounded-3xl text-lg font-bold active:scale-[0.98] transition-all">Continue</button>
+
             </div>
-            <button onclick="setWizardStep(7)" class="w-full bg-primary text-white py-3 rounded-3xl text-lg font-bold active:scale-[0.98] transition-all">Continue</button>
         </div>
     `;
 }
